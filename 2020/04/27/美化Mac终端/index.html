@@ -27,10 +27,12 @@
 <meta property="og:site_name" content="Xpye&#39;s Website">
 <meta property="og:description" content="本文严重抄袭自：https:&#x2F;&#x2F;blog.biezhi.me&#x2F;2018&#x2F;11&#x2F;build-a-beautiful-mac-terminal-environment.html 切换默认shell为zshmac自带了多种shell，但默认的shell为bash。我们可以通过如下命令查看已有的shell 1cat &#x2F;etc&#x2F;shells  此后我们更改默认shell为zsh 1chsh -s &amp;#x2F">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/images/image-20200427170143962.png">
 <meta property="article:published_time" content="2020-04-27T09:09:31.195Z">
-<meta property="article:modified_time" content="2020-05-03T03:55:46.788Z">
+<meta property="article:modified_time" content="2020-05-03T04:05:51.884Z">
 <meta property="article:author" content="Xingpei Ye">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/image-20200427170143962.png">
 
 <link rel="canonical" href="http://yoursite.com/2020/04/27/%E7%BE%8E%E5%8C%96Mac%E7%BB%88%E7%AB%AF/">
 
@@ -185,7 +187,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-05-03 11:55:46" itemprop="dateModified" datetime="2020-05-03T11:55:46+08:00">2020-05-03</time>
+                <time title="Modified: 2020-05-03 12:05:51" itemprop="dateModified" datetime="2020-05-03T12:05:51+08:00">2020-05-03</time>
               </span>
 
           
@@ -217,7 +219,7 @@
 <figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew tap homebrew/cask-fonts</span><br><span class="line">brew cask install font-hack-nerd-font</span><br></pre></td></tr></table></figure>
 
 <p>成功后，我们在terminal的偏好设置中更改字体即可。</p>
-<p>![image-20200427170143962](/Users/sebestian/Library/Application Support/typora-user-images/image-20200427170143962.png)</p>
+<p><img src="/images/image-20200427170143962.png" alt="image-20200427170143962"></p>
 <p>另外，终端的各种颜色（包括背景，高亮）也是很有讲究。大家可以自选ANSI喜欢的颜色。如果想要达到开头我那样的效果，也可以在更改颜色时，利用mac自带的取色器直接对着我的图里的ANSI取色。</p>
 <h5 id="自定义主题样式"><a href="#自定义主题样式" class="headerlink" title="自定义主题样式"></a>自定义主题样式</h5><p>最后，我们就可以根据自己的喜好，自定义出现在终端里的元素（prompt），同样是在.zshrc中更改，这里给出完整的.zshrc文件，也就是我开头效果的设置。设置完后记得source一下。</p>
 <figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># If you come from bash you might have to change your $PATH.</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$HOME</span>/bin:/usr/<span class="built_in">local</span>/bin:<span class="variable">$PATH</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Path to your oh-my-zsh installation.</span></span><br><span class="line"><span class="built_in">export</span> ZSH=<span class="string">"/Users/sebestian/.oh-my-zsh"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Set name of the theme to load --- if set to "random", it will</span></span><br><span class="line"><span class="comment"># load a random theme each time oh-my-zsh is loaded, in which case,</span></span><br><span class="line"><span class="comment"># to know which specific one was loaded, run: echo $RANDOM_THEME</span></span><br><span class="line"><span class="comment"># See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes</span></span><br><span class="line">ZSH_THEME=<span class="string">"powerlevel9k/powerlevel9k"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#### Default Setting  ####</span></span><br><span class="line">POWERLEVEL9K_MODE=<span class="string">'nerdfont-complete'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Which plugins would you like to load?</span></span><br><span class="line"><span class="comment"># Standard plugins can be found in ~/.oh-my-zsh/plugins/*</span></span><br><span class="line"><span class="comment"># Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/</span></span><br><span class="line"><span class="comment"># Example format: plugins=(rails git textmate ruby lighthouse)</span></span><br><span class="line"><span class="comment"># Add wisely, as too many plugins slow down shell startup.</span></span><br><span class="line">plugins=(git)</span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> <span class="variable">$ZSH</span>/oh-my-zsh.sh</span><br><span class="line"></span><br><span class="line"><span class="comment"># source bashrc</span></span><br><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Customize prompt of  powerlevel9k-theme</span></span><br><span class="line">POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon user ssh dir vcs newline status)</span><br><span class="line">POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time)</span><br><span class="line">POWERLEVEL9K_PROMPT_ADD_NEWLINE=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
@@ -241,10 +243,7 @@
     <a href="/2019/06/26/%E5%85%B3%E4%BA%8E%E5%8D%97%E5%A4%A7%E5%AE%A3%E4%BC%A0/" rel="prev" title="关于南大宣传">
       <i class="fa fa-chevron-left"></i> 关于南大宣传
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/05/03/hello-world/" rel="next" title="Hello World">
-      Hello World <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -319,7 +318,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
