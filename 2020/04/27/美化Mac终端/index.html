@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="美化Mac终端本文严重抄袭自：https:&#x2F;&#x2F;blog.biezhi.me&#x2F;2018&#x2F;11&#x2F;build-a-beautiful-mac-terminal-environment.html 切换默认shell为zshmac自带了多种shell，但默认的shell为bash。我们可以通过如下命令查看已有的shell 1cat &#x2F;etc&#x2F;shells  此后我们更改默认shell为zsh 1chsh -">
+<meta property="og:type" content="article">
+<meta property="og:title" content="美化Mac终端">
+<meta property="og:url" content="http://yoursite.com/2020/04/27/%E7%BE%8E%E5%8C%96Mac%E7%BB%88%E7%AB%AF/index.html">
+<meta property="og:site_name" content="Xpye&#39;s Website">
+<meta property="og:description" content="美化Mac终端本文严重抄袭自：https:&#x2F;&#x2F;blog.biezhi.me&#x2F;2018&#x2F;11&#x2F;build-a-beautiful-mac-terminal-environment.html 切换默认shell为zshmac自带了多种shell，但默认的shell为bash。我们可以通过如下命令查看已有的shell 1cat &#x2F;etc&#x2F;shells  此后我们更改默认shell为zsh 1chsh -">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-04-27T09:09:31.195Z">
+<meta property="article:modified_time" content="2020-04-27T09:30:53.902Z">
+<meta property="article:author" content="Xingpei Ye">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/04/27/%E7%BE%8E%E5%8C%96Mac%E7%BB%88%E7%AB%AF/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>美化Mac终端 | Xpye's Website</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Xpye's Website</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/27/%E7%BE%8E%E5%8C%96Mac%E7%BB%88%E7%AB%AF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Xingpei Ye">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Xpye's Website">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          美化Mac终端
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-04-27 17:09:31 / Modified: 17:30:53" itemprop="dateCreated datePublished" datetime="2020-04-27T17:09:31+08:00">2020-04-27</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="美化Mac终端"><a href="#美化Mac终端" class="headerlink" title="美化Mac终端"></a>美化Mac终端</h2><p>本文严重抄袭自：<a href="https://blog.biezhi.me/2018/11/build-a-beautiful-mac-terminal-environment.html" target="_blank" rel="noopener">https://blog.biezhi.me/2018/11/build-a-beautiful-mac-terminal-environment.html</a></p>
+<h5 id="切换默认shell为zsh"><a href="#切换默认shell为zsh" class="headerlink" title="切换默认shell为zsh"></a>切换默认shell为zsh</h5><p>mac自带了多种shell，但默认的shell为bash。我们可以通过如下命令查看已有的shell</p>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/shells</span><br></pre></td></tr></table></figure>
+
+<p>此后我们更改默认shell为zsh</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chsh -s &#x2F;usr&#x2F;local&#x2F;bin&#x2F;zsh</span><br></pre></td></tr></table></figure>
+
+<h5 id="下载oh-my-zsh以及powerlevel9k主题"><a href="#下载oh-my-zsh以及powerlevel9k主题" class="headerlink" title="下载oh-my-zsh以及powerlevel9k主题"></a>下载oh-my-zsh以及powerlevel9k主题</h5><p>zsh是一个较难配置的shell，因此之前用的人不多，不过好在oh-my-zsh的出现使得这一切变得方便起来，我们通过官网的下载步骤安装</p>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)</span>"</span></span><br></pre></td></tr></table></figure>
+
+<p>安装完oh-my-zsh后会出现成功的字样，重启终端后应该能发现主题已经更换得稍微美观了一点，这是因为oh-my-zsh默认的主题为robbyrussell，我们可以打开~/.zshrc看到其中ZSH_THEME=”robbyrussell”的字样。oh-my-zsh自带了很多主题，可以在官网上查看：<a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Themes。只要修改前面的字样，就能切换主题。" target="_blank" rel="noopener">https://github.com/ohmyzsh/ohmyzsh/wiki/Themes。只要修改前面的字样，就能切换主题。</a></p>
+<p>不过这里我们使用一个自由化程度更高也更炫酷的主题：powerlevel9k。下载很方便，直接从git上下载就行，之后我们更改主题ZSH_THEME=”powerlevel9k/powerlevel9k”，并source生效</p>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k</span><br></pre></td></tr></table></figure>
+
+<h5 id="下载字体，配置终端颜色"><a href="#下载字体，配置终端颜色" class="headerlink" title="下载字体，配置终端颜色"></a>下载字体，配置终端颜色</h5><p>更换到最新的主题后，我们发现有些地方是乱码的，这是因为默认terminal的字体是不支持一些花里胡哨的图标的，因此我们要下载更丰富的字体：nerd-fonts。安装方法是利用Homebrew（不知道这个的强烈推荐安装，管理mac包神器）</p>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew tap homebrew/cask-fonts</span><br><span class="line">brew cask install font-hack-nerd-font</span><br></pre></td></tr></table></figure>
+
+<p>成功后，我们在terminal的偏好设置中更改字体即可。</p>
+<p>![image-20200427170143962](/Users/sebestian/Library/Application Support/typora-user-images/image-20200427170143962.png)</p>
+<p>另外，终端的各种颜色（包括背景，高亮）也是很有讲究。大家可以自选ANSI喜欢的颜色。如果想要达到开头我那样的效果，也可以在更改颜色时，利用mac自带的取色器直接对着我的图里的ANSI取色。</p>
+<h5 id="自定义主题样式"><a href="#自定义主题样式" class="headerlink" title="自定义主题样式"></a>自定义主题样式</h5><p>最后，我们就可以根据自己的喜好，自定义出现在终端里的元素（prompt），同样是在.zshrc中更改，这里给出完整的.zshrc文件，也就是我开头效果的设置。设置完后记得source一下。</p>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># If you come from bash you might have to change your $PATH.</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$HOME</span>/bin:/usr/<span class="built_in">local</span>/bin:<span class="variable">$PATH</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Path to your oh-my-zsh installation.</span></span><br><span class="line"><span class="built_in">export</span> ZSH=<span class="string">"/Users/sebestian/.oh-my-zsh"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Set name of the theme to load --- if set to "random", it will</span></span><br><span class="line"><span class="comment"># load a random theme each time oh-my-zsh is loaded, in which case,</span></span><br><span class="line"><span class="comment"># to know which specific one was loaded, run: echo $RANDOM_THEME</span></span><br><span class="line"><span class="comment"># See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes</span></span><br><span class="line">ZSH_THEME=<span class="string">"powerlevel9k/powerlevel9k"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#### Default Setting  ####</span></span><br><span class="line">POWERLEVEL9K_MODE=<span class="string">'nerdfont-complete'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Which plugins would you like to load?</span></span><br><span class="line"><span class="comment"># Standard plugins can be found in ~/.oh-my-zsh/plugins/*</span></span><br><span class="line"><span class="comment"># Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/</span></span><br><span class="line"><span class="comment"># Example format: plugins=(rails git textmate ruby lighthouse)</span></span><br><span class="line"><span class="comment"># Add wisely, as too many plugins slow down shell startup.</span></span><br><span class="line">plugins=(git)</span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> <span class="variable">$ZSH</span>/oh-my-zsh.sh</span><br><span class="line"></span><br><span class="line"><span class="comment"># source bashrc</span></span><br><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Customize prompt of  powerlevel9k-theme</span></span><br><span class="line">POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon user ssh dir vcs newline status)</span><br><span class="line">POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time)</span><br><span class="line">POWERLEVEL9K_PROMPT_ADD_NEWLINE=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>这里我source bash_profile的目的是为了启用conda的环境，这些指令以前存在bash里，如果不这样做的话conda的一些指令会用不了。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/06/26/%E5%85%B3%E4%BA%8E%E5%8D%97%E5%A4%A7%E5%AE%A3%E4%BC%A0/" rel="prev" title="关于南大宣传">
+      <i class="fa fa-chevron-left"></i> 关于南大宣传
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/05/03/hello-world/" rel="next" title="Hello World">
+      Hello World <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#美化Mac终端"><span class="nav-number">1.</span> <span class="nav-text">美化Mac终端</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#切换默认shell为zsh"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">切换默认shell为zsh</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#下载oh-my-zsh以及powerlevel9k主题"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">下载oh-my-zsh以及powerlevel9k主题</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#下载字体，配置终端颜色"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">下载字体，配置终端颜色</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#自定义主题样式"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">自定义主题样式</span></a></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xingpei Ye"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Xingpei Ye</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xingpei Ye</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
