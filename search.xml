@@ -99,6 +99,28 @@
       </tags>
   </entry>
   <entry>
+    <title>微信聊天记录导出</title>
+    <url>/2020/03/05/%E5%BE%AE%E4%BF%A1%E8%81%8A%E5%A4%A9%E8%AE%B0%E5%BD%95%E5%AF%BC%E5%87%BA/</url>
+    <content><![CDATA[<p>与npy很快就要在一起一周年了，在pyq某同学的提醒下意识到完全可以将微信聊天记录导出并且进行一波数据分析。（p，实际就是看看谁的话多，每天几点话最多，一年以来的时间序列…之类的简单操作）</p>
+<a id="more"></a>
+
+<h5 id="前提工作与说明"><a href="#前提工作与说明" class="headerlink" title="前提工作与说明"></a>前提工作与说明</h5><p>确认一下微信里聊天记录是否健在（bushi），如果方便，可以提前把其他人的聊天记录都删了，这样备份快，并且好找。如果有一些其他人的重要信息不太能删的，emmm，那最好你想要导出的这个人的聊天记录是所有人当中最多的，这样我们之后在导出到电脑后方便选择。（实际上关于如何确定哪个记录属于谁这个问题，可以通过微信ID来定位，然而这个方法貌似只适用于没有修改过微信默认ID的情况，因此这里就先不介绍了）另外， 我这里使用的是windows系统以及苹果手机。（关于安卓手机的方法百度一下貌似更多） </p>
+<h5 id="关于如何导出聊天记录到电脑"><a href="#关于如何导出聊天记录到电脑" class="headerlink" title="关于如何导出聊天记录到电脑"></a>关于如何导出聊天记录到电脑</h5><p>首先，我们下载iTunes，将手机连上电脑后，选择备份。如果你手机内容很多的话，这个过程可能要很久……备份成功后，我们在编辑/偏好设置/设备/ 中能够看到已经备份好的手机。</p>
+<p>这之后我们下载“<a href="https://www.louyue.com/itunes.htm" target="_blank" rel="noopener">楼月免费iTunes备份管理器</a>”，在微信聊天记录里面，导出Documents文件夹到我们想要的一个目录。在Documents文件下内，会有一个由数字字母组成的乱码一样的文件夹，那个文件夹便是我们聊天记录所在的位置。（如果有多个微信账号，会有多个乱码文件夹，这时候判断一下文件大小应该可以知道谁是谁）</p>
+<h5 id="找到指定好友"><a href="#找到指定好友" class="headerlink" title="找到指定好友"></a>找到指定好友</h5><p>这一步卡了我最久，后来我的解决方法是，下载“<a href="https://www.softpedia.com/get/Internet/Servers/Database-Utils/SQLiteSpy.shtml" target="_blank" rel="noopener">SQLiteSpy</a>”，用该软件打开刚才的Documents/一度乱码的文件夹/DB/MM.sqlite文件。然后，我们在软件左侧最下面找到一个名为”sqlite_sequence”的表，点击seq进行从大到小的排列，就可以定位出哪个表代表了你想要的那个人。表名形如Chat_xxxxxxxxxx</p>
+<h5 id="利用Python导出至Excel"><a href="#利用Python导出至Excel" class="headerlink" title="利用Python导出至Excel"></a>利用Python导出至Excel</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#该程序可以实现将聊天记录导出为excel</span></span><br><span class="line"><span class="keyword">import</span> sqlite3</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">with</span> sqlite3.connect(<span class="string">r'聊天记录目录/DB/MM.sqlite'</span>) <span class="keyword">as</span> con:</span><br><span class="line">    df1 = pd.read_sql_query(<span class="string">"select * from Chat_xxx"</span>, con) <span class="comment">#xxx即为刚才找到的制定好友代号</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#保存至excel，这里直接用的相对路径</span></span><br><span class="line">writer = pd.ExcelWriter(<span class="string">'wechat.xlsx'</span>)</span><br><span class="line">df1.to_excel(writer, <span class="string">'Sheet1'</span>)</span><br><span class="line">writer.save()</span><br></pre></td></tr></table></figure>
+
+<p>至此，大功告成。之后的分析就各显神通了，我选择的是matlab。当然，直接用excel基本也能实现想要的功能了。数据分析的结果，也许可以新开个笔记介绍。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>聊天记录</tag>
+        <tag>微信</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>洗澡</title>
     <url>/2019/05/20/%E6%B4%97%E6%BE%A1/</url>
     <content><![CDATA[<blockquote><p>上冲下洗，左揉右搓。人穿上衣服分个三六九等，来了这儿，都一样。房子再贵，真正需要的也不过一张小床，衣服再华丽，进了澡堂大家都一个样，唯有身上的精气神是能够长久留下来的东西。</p>
@@ -122,58 +144,6 @@
       </categories>
       <tags>
         <tag>洗澡</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>微信聊天记录导出</title>
-    <url>/2020/03/05/%E5%BE%AE%E4%BF%A1%E8%81%8A%E5%A4%A9%E8%AE%B0%E5%BD%95%E5%AF%BC%E5%87%BA/</url>
-    <content><![CDATA[<p>与npy很快就要在一起一周年了，在pyq某同学的提醒下意识到完全可以将微信聊天记录导出并且进行一波数据分析。（p，实际就是看看谁的话多，每天几点话最多，一年以来的时间序列…之类的简单操作）</p>
-<a id="more"></a>
-
-<h5 id="前提工作与说明"><a href="#前提工作与说明" class="headerlink" title="前提工作与说明"></a>前提工作与说明</h5><p>确认一下微信里聊天记录是否健在（bushi），如果方便，可以提前把其他人的聊天记录都删了，这样备份快，并且好找。如果有一些其他人的重要信息不太能删的，emmm，那最好你想要导出的这个人的聊天记录是所有人当中最多的，这样我们之后在导出到电脑后方便选择。（实际上关于如何确定哪个记录属于谁这个问题，可以通过微信ID来定位，然而这个方法貌似只适用于没有修改过微信默认ID的情况，因此这里就先不介绍了）另外， 我这里使用的是windows系统以及苹果手机。（关于安卓手机的方法百度一下貌似更多） </p>
-<h5 id="关于如何导出聊天记录到电脑"><a href="#关于如何导出聊天记录到电脑" class="headerlink" title="关于如何导出聊天记录到电脑"></a>关于如何导出聊天记录到电脑</h5><p>首先，我们下载iTunes，将手机连上电脑后，选择备份。如果你手机内容很多的话，这个过程可能要很久……备份成功后，我们在编辑/偏好设置/设备/ 中能够看到已经备份好的手机。</p>
-<p>这之后我们下载“<a href="https://www.louyue.com/itunes.htm" target="_blank" rel="noopener">楼月免费iTunes备份管理器</a>”，在微信聊天记录里面，导出Documents文件夹到我们想要的一个目录。在Documents文件下内，会有一个由数字字母组成的乱码一样的文件夹，那个文件夹便是我们聊天记录所在的位置。（如果有多个微信账号，会有多个乱码文件夹，这时候判断一下文件大小应该可以知道谁是谁）</p>
-<h5 id="找到指定好友"><a href="#找到指定好友" class="headerlink" title="找到指定好友"></a>找到指定好友</h5><p>这一步卡了我最久，后来我的解决方法是，下载“<a href="https://www.softpedia.com/get/Internet/Servers/Database-Utils/SQLiteSpy.shtml" target="_blank" rel="noopener">SQLiteSpy</a>”，用该软件打开刚才的Documents/一度乱码的文件夹/DB/MM.sqlite文件。然后，我们在软件左侧最下面找到一个名为”sqlite_sequence”的表，点击seq进行从大到小的排列，就可以定位出哪个表代表了你想要的那个人。表名形如Chat_xxxxxxxxxx</p>
-<h5 id="利用Python导出至Excel"><a href="#利用Python导出至Excel" class="headerlink" title="利用Python导出至Excel"></a>利用Python导出至Excel</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#该程序可以实现将聊天记录导出为excel</span></span><br><span class="line"><span class="keyword">import</span> sqlite3</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">with</span> sqlite3.connect(<span class="string">r'聊天记录目录/DB/MM.sqlite'</span>) <span class="keyword">as</span> con:</span><br><span class="line">    df1 = pd.read_sql_query(<span class="string">"select * from Chat_xxx"</span>, con) <span class="comment">#xxx即为刚才找到的制定好友代号</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#保存至excel，这里直接用的相对路径</span></span><br><span class="line">writer = pd.ExcelWriter(<span class="string">'wechat.xlsx'</span>)</span><br><span class="line">df1.to_excel(writer, <span class="string">'Sheet1'</span>)</span><br><span class="line">writer.save()</span><br></pre></td></tr></table></figure>
-
-<p>至此，大功告成。之后的分析就各显神通了，我选择的是matlab。当然，直接用excel基本也能实现想要的功能了。数据分析的结果，也许可以新开个笔记介绍。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>聊天记录</tag>
-        <tag>微信</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>站在巨人的肩膀上</title>
-    <url>/2019/06/10/%E7%AB%99%E5%9C%A8%E5%B7%A8%E4%BA%BA%E7%9A%84%E8%82%A9%E8%86%80%E4%B8%8A/</url>
-    <content><![CDATA[<p><img src="/images/image-E8BB70E168CC-1.jpeg" alt=""></p>
-<p>去北大的夏令营，除了收获一个满意的offer，更让我值得回味的，是一个来自中南大学，学地球物理的哥们。这里称他为C同学。</p>
-<p>关于他的背景，我跟身边的人已经说太多次了，但还是简要概括一下吧：（目的是让以后的自己看到还能知道些细节）</p>
-<a id="more"></a>
-
-
-<p><em>高考志愿毅然决然选择中南大学地球物理专业，除此之外一个没填，不服从调剂。</em></p>
-<p><em>大一下学期开始科研，花大半年时间入门，发表会议期刊。</em></p>
-<p><em>大二期间拿着导师的经费参加哈尔滨人工智能暑期课程以及国际会议，但因不好意思，只好跟身边的博士博士后谎称自己是大四。</em></p>
-<p><em>截止参加夏令营时，已发表Sci两篇，一篇1区，一篇2区，1区为JGR。</em></p>
-<p><em>被MIT伍兹霍尔研究所大牛点名要求跟他读博，婉拒，只因觉得自己英语太菜，过不了MIT的英语基本要求。</em></p>
-<p><em>打算跟一个只有全美Top100附近的大学的华人教授读博，因为他觉得这个老师跟他更像哥们关系，并且对方承诺让他4年博士毕业。</em></p>
-<p><em>为考中国地大的青藏高原数据，顺路来参加北大大气夏令营，拿到offer后表示只要英语过了关能去美国读博，他会毁约。</em></p>
-<p>C同学是我接触到同龄人当中最强的，至少科研上如此。他有异于常人的品格，诸如异常决绝并且异常勤奋。然而我还是很好奇，他究竟为什么成功？或者说我很想知道，他是如何在科研的道路上起步的。</p>
-<p>C同学回忆起他的科研经历。在刚开始的那个阶段，导师给了他几篇论文，和论文背后导师自己写好的代码。这之后，C同学表示他用了大半年的时间，一边读论文，一边用设不同的断点跑代码，同时不断结合自己的理解给代码调参。此外，导师为了帮助他的理解，在一开始给他布置了一些非常好实现的简单作业，目的是让他了解新旧方法的区别，亦即现在他所研究的方向到底是什么意义。</p>
-<p>这其实是我最想听到的部分。长久以来，科研于我，是一个很玄学的概念。虽然我一直以读研究生为我本科期间的一个阶段性目标，但事实就是，科研是什么，我其实根本还没摸到门路。本科期间我也有科研经历，然而偏偏不巧的是，我做的这个方向不仅偏工程，而且我的导师也不甚熟悉，无论在大的科学性还是技术细节上都不太能给我很好的指导。（这里没有任何贬低我导师的意思，事实上，我的导师人非常好，在自己专业领域上的科研能力也有目共睹，并且在其他方面都给了我很大帮助，可以说是我的贵人）除此之外，另外一个我觉得会很有意思的气候相关的暑研我也还没开始。所以，科研是什么，到底应该如何做，是我从大二下开始进行所谓的科研训练后一直迷茫和思索的话题。</p>
-<p>C同学的一席话，给了我窥见科研的一个窗口。我记得听完他经历的那个晚上，因为过于震撼，我都没能好好的睡觉。现在在回想起来，其实这就是最寻常不过的科研起步的例子了吧——跟着导师熟悉的方向，接着做下一步的工作，这之后再凭借自己的努力和天赋继续走下去。这与我在知乎，在博客上看到的经历其实没有任何两样。但从一个活生生的例子，也就是C同学的口中说出来时，我才意识到对比自己，我在错误的方向上忙活了两年。</p>
-<p>本科生我的这段科研本身兴许是失败的（其实也未知，还有一年的时间可以好好琢磨），但转念想来，何尝不是一次绝佳的试错机会呢？我在导师不甚熟悉的领域上如无头苍蝇般漫无目的地四处碰壁，但好在这只是本科，我的大部分精力还是放在课程的学习上。科研上的颗粒无收虽影响我的心态，但自己反正不是研究生，也影响不到什么毕业论文。有这样一次过程，我想我在真正的博士工作期间，能更好的进入真正科研的状态吧。</p>
-<p>我把真正进入科研的状态，比做如何站在巨人的肩膀上这样一个过程。站在巨人的肩膀上，这是谷歌学术的一个标语，实际上也确确实实是科研之所以能够从亚里士多德那个时代一直传承到现在，并继续为人类社会做贡献的原因。这次夏令营，我也选到了自己心仪的导师，希望有朝一日我也能站在他的肩膀上，看到更广阔的世界。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>北大</tag>
       </tags>
   </entry>
   <entry>
@@ -210,6 +180,36 @@
       <tags>
         <tag>终端</tag>
         <tag>Mac</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>站在巨人的肩膀上</title>
+    <url>/2019/06/10/%E7%AB%99%E5%9C%A8%E5%B7%A8%E4%BA%BA%E7%9A%84%E8%82%A9%E8%86%80%E4%B8%8A/</url>
+    <content><![CDATA[<p><img src="/images/image-E8BB70E168CC-1.jpeg" alt=""></p>
+<p>去北大的夏令营，除了收获一个满意的offer，更让我值得回味的，是一个来自中南大学，学地球物理的哥们。这里称他为C同学。</p>
+<p>关于他的背景，我跟身边的人已经说太多次了，但还是简要概括一下吧：（目的是让以后的自己看到还能知道些细节）</p>
+<a id="more"></a>
+
+
+<p><em>高考志愿毅然决然选择中南大学地球物理专业，除此之外一个没填，不服从调剂。</em></p>
+<p><em>大一下学期开始科研，花大半年时间入门，发表会议期刊。</em></p>
+<p><em>大二期间拿着导师的经费参加哈尔滨人工智能暑期课程以及国际会议，但因不好意思，只好跟身边的博士博士后谎称自己是大四。</em></p>
+<p><em>截止参加夏令营时，已发表Sci两篇，一篇1区，一篇2区，1区为JGR。</em></p>
+<p><em>被MIT伍兹霍尔研究所大牛点名要求跟他读博，婉拒，只因觉得自己英语太菜，过不了MIT的英语基本要求。</em></p>
+<p><em>打算跟一个只有全美Top100附近的大学的华人教授读博，因为他觉得这个老师跟他更像哥们关系，并且对方承诺让他4年博士毕业。</em></p>
+<p><em>为考中国地大的青藏高原数据，顺路来参加北大大气夏令营，拿到offer后表示只要英语过了关能去美国读博，他会毁约。</em></p>
+<p>C同学是我接触到同龄人当中最强的，至少科研上如此。他有异于常人的品格，诸如异常决绝并且异常勤奋。然而我还是很好奇，他究竟为什么成功？或者说我很想知道，他是如何在科研的道路上起步的。</p>
+<p>C同学回忆起他的科研经历。在刚开始的那个阶段，导师给了他几篇论文，和论文背后导师自己写好的代码。这之后，C同学表示他用了大半年的时间，一边读论文，一边用设不同的断点跑代码，同时不断结合自己的理解给代码调参。此外，导师为了帮助他的理解，在一开始给他布置了一些非常好实现的简单作业，目的是让他了解新旧方法的区别，亦即现在他所研究的方向到底是什么意义。</p>
+<p>这其实是我最想听到的部分。长久以来，科研于我，是一个很玄学的概念。虽然我一直以读研究生为我本科期间的一个阶段性目标，但事实就是，科研是什么，我其实根本还没摸到门路。本科期间我也有科研经历，然而偏偏不巧的是，我做的这个方向不仅偏工程，而且我的导师也不甚熟悉，无论在大的科学性还是技术细节上都不太能给我很好的指导。（这里没有任何贬低我导师的意思，事实上，我的导师人非常好，在自己专业领域上的科研能力也有目共睹，并且在其他方面都给了我很大帮助，可以说是我的贵人）除此之外，另外一个我觉得会很有意思的气候相关的暑研我也还没开始。所以，科研是什么，到底应该如何做，是我从大二下开始进行所谓的科研训练后一直迷茫和思索的话题。</p>
+<p>C同学的一席话，给了我窥见科研的一个窗口。我记得听完他经历的那个晚上，因为过于震撼，我都没能好好的睡觉。现在在回想起来，其实这就是最寻常不过的科研起步的例子了吧——跟着导师熟悉的方向，接着做下一步的工作，这之后再凭借自己的努力和天赋继续走下去。这与我在知乎，在博客上看到的经历其实没有任何两样。但从一个活生生的例子，也就是C同学的口中说出来时，我才意识到对比自己，我在错误的方向上忙活了两年。</p>
+<p>本科生我的这段科研本身兴许是失败的（其实也未知，还有一年的时间可以好好琢磨），但转念想来，何尝不是一次绝佳的试错机会呢？我在导师不甚熟悉的领域上如无头苍蝇般漫无目的地四处碰壁，但好在这只是本科，我的大部分精力还是放在课程的学习上。科研上的颗粒无收虽影响我的心态，但自己反正不是研究生，也影响不到什么毕业论文。有这样一次过程，我想我在真正的博士工作期间，能更好的进入真正科研的状态吧。</p>
+<p>我把真正进入科研的状态，比做如何站在巨人的肩膀上这样一个过程。站在巨人的肩膀上，这是谷歌学术的一个标语，实际上也确确实实是科研之所以能够从亚里士多德那个时代一直传承到现在，并继续为人类社会做贡献的原因。这次夏令营，我也选到了自己心仪的导师，希望有朝一日我也能站在他的肩膀上，看到更广阔的世界。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>北大</tag>
       </tags>
   </entry>
 </search>
