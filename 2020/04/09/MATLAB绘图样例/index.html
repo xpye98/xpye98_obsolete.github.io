@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="fonts.googleapis.com/css?family=EB Garamond:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="简单给出MATLAB一些常见图的绘制代码。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MATLAB绘图样例">
+<meta property="og:url" content="http://yoursite.com/2020/04/09/MATLAB%E7%BB%98%E5%9B%BE%E6%A0%B7%E4%BE%8B/index.html">
+<meta property="og:site_name" content="远东二三叶">
+<meta property="og:description" content="简单给出MATLAB一些常见图的绘制代码。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/images/image-1.png">
+<meta property="og:image" content="http://yoursite.com/images/image-1536x542.png">
+<meta property="og:image" content="http://yoursite.com/images/image-2.png">
+<meta property="article:published_time" content="2020-04-08T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-05-04T14:36:30.742Z">
+<meta property="article:author" content="Xingpei Ye">
+<meta property="article:tag" content="MATLAB">
+<meta property="article:tag" content="绘图">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/image-1.png">
+
+<link rel="canonical" href="http://yoursite.com/2020/04/09/MATLAB%E7%BB%98%E5%9B%BE%E6%A0%B7%E4%BE%8B/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <title>MATLAB绘图样例 | 远东二三叶</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">远东二三叶</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/09/MATLAB%E7%BB%98%E5%9B%BE%E6%A0%B7%E4%BE%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Xingpei Ye">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="远东二三叶">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          MATLAB绘图样例
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-09 00:00:00" itemprop="dateCreated datePublished" datetime="2020-04-09T00:00:00+08:00">2020-04-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-04 22:36:30" itemprop="dateModified" datetime="2020-05-04T22:36:30+08:00">2020-05-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>简单给出MATLAB一些常见图的绘制代码。</p>
+<a id="more"></a>
+
+<h5 id="线图（plot）"><a href="#线图（plot）" class="headerlink" title="线图（plot）"></a>线图（plot）</h5><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 设置图片大小，[距屏幕左边距离，距屏幕下面距离，长，高 ]</span></span><br><span class="line"><span class="built_in">figure</span>(<span class="string">'position'</span>, [<span class="number">300</span>, <span class="number">400</span>, <span class="number">600</span>, <span class="number">350</span>]); </span><br><span class="line"></span><br><span class="line">hData = <span class="built_in">plot</span>(base_NCP_daily,<span class="string">'linewidth'</span>,<span class="number">3.5</span>,...</span><br><span class="line"><span class="string">'color'</span>,[<span class="number">0.8500</span>, <span class="number">0.3250</span>, <span class="number">0.0980</span>]); <span class="comment">% 线图</span></span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line">hE = errorbar(x,obs_NCP_daily, obs_std) <span class="comment">%带errorbar的线图</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% 设置errorbar线图</span></span><br><span class="line">set(hE                            , …</span><br><span class="line"><span class="string">'Marker'</span>          , <span class="string">'.'</span>         , …</span><br><span class="line"><span class="string">'Color'</span>           , [<span class="number">.3</span> <span class="number">.3</span> <span class="number">.3</span>]  ,…</span><br><span class="line"><span class="string">'LineStyle'</span>       ,<span class="string">'none'</span>       ,…</span><br><span class="line"><span class="string">'Marker'</span>          , <span class="string">'o'</span>         , …</span><br><span class="line"><span class="string">'MarkerSize'</span>      , <span class="number">8</span>           , …</span><br><span class="line"><span class="string">'MarkerEdgeColor'</span> , [<span class="number">.2</span> <span class="number">.2</span> <span class="number">.2</span>]  , …</span><br><span class="line"><span class="string">'MarkerFaceColor'</span> , [<span class="number">.7</span> <span class="number">.7</span> <span class="number">.7</span>]  ,…</span><br><span class="line"><span class="string">'linewidth'</span>,<span class="number">1.5</span>);</span><br><span class="line"></span><br><span class="line">set(gca,<span class="string">'XLim'</span>,[<span class="number">0</span> <span class="number">32</span>],<span class="string">'YLim'</span>,[<span class="number">0</span> <span class="number">160</span>]); <span class="comment">% 设置横纵坐标的范围</span></span><br><span class="line">set(gca, <span class="string">'Box'</span>, <span class="string">'on'</span>, <span class="string">'TickDir'</span>, <span class="string">'out'</span>,<span class="string">'LineWidth'</span>, <span class="number">1</span>, …</span><br><span class="line"><span class="string">'XMinorTick'</span>, <span class="string">'on'</span>, <span class="string">'YMinorTick'</span>, <span class="string">'on'</span>, <span class="string">'YGrid'</span>, <span class="string">'on'</span>,...</span><br><span class="line"><span class="string">'FontName'</span>, <span class="string">'Arial'</span>,<span class="string">'fontsize'</span>,<span class="number">12</span>); <span class="comment">% 美化坐标轴</span></span><br><span class="line"></span><br><span class="line">xlabel(<span class="string">'day'</span>); <span class="comment">% 坐标轴名称</span></span><br><span class="line">ylabel(<span class="string">'O3 MDA8 (ppbv)'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">%设置legend标签</span></span><br><span class="line">hLegend = <span class="built_in">legend</span>( …</span><br><span class="line">[hE, hData], …</span><br><span class="line"><span class="string">'Observation (\mu \pm \sigma)'</span> , …</span><br><span class="line"><span class="string">'GEOS-Chem base'</span>                , …</span><br><span class="line"><span class="string">'location'</span>, <span class="string">'NorthEast'</span> );</span><br><span class="line"><span class="comment">% 额外加入一些文字</span></span><br><span class="line">text(<span class="number">2</span>,<span class="number">150</span>,<span class="string">'NCP '</span>,<span class="string">'fontsize'</span>,<span class="number">14</span>,<span class="string">'fontname'</span>,<span class="string">'Arial'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>类似效果图</p>
+<p> <img src="/images/image-1.png" alt="image-1"></p>
+<h5 id="地图（contour）"><a href="#地图（contour）" class="headerlink" title="地图（contour）"></a>地图（contour）</h5><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 设置投影格式，经纬度范围</span></span><br><span class="line">m_proj(<span class="string">'miller'</span>,<span class="string">'longitudes'</span>,[<span class="number">71</span> <span class="number">139</span>],<span class="string">'latitudes'</span>,[<span class="number">15</span> <span class="number">55</span>]); </span><br><span class="line">[X, Y] = <span class="built_in">meshgrid</span>(lon,lat); <span class="comment">% 经纬度需从nc文件读取</span></span><br><span class="line">m_contourf(X',Y',NO_anthro,<span class="string">'Linestyle'</span>,<span class="string">'none'</span>); <span class="comment">% 去掉contourf之间的线</span></span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line"></span><br><span class="line">m_plot(bou1_4px,bou1_4py,<span class="string">'k'</span>,<span class="string">'LineWidth'</span>,<span class="number">1</span>); <span class="comment">% 绘制省界，参考之前的笔记</span></span><br><span class="line">m_coast(<span class="string">'line'</span>,<span class="string">'linewidth'</span>,<span class="number">1</span>,<span class="string">'color'</span>,<span class="string">'black'</span>); <span class="comment">% 绘制海岸线</span></span><br><span class="line">m_grid(<span class="string">'fontsize'</span>,<span class="number">5</span>,<span class="string">'linespec'</span>,<span class="string">'none'</span>,<span class="string">'xticklabels'</span>,<span class="string">''</span>,<span class="string">'yticklabels'</span>,<span class="string">''</span>); <span class="comment">% 设置地图边框格式，这里不显示任何信息</span></span><br><span class="line">title(<span class="string">'(a) Anthropogenic NO'</span>,<span class="string">'fontsize'</span>,<span class="number">14</span>,<span class="string">'fontname'</span>,<span class="string">'Arial'</span>); <span class="comment">% 设置标题</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% 自己设置的colorbar RGB颜色</span></span><br><span class="line">colmap = [<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>;<span class="number">230</span>,<span class="number">230</span>,<span class="number">250</span>;<span class="number">135</span>,<span class="number">206</span>,<span class="number">250</span>;...</span><br><span class="line"><span class="number">64</span>,<span class="number">224</span>,<span class="number">208</span>;<span class="number">60</span>,<span class="number">179</span>,<span class="number">113</span>;<span class="number">255</span>,<span class="number">215</span>,<span class="number">0</span>;<span class="number">255</span>,...</span><br><span class="line"><span class="number">140</span>,<span class="number">0</span>;<span class="number">255</span>,<span class="number">69</span>,<span class="number">0</span>;<span class="number">165</span>,<span class="number">42</span>,<span class="number">42</span>;<span class="number">128</span>,<span class="number">0</span>,<span class="number">0</span>]/<span class="number">256</span>;</span><br><span class="line">colormap(colmap); <span class="comment">% 启用colmap</span></span><br><span class="line">caxis([<span class="number">1</span> <span class="number">100</span>]) <span class="comment">% 设置数值范围</span></span><br><span class="line">text(<span class="number">-0.55</span>,<span class="number">1.02</span>,<span class="number">10</span>,[num2str(roundn(total_NO_anthro_NCP,<span class="number">-2</span>)),<span class="string">' Tg N'</span>],<span class="string">'fontsize'</span>,<span class="number">16</span>) <span class="comment">% 额外加文字</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% 显示colorbar并设置其位置等，horiz表示横向，纵向则不用写</span></span><br><span class="line">hcb = colorbar(<span class="string">'horiz'</span>,<span class="string">'position'</span>,[<span class="number">0.3</span>,<span class="number">0.18</span>,<span class="number">0.4</span>,<span class="number">0.04</span>],<span class="string">'FontSize'</span>,<span class="number">14</span>,<span class="string">'FontWeight'</span>,<span class="string">'bold'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>类似效果图</p>
+<p><img src="/images/image-1536x542.png" alt="image-1536x542"></p>
+<h5 id="箱型图（box-plot）"><a href="#箱型图（box-plot）" class="headerlink" title="箱型图（box plot）"></a>箱型图（box plot）</h5><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 预处理，这里分两组</span></span><br><span class="line">x1 = [anthro_soil_1,anthro_soil_2,anthro_soil_3];</span><br><span class="line">x2 = [anthro_nosoil_1,anthro_nosoil_2,anthro_nosoil_3];</span><br><span class="line"> </span><br><span class="line"><span class="comment">% 绘制箱型图，position后的[]表示其所在位置</span></span><br><span class="line">h2 = boxplot(x1,<span class="string">'positions'</span>,[<span class="number">1.5</span>,<span class="number">3.5</span>,<span class="number">5.5</span>],<span class="string">'symbol'</span>,<span class="string">''</span>,<span class="string">'width'</span>,<span class="number">0.35</span>,<span class="string">'color'</span>,<span class="string">'r'</span>);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line">h1 = boxplot(x2,<span class="string">'positions'</span>,[<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>],<span class="string">'symbol'</span>,<span class="string">''</span>,<span class="string">'width'</span>,<span class="number">0.35</span>,<span class="string">'color'</span>,[<span class="number">0</span>,<span class="number">0.4470</span>,<span class="number">0.7410</span>]);</span><br><span class="line"> </span><br><span class="line">label = &#123;<span class="string">'&lt;33%'</span>,<span class="string">'33%-67%'</span>,<span class="string">'&gt;67%'</span>&#125;;</span><br><span class="line"> </span><br><span class="line">xlabel(<span class="string">'GC O3 MDA8'</span>)</span><br><span class="line">ylabel(<span class="string">'Anthro Contribution (ppb)'</span>)</span><br><span class="line"> </span><br><span class="line"><span class="comment">% 设置坐标轴</span></span><br><span class="line">set(gca,<span class="string">'XTick'</span>,[<span class="number">1.75</span> <span class="number">3.75</span>, <span class="number">5.75</span>],<span class="string">'XTickLabel'</span>,label,<span class="string">'Xlim'</span>,[<span class="number">1</span> <span class="number">6.5</span>],<span class="string">'Ylim'</span>,[<span class="number">-10</span> <span class="number">60</span>],...</span><br><span class="line">    <span class="string">'Box'</span>, <span class="string">'off'</span>, <span class="string">'TickDir'</span>, <span class="string">'out'</span>,<span class="string">'LineWidth'</span>, <span class="number">1</span>,...</span><br><span class="line">    <span class="string">'FontName'</span>, <span class="string">'Helvetica'</span>,<span class="string">'fontsize'</span>,<span class="number">12</span>)</span><br><span class="line"> </span><br><span class="line"><span class="comment">% 添加一些文字</span></span><br><span class="line">text(<span class="number">1.25</span>,<span class="number">55</span>,<span class="string">'base'</span>,<span class="string">'color'</span>,<span class="string">'r'</span>,<span class="string">'fontsize'</span>,<span class="number">14</span>,<span class="string">'fontweight'</span>,<span class="string">'bold'</span>)</span><br><span class="line">text(<span class="number">2</span>,<span class="number">55</span>,<span class="string">'no soil'</span>,<span class="string">'color'</span>,[<span class="number">0</span>,<span class="number">0.4470</span>,<span class="number">0.7410</span>],<span class="string">'fontsize'</span>,<span class="number">14</span>,<span class="string">'fontweight'</span>,<span class="string">'bold'</span>)</span><br><span class="line">text(<span class="number">4.75</span>,<span class="number">-3</span>,<span class="string">'NCP 55 cities'</span>,<span class="string">'color'</span>,<span class="string">'black'</span>,<span class="string">'fontsize'</span>,<span class="number">12</span>,<span class="string">'fontweight'</span>,<span class="string">'bold'</span>)</span><br><span class="line"> </span><br><span class="line"><span class="comment">% 设置箱型图边框的粗细</span></span><br><span class="line">set(h1,&#123;<span class="string">'linew'</span>&#125;,&#123;<span class="number">1.5</span>&#125;)</span><br><span class="line">set(h2,&#123;<span class="string">'linew'</span>&#125;,&#123;<span class="number">1.5</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>类似效果图</p>
+<p><img src="/images/image-2.png" alt="image-2"></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/MATLAB/" rel="tag"># MATLAB</a>
+              <a href="/tags/%E7%BB%98%E5%9B%BE/" rel="tag"># 绘图</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/03/06/%E5%BE%AE%E4%BF%A1%E8%81%8A%E5%A4%A9%E8%AE%B0%E5%BD%95%E7%9A%84%E5%88%86%E6%9E%90/" rel="prev" title="微信聊天记录的分析">
+      <i class="fa fa-chevron-left"></i> 微信聊天记录的分析
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/27/%E7%BE%8E%E5%8C%96Mac%E7%BB%88%E7%AB%AF/" rel="next" title="美化Mac终端">
+      美化Mac终端 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#线图（plot）"><span class="nav-number">1.</span> <span class="nav-text">线图（plot）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#地图（contour）"><span class="nav-number">2.</span> <span class="nav-text">地图（contour）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#箱型图（box-plot）"><span class="nav-number">3.</span> <span class="nav-text">箱型图（box plot）</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Xingpei Ye"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Xingpei Ye</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xpye98" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xpye98" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:xpye98@outlook.com" title="E-Mail → mailto:xpye98@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/xpye98" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;xpye98" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Xingpei Ye</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
