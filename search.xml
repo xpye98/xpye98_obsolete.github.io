@@ -216,7 +216,7 @@
   <entry>
     <title>Hexo建站笔记</title>
     <url>/2020/05/05/Hexo%E5%BB%BA%E7%AB%99%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>在利用Hexo建站的过程中，主要参考<a href="[https://guanqr.com/tech/website/hexo-theme-next-customization/#%E7%AB%99%E7%82%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6](https://guanqr.com/tech/website/hexo-theme-next-customization/#站点配置文件)">guanqr</a>这片文章，收获良多。这里简单记录一些遇到的问题。</p>
+    <content><![CDATA[<p>在利用Hexo建站的过程中，主要参考<a href="https://guanqr.com/tech/website/hexo-theme-next-customization/#%E7%AB%99%E7%82%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6](https://guanqr.com/tech/website/hexo-theme-next-customization/#%E7%AB%99%E7%82%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6)" target="_blank" rel="noopener">guanqr</a>这篇文章，收获良多。这里简单记录一些遇到的问题。</p>
 <a id="more"></a>
 
 <h5 id="字体设置"><a href="#字体设置" class="headerlink" title="字体设置"></a>字体设置</h5><p>Hexo默认的字体为PingFang SC和Microsoft YaHei，这两个字体较为通用，一是苹果系统自带的苹方字体，一是Windows自带的微软雅黑。为了增强阅读体验，这里考虑使用google提供的中文思源字体，英文使用EB Garamond。</p>
