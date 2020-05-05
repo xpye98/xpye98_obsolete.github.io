@@ -179,7 +179,8 @@
   <entry>
     <title>美化Mac终端</title>
     <url>/2020/04/27/%E7%BE%8E%E5%8C%96Mac%E7%BB%88%E7%AB%AF/</url>
-    <content><![CDATA[<p>本文严重抄袭自：<a href="https://blog.biezhi.me/2018/11/build-a-beautiful-mac-terminal-environment.html" target="_blank" rel="noopener">https://blog.biezhi.me/2018/11/build-a-beautiful-mac-terminal-environment.html</a></p>
+    <content><![CDATA[<p>本文严重抄袭自：</p>
+<p><a href="https://blog.biezhi.me/2018/11/build-a-beautiful-mac-terminal-environment.html" target="_blank" rel="noopener">https://blog.biezhi.me/2018/11/build-a-beautiful-mac-terminal-environment.html</a></p>
 <h5 id="切换默认shell为zsh"><a href="#切换默认shell为zsh" class="headerlink" title="切换默认shell为zsh"></a>切换默认shell为zsh</h5><p>mac自带了多种shell，但默认的shell为bash。我们可以通过如下命令查看已有的shell</p>
 <figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">cat /etc/shells</span><br></pre></td></tr></table></figure>
 
