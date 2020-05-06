@@ -108,7 +108,7 @@
 <p>在做不同类型的分布饼图时，我感觉matlab的饼图函数实在是太丑，于是我回归Excel，制作出来的效果还算不错。</p>
 <p><img src="/images/%E8%81%8A%E5%A4%A9%E5%86%85%E5%AE%B9%E5%88%86%E5%B8%83.png" alt="聊天内容分布"></p>
 <p>另外，我还画了一天内聊天频率的分布直方图，结果不出意外，深夜凌晨聊的最多，呈现出W型的分布。</p>
-<p><img src="images/image-4-1024x577.png" alt="image-4-1024x577"></p>
+<p><img src="/images/image-4-1024x577.png" alt="image-4-1024x577"></p>
 <p>Python有一个wordcloud的包，貌似是专门用来制作微信聊天记录词云的，我也没有经得住诱惑，拿来试了试，效果还不错，就是很土味，哈哈！</p>
 <p><img src="/images/wordcloud.png" alt="wordcloud"></p>
 ]]></content>
@@ -151,17 +151,19 @@
     <url>/2019/06/10/%E7%AB%99%E5%9C%A8%E5%B7%A8%E4%BA%BA%E7%9A%84%E8%82%A9%E8%86%80%E4%B8%8A/</url>
     <content><![CDATA[<p><img src="/images/image-E8BB70E168CC-1.jpeg" alt=""></p>
 <p>去北大的夏令营，除了收获一个满意的offer，更让我值得回味的，是一个来自中南大学，学地球物理的哥们。这里称他为C同学。</p>
-<p>关于他的背景，我跟身边的人已经说太多次了，但还是简要概括一下吧：（目的是让以后的自己看到还能知道些细节）</p>
 <a id="more"></a>
 
+<p>关于他的背景，我跟身边的人已经说太多次了，但还是简要概括一下吧：（目的是让以后的自己看到还能知道些细节）</p>
+<blockquote><p>高考志愿毅然决然选择中南大学地球物理专业，除此之外一个没填，不服从调剂。</p>
+<p>大一下学期开始科研，花大半年时间入门，发表会议期刊。</p>
+<p>大二期间拿着导师的经费参加哈尔滨人工智能暑期课程以及国际会议，但因不好意思，只好跟身边的博士博士后谎称自己是大四。</p>
+<p>截止参加夏令营时，已发表Sci两篇，一篇1区，一篇2区，1区为JGR。</p>
+<p>被MIT伍兹霍尔研究所大牛点名要求跟他读博，婉拒，只因觉得自己英语太菜，过不了MIT的英语基本要求。</p>
+<p>打算跟一个只有全美Top100附近的大学的华人教授读博，因为他觉得这个老师跟他更像哥们关系，并且对方承诺让他4年博士毕业。</p>
+<p>为考中国地大的青藏高原数据，顺路来参加北大大气夏令营，拿到offer后表示只要英语过了关能去美国读博，他会毁约。</p>
+</blockquote>
 
-<p><em>高考志愿毅然决然选择中南大学地球物理专业，除此之外一个没填，不服从调剂。</em></p>
-<p><em>大一下学期开始科研，花大半年时间入门，发表会议期刊。</em></p>
-<p><em>大二期间拿着导师的经费参加哈尔滨人工智能暑期课程以及国际会议，但因不好意思，只好跟身边的博士博士后谎称自己是大四。</em></p>
-<p><em>截止参加夏令营时，已发表Sci两篇，一篇1区，一篇2区，1区为JGR。</em></p>
-<p><em>被MIT伍兹霍尔研究所大牛点名要求跟他读博，婉拒，只因觉得自己英语太菜，过不了MIT的英语基本要求。</em></p>
-<p><em>打算跟一个只有全美Top100附近的大学的华人教授读博，因为他觉得这个老师跟他更像哥们关系，并且对方承诺让他4年博士毕业。</em></p>
-<p><em>为考中国地大的青藏高原数据，顺路来参加北大大气夏令营，拿到offer后表示只要英语过了关能去美国读博，他会毁约。</em></p>
+
 <p>C同学是我接触到同龄人当中最强的，至少科研上如此。他有异于常人的品格，诸如异常决绝并且异常勤奋。然而我还是很好奇，他究竟为什么成功？或者说我很想知道，他是如何在科研的道路上起步的。</p>
 <p>C同学回忆起他的科研经历。在刚开始的那个阶段，导师给了他几篇论文，和论文背后导师自己写好的代码。这之后，C同学表示他用了大半年的时间，一边读论文，一边用设不同的断点跑代码，同时不断结合自己的理解给代码调参。此外，导师为了帮助他的理解，在一开始给他布置了一些非常好实现的简单作业，目的是让他了解新旧方法的区别，亦即现在他所研究的方向到底是什么意义。</p>
 <p>这其实是我最想听到的部分。长久以来，科研于我，是一个很玄学的概念。虽然我一直以读研究生为我本科期间的一个阶段性目标，但事实就是，科研是什么，我其实根本还没摸到门路。本科期间我也有科研经历，然而偏偏不巧的是，我做的这个方向不仅偏工程，而且我的导师也不甚熟悉，无论在大的科学性还是技术细节上都不太能给我很好的指导。（这里没有任何贬低我导师的意思，事实上，我的导师人非常好，在自己专业领域上的科研能力也有目共睹，并且在其他方面都给了我很大帮助，可以说是我的贵人）除此之外，另外一个我觉得会很有意思的气候相关的暑研我也还没开始。所以，科研是什么，到底应该如何做，是我从大二下开始进行所谓的科研训练后一直迷茫和思索的话题。</p>
@@ -190,7 +192,7 @@
 <h5 id="下载oh-my-zsh以及powerlevel9k主题"><a href="#下载oh-my-zsh以及powerlevel9k主题" class="headerlink" title="下载oh-my-zsh以及powerlevel9k主题"></a>下载oh-my-zsh以及powerlevel9k主题</h5><p>zsh是一个较难配置的shell，因此之前用的人不多，不过好在oh-my-zsh的出现使得这一切变得方便起来，我们通过官网的下载步骤安装</p>
 <figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">sh -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)</span>"</span></span><br></pre></td></tr></table></figure>
 
-<p>安装完oh-my-zsh后会出现成功的字样，重启终端后应该能发现主题已经更换得稍微美观了一点，这是因为oh-my-zsh默认的主题为robbyrussell，我们可以打开~/.zshrc看到其中ZSH_THEME=”robbyrussell”的字样。oh-my-zsh自带了很多主题，可以在官网上查看：<a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Themes。只要修改前面的字样，就能切换主题。" target="_blank" rel="noopener">https://github.com/ohmyzsh/ohmyzsh/wiki/Themes。只要修改前面的字样，就能切换主题。</a></p>
+<p>安装完oh-my-zsh后会出现成功的字样，重启终端后应该能发现主题已经更换得稍微美观了一点，这是因为oh-my-zsh默认的主题为robbyrussell，我们可以打开~/.zshrc看到其中ZSH_THEME=”robbyrussell”的字样。oh-my-zsh自带了很多主题，可以在<a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Themes" target="_blank" rel="noopener">官网上查看。</a></p>
 <p>不过这里我们使用一个自由化程度更高也更炫酷的主题：powerlevel9k。下载很方便，直接从git上下载就行，之后我们更改主题ZSH_THEME=”powerlevel9k/powerlevel9k”，并source生效</p>
 <figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k</span><br></pre></td></tr></table></figure>
 
