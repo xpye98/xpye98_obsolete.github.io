@@ -1,37 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hexo建站笔记</title>
-    <url>/2020/05/05/Hexo%E5%BB%BA%E7%AB%99%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>在利用Hexo建站的过程中，主要参考<a href="https://guanqr.com/tech/website/hexo-theme-next-customization/#%E7%AB%99%E7%82%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6](https://guanqr.com/tech/website/hexo-theme-next-customization/#%E7%AB%99%E7%82%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6)" target="_blank" rel="noopener">guanqr</a>这篇文章，收获良多。这里简单记录一些遇到的问题。</p>
-<a id="more"></a>
-
-<h5 id="字体设置"><a href="#字体设置" class="headerlink" title="字体设置"></a>字体设置</h5><p>Hexo默认的字体为PingFang SC和Microsoft YaHei，这两个字体较为通用，一是苹果系统自带的苹方字体，一是Windows自带的微软雅黑。为了增强阅读体验，这里考虑使用google提供的中文思源字体，英文使用EB Garamond。</p>
-<p>Next主题配置中提供了选择google字体的方式，在~/themes/next/_congfig.yml中，我们做如下修改，将enable置为true，全局global字体family选择为EB Garamond。这是对英文字体做的修改。</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">font:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Uri of fonts host, e.g. https://fonts.googleapis.com (Default).</span></span><br><span class="line">  <span class="attr">host:</span> <span class="string">fonts.googleapis.com</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Font options:</span></span><br><span class="line">  <span class="comment"># `external: true` will load this font family from `host` above.</span></span><br><span class="line">  <span class="comment"># `family: Times New Roman`. Without any quotes.</span></span><br><span class="line">  <span class="comment"># `size: x.x`. Use `em` as unit. Default: 1 (16px)</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Global font settings used for all elements inside &lt;body&gt;.</span></span><br><span class="line">  <span class="attr">global:</span></span><br><span class="line">    <span class="attr">external:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">family:</span> <span class="string">EB</span> <span class="string">Garamond</span></span><br><span class="line">    <span class="attr">size:</span></span><br></pre></td></tr></table></figure>
-
-<p>接着，我们到~/themes/next/source/css/_variables/base.styl文件中做如下修改，即将中文设置为思源字体。</p>
-<figure class="highlight styl"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Font families.</span></span><br><span class="line"><span class="variable">$font</span>-family-chinese      = <span class="string">"Noto Serif SC"</span></span><br></pre></td></tr></table></figure>
-
-<p>之后，我们在~/source中新建_data文件夹，向其中添加两个文件。首先是head.swig，该文件链接了我们从google font找到的字体，文件内容如下。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;link href&#x3D;&quot;https:&#x2F;&#x2F;fonts.googleapis.com&#x2F;css2?family&#x3D;EB+Garamond:wght@400;500;700&amp;family&#x3D;Noto+Serif+SC:wght@400;500;700&amp;display&#x3D;swap&quot; rel&#x3D;&quot;stylesheet&quot;&gt;</span><br></pre></td></tr></table></figure>
-
-<p>第二个文件是styles.styl，目的是为了将字体颜色加深，因为默认的字体较浅。内容如下。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.post-body &#123;</span><br><span class="line">    color: #333;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>上述两个文件属于自定义文件，所以在主题_config.yml文件中，我们得将自定义前的注释去掉。</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Define custom file paths.</span></span><br><span class="line"><span class="comment"># Create your custom files in site directory `source/_data` and uncomment needed files below.</span></span><br><span class="line"><span class="attr">custom_file_path:</span></span><br><span class="line">  <span class="attr">head:</span> <span class="string">source/_data/head.swig</span></span><br><span class="line">  <span class="comment">#header: source/_data/header.swig</span></span><br><span class="line">  <span class="comment">#sidebar: source/_data/sidebar.swig</span></span><br><span class="line">  <span class="comment">#postMeta: source/_data/post-meta.swig</span></span><br><span class="line">  <span class="comment">#postBodyEnd: source/_data/post-body-end.swig</span></span><br><span class="line">  <span class="comment">#footer: source/_data/footer.swig</span></span><br><span class="line">  <span class="comment">#bodyEnd: source/_data/body-end.swig</span></span><br><span class="line">  <span class="comment">#variable: source/_data/variables.styl</span></span><br><span class="line">  <span class="comment">#mixin: source/_data/mixins.styl</span></span><br><span class="line">  <span class="attr">style:</span> <span class="string">source/_data/styles.styl</span></span><br></pre></td></tr></table></figure>
-
-<p>之后部署一下便大功告成。如果遇到部署完还没有显示新字体的状况，可以hexo clean清除一下缓存。</p>
-<h5 id=""><a href="#" class="headerlink" title=""></a></h5>]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MATLAB绘图样例</title>
     <url>/2020/04/09/MATLAB%E7%BB%98%E5%9B%BE%E6%A0%B7%E4%BE%8B/</url>
     <content><![CDATA[<p>简单给出MATLAB一些常见图的绘制代码。</p>
@@ -82,6 +51,55 @@
       </categories>
   </entry>
   <entry>
+    <title>Hexo建站笔记</title>
+    <url>/2020/05/05/Hexo%E5%BB%BA%E7%AB%99%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>在利用Hexo建站的过程中，主要参考<a href="https://guanqr.com/tech/website/hexo-theme-next-customization/#%E7%AB%99%E7%82%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6](https://guanqr.com/tech/website/hexo-theme-next-customization/#%E7%AB%99%E7%82%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6)" target="_blank" rel="noopener">guanqr</a>这篇文章，收获良多。这里简单记录一些遇到的问题。</p>
+<a id="more"></a>
+
+<h5 id="字体设置"><a href="#字体设置" class="headerlink" title="字体设置"></a>字体设置</h5><p>Hexo默认的字体为PingFang SC和Microsoft YaHei，这两个字体较为通用，一是苹果系统自带的苹方字体，一是Windows自带的微软雅黑。为了增强阅读体验，这里考虑使用google提供的中文思源字体，英文使用EB Garamond。</p>
+<p>Next主题配置中提供了选择google字体的方式，在~/themes/next/_congfig.yml中，我们做如下修改，将enable置为true，全局global字体family选择为EB Garamond。这是对英文字体做的修改。</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">font:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Uri of fonts host, e.g. https://fonts.googleapis.com (Default).</span></span><br><span class="line">  <span class="attr">host:</span> <span class="string">fonts.googleapis.com</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Font options:</span></span><br><span class="line">  <span class="comment"># `external: true` will load this font family from `host` above.</span></span><br><span class="line">  <span class="comment"># `family: Times New Roman`. Without any quotes.</span></span><br><span class="line">  <span class="comment"># `size: x.x`. Use `em` as unit. Default: 1 (16px)</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Global font settings used for all elements inside &lt;body&gt;.</span></span><br><span class="line">  <span class="attr">global:</span></span><br><span class="line">    <span class="attr">external:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">family:</span> <span class="string">EB</span> <span class="string">Garamond</span></span><br><span class="line">    <span class="attr">size:</span></span><br></pre></td></tr></table></figure>
+
+<p>接着，我们到~/themes/next/source/css/_variables/base.styl文件中做如下修改，即将中文设置为思源字体。</p>
+<figure class="highlight styl"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Font families.</span></span><br><span class="line"><span class="variable">$font</span>-family-chinese      = <span class="string">"Noto Serif SC"</span></span><br></pre></td></tr></table></figure>
+
+<p>之后，我们在~/source中新建_data文件夹，向其中添加两个文件。首先是head.swig，该文件链接了我们从google font找到的字体，文件内容如下。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;link href&#x3D;&quot;https:&#x2F;&#x2F;fonts.googleapis.com&#x2F;css2?family&#x3D;EB+Garamond:wght@400;500;700&amp;family&#x3D;Noto+Serif+SC:wght@400;500;700&amp;display&#x3D;swap&quot; rel&#x3D;&quot;stylesheet&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>第二个文件是styles.styl，目的是为了将字体颜色加深，因为默认的字体较浅。内容如下。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.post-body &#123;</span><br><span class="line">    color: #333;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上述两个文件属于自定义文件，所以在主题_config.yml文件中，我们得将自定义前的注释去掉。</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Define custom file paths.</span></span><br><span class="line"><span class="comment"># Create your custom files in site directory `source/_data` and uncomment needed files below.</span></span><br><span class="line"><span class="attr">custom_file_path:</span></span><br><span class="line">  <span class="attr">head:</span> <span class="string">source/_data/head.swig</span></span><br><span class="line">  <span class="comment">#header: source/_data/header.swig</span></span><br><span class="line">  <span class="comment">#sidebar: source/_data/sidebar.swig</span></span><br><span class="line">  <span class="comment">#postMeta: source/_data/post-meta.swig</span></span><br><span class="line">  <span class="comment">#postBodyEnd: source/_data/post-body-end.swig</span></span><br><span class="line">  <span class="comment">#footer: source/_data/footer.swig</span></span><br><span class="line">  <span class="comment">#bodyEnd: source/_data/body-end.swig</span></span><br><span class="line">  <span class="comment">#variable: source/_data/variables.styl</span></span><br><span class="line">  <span class="comment">#mixin: source/_data/mixins.styl</span></span><br><span class="line">  <span class="attr">style:</span> <span class="string">source/_data/styles.styl</span></span><br></pre></td></tr></table></figure>
+
+<p>之后部署一下便大功告成。如果遇到部署完还没有显示新字体的状况，可以hexo clean清除一下缓存。</p>
+<h5 id=""><a href="#" class="headerlink" title=""></a></h5>]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>关于南大宣传</title>
+    <url>/2019/06/26/%E5%85%B3%E4%BA%8E%E5%8D%97%E5%A4%A7%E5%AE%A3%E4%BC%A0/</url>
+    <content><![CDATA[<p>虽然我自己不是高中应届毕业生，不知道真实的宣传效果如何，但从公众号一系列推送中的视频和文案的用心程度，我觉得南大今年在招生方面的工作做得还是很到位的。</p>
+<a id="more"></a>
+<p>南大的名气和水平不符，这点南大人估计心里都清楚。身边很多江浙沪以外的同学，进校前甚至都不知道南大的存在。某同学在表示自己录取南大时，甚至有周围人说：啊呀，南大是什么学校呀，不如上个三峡大学挺好的。（没有黑的意思）</p>
+<p>好在这种现象在慢慢被改善，除了招生方面，作为地学专业的同学，我对南大在国际科考的大力投入也有很大的体会。以往的地学国际科考，无论是贝加尔湖还是阿尔卑斯山，往往都是几年一次，可以选的项目也十分有限。但是今年一年的国际科考项目就足足有18个，从欧洲列国到北美，到非洲，到大洋洲，遍布世界。牵头院系也不仅仅局限于地学院系了，还涌现出了很多文学、历史学、艺术学、理学以及一些交叉学科的科考项目。抛开科考本身的科研内容不谈，从科考出发前，到行中，到返校后，学校在宣传方面的工作把控的都十分有效，队伍里都有分配教务处专职老师随行监督。就自己的体验，在新西兰过平安夜的大晚上，我都要被抓着写推送不放（笑哭）。</p>
+<p>除此之外，南大比较会的一个地方在于，在一些比较成熟的科考项目中（比如贝加尔湖和阿尔卑斯山科考），加入对高中生的选拔。这些高中生往往就来自于上述提到的西部地区。他们可能之前不知道南大或了解甚少，但经历过科考，他们对南大的印象肯定加深。口口相传之下，他们身边的同学、家长也就有了更多的了解。加上一些他们所在高中甚至地区的公众号宣传，南哪儿大学的梗，我想说不定在以后也不会再有。</p>
+<p>这次去别的学校夏令营，在谈及本科生活经历时，一位上交老哥突然对我竖起大拇指：不愧是做最好的本科教育。我瞬间有点苦笑不得，但也鼻子有点酸酸：这个口号我在刚入校时觉得是空话、大话、甚至是谎话。但三年下来再看这句话，我觉得南大确实也有这样的底气和信心。有个天天diss南大哪里哪里不好的大四学姐，在即将毕业时，发了一条pyq谈到这个口号，她说：最好不一定，但是前三应该没问题。</p>
+<p>我想，嗯，应该没问题，如果宿舍来个热水就更好了。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>南大</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>利用MATLAB进行regrid</title>
     <url>/2020/06/25/%E5%88%A9%E7%94%A8MATLAB%E8%BF%9B%E8%A1%8Cregrid/</url>
     <content><![CDATA[<p>在大气科学模式数据处理中，经常需要进行regrid的操作，例如将025x025的MIX排放清单格点转化成GEOS-Chem的025x03125格点。这里我们使用MATLAB中的griddata函数进行该操作。</p>
@@ -113,24 +131,6 @@
       </tags>
   </entry>
   <entry>
-    <title>关于南大宣传</title>
-    <url>/2019/06/26/%E5%85%B3%E4%BA%8E%E5%8D%97%E5%A4%A7%E5%AE%A3%E4%BC%A0/</url>
-    <content><![CDATA[<p>虽然我自己不是高中应届毕业生，不知道真实的宣传效果如何，但从公众号一系列推送中的视频和文案的用心程度，我觉得南大今年在招生方面的工作做得还是很到位的。</p>
-<a id="more"></a>
-<p>南大的名气和水平不符，这点南大人估计心里都清楚。身边很多江浙沪以外的同学，进校前甚至都不知道南大的存在。某同学在表示自己录取南大时，甚至有周围人说：啊呀，南大是什么学校呀，不如上个三峡大学挺好的。（没有黑的意思）</p>
-<p>好在这种现象在慢慢被改善，除了招生方面，作为地学专业的同学，我对南大在国际科考的大力投入也有很大的体会。以往的地学国际科考，无论是贝加尔湖还是阿尔卑斯山，往往都是几年一次，可以选的项目也十分有限。但是今年一年的国际科考项目就足足有18个，从欧洲列国到北美，到非洲，到大洋洲，遍布世界。牵头院系也不仅仅局限于地学院系了，还涌现出了很多文学、历史学、艺术学、理学以及一些交叉学科的科考项目。抛开科考本身的科研内容不谈，从科考出发前，到行中，到返校后，学校在宣传方面的工作把控的都十分有效，队伍里都有分配教务处专职老师随行监督。就自己的体验，在新西兰过平安夜的大晚上，我都要被抓着写推送不放（笑哭）。</p>
-<p>除此之外，南大比较会的一个地方在于，在一些比较成熟的科考项目中（比如贝加尔湖和阿尔卑斯山科考），加入对高中生的选拔。这些高中生往往就来自于上述提到的西部地区。他们可能之前不知道南大或了解甚少，但经历过科考，他们对南大的印象肯定加深。口口相传之下，他们身边的同学、家长也就有了更多的了解。加上一些他们所在高中甚至地区的公众号宣传，南哪儿大学的梗，我想说不定在以后也不会再有。</p>
-<p>这次去别的学校夏令营，在谈及本科生活经历时，一位上交老哥突然对我竖起大拇指：不愧是做最好的本科教育。我瞬间有点苦笑不得，但也鼻子有点酸酸：这个口号我在刚入校时觉得是空话、大话、甚至是谎话。但三年下来再看这句话，我觉得南大确实也有这样的底气和信心。有个天天diss南大哪里哪里不好的大四学姐，在即将毕业时，发了一条pyq谈到这个口号，她说：最好不一定，但是前三应该没问题。</p>
-<p>我想，嗯，应该没问题，如果宿舍来个热水就更好了。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>南大</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>微信聊天记录导出</title>
     <url>/2020/03/05/%E5%BE%AE%E4%BF%A1%E8%81%8A%E5%A4%A9%E8%AE%B0%E5%BD%95%E5%AF%BC%E5%87%BA/</url>
     <content><![CDATA[<p>与npy很快就要在一起一周年了，在pyq某同学的提醒下意识到完全可以将微信聊天记录导出并且进行一波数据分析。（p，实际就是看看谁的话多，每天几点话最多，一年以来的时间序列…之类的简单操作）</p>
@@ -143,6 +143,36 @@
 <h5 id="利用Python导出至Excel"><a href="#利用Python导出至Excel" class="headerlink" title="利用Python导出至Excel"></a>利用Python导出至Excel</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#该程序可以实现将聊天记录导出为excel</span></span><br><span class="line"><span class="keyword">import</span> sqlite3</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">with</span> sqlite3.connect(<span class="string">r'聊天记录目录/DB/MM.sqlite'</span>) <span class="keyword">as</span> con:</span><br><span class="line">    df1 = pd.read_sql_query(<span class="string">"select * from Chat_xxx"</span>, con) <span class="comment">#xxx即为刚才找到的制定好友代号</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#保存至excel，这里直接用的相对路径</span></span><br><span class="line">writer = pd.ExcelWriter(<span class="string">'wechat.xlsx'</span>)</span><br><span class="line">df1.to_excel(writer, <span class="string">'Sheet1'</span>)</span><br><span class="line">writer.save()</span><br></pre></td></tr></table></figure>
 
 <p>至此，大功告成。之后的分析就各显神通了，我选择的是matlab。当然，直接用excel基本也能实现想要的功能了。数据分析的结果，也许可以新开个笔记介绍。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>聊天记录</tag>
+        <tag>微信</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>微信聊天记录的分析</title>
+    <url>/2020/03/06/%E5%BE%AE%E4%BF%A1%E8%81%8A%E5%A4%A9%E8%AE%B0%E5%BD%95%E7%9A%84%E5%88%86%E6%9E%90/</url>
+    <content><![CDATA[<p>前一篇文章提到我将微信聊天数据导出到了电脑，这里讲一下我的分析中遇到的一些问题。</p>
+<a id="more"></a>
+
+<p><strong>首先是发送消息的时间确定</strong>。从excel列表中看到的时间位unix时间戳（定义为距离1970年1月1日的时间），因此要将这个格式的时间转化为北京时间。实际上，matlab中有一个datenum的函数，可以计算两者之间的时间差，因此从定义我们可以直接换算成一般格式</p>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">date = datestr(unix_time/<span class="number">86400</span>/<span class="number">1000</span> + datenum(<span class="number">1970</span>,<span class="number">1</span>,<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+
+<p>或者，在新版的matlab中，也可以直接运用</p>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">`dt = datetime( unix_time, <span class="string">'ConvertFrom'</span>, <span class="string">'posixtime'</span> )`</span><br></pre></td></tr></table></figure>
+
+<p>有了时间之后，剩下的事情其实都好做了。我们可以算一下总条数，总字数之类的统计值。还可以画出这些值随时间变化的时序图。不过在确定字数的时候，我们会遇到一个问题，就是<strong>如何判断聊天记录的类型</strong>，因为聊天记录分为纯文字、图片、语音、视频、链接等不同属性的，然而在我们导出的数据里面，这些内容都是以字符串的形式出现的。在跟手机上的消息对比后，我总结出如下：</p>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="comment">% contains函数里msg之类的符号便代表不同的类型</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> contains(message(<span class="built_in">i</span>),<span class="string">'&lt;msg&gt;&lt;emoji'</span>)</span><br><span class="line">        amount_sticker = amount_sticker + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">elseif</span> contains(message(<span class="built_in">i</span>),<span class="string">'&lt;?xml'</span>) || contains(message(<span class="built_in">i</span>),<span class="string">'&lt;msg&gt;&lt;img'</span>)</span><br><span class="line">        amount_figure = amount_figure + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">elseif</span> contains(message(<span class="built_in">i</span>),<span class="string">'&lt;msg&gt;&lt;voice'</span>)</span><br><span class="line">        amount_voice = amount_voice + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">elseif</span> contains(message(<span class="built_in">i</span>),<span class="string">'&lt;msg&gt;&lt;video'</span>)</span><br><span class="line">        amount_video = amount_video + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">elseif</span> contains(message(<span class="built_in">i</span>),<span class="string">'&lt;msg&gt;&lt;appmsg'</span>)</span><br><span class="line">        amount_other = amount_other + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        amount_text = amount_text + <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<p>在做不同类型的分布饼图时，我感觉matlab的饼图函数实在是太丑，于是我回归Excel，制作出来的效果还算不错。</p>
+<p><img src="/images/%E8%81%8A%E5%A4%A9%E5%86%85%E5%AE%B9%E5%88%86%E5%B8%83.png" alt="聊天内容分布"></p>
+<p>另外，我还画了一天内聊天频率的分布直方图，结果不出意外，深夜凌晨聊的最多，呈现出W型的分布。</p>
+<p><img src="/images/image-4-1024x577.png" alt="image-4-1024x577"></p>
+<p>Python有一个wordcloud的包，貌似是专门用来制作微信聊天记录词云的，我也没有经得住诱惑，拿来试了试，效果还不错，就是很土味，哈哈！</p>
+<p><img src="/images/wordcloud.png" alt="wordcloud"></p>
 ]]></content>
       <categories>
         <category>技术</category>
@@ -176,36 +206,6 @@
       </categories>
       <tags>
         <tag>洗澡</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>微信聊天记录的分析</title>
-    <url>/2020/03/06/%E5%BE%AE%E4%BF%A1%E8%81%8A%E5%A4%A9%E8%AE%B0%E5%BD%95%E7%9A%84%E5%88%86%E6%9E%90/</url>
-    <content><![CDATA[<p>前一篇文章提到我将微信聊天数据导出到了电脑，这里讲一下我的分析中遇到的一些问题。</p>
-<a id="more"></a>
-
-<p><strong>首先是发送消息的时间确定</strong>。从excel列表中看到的时间位unix时间戳（定义为距离1970年1月1日的时间），因此要将这个格式的时间转化为北京时间。实际上，matlab中有一个datenum的函数，可以计算两者之间的时间差，因此从定义我们可以直接换算成一般格式</p>
-<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">date = datestr(unix_time/<span class="number">86400</span>/<span class="number">1000</span> + datenum(<span class="number">1970</span>,<span class="number">1</span>,<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
-
-<p>或者，在新版的matlab中，也可以直接运用</p>
-<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">`dt = datetime( unix_time, <span class="string">'ConvertFrom'</span>, <span class="string">'posixtime'</span> )`</span><br></pre></td></tr></table></figure>
-
-<p>有了时间之后，剩下的事情其实都好做了。我们可以算一下总条数，总字数之类的统计值。还可以画出这些值随时间变化的时序图。不过在确定字数的时候，我们会遇到一个问题，就是<strong>如何判断聊天记录的类型</strong>，因为聊天记录分为纯文字、图片、语音、视频、链接等不同属性的，然而在我们导出的数据里面，这些内容都是以字符串的形式出现的。在跟手机上的消息对比后，我总结出如下：</p>
-<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="comment">% contains函数里msg之类的符号便代表不同的类型</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> contains(message(<span class="built_in">i</span>),<span class="string">'&lt;msg&gt;&lt;emoji'</span>)</span><br><span class="line">        amount_sticker = amount_sticker + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">elseif</span> contains(message(<span class="built_in">i</span>),<span class="string">'&lt;?xml'</span>) || contains(message(<span class="built_in">i</span>),<span class="string">'&lt;msg&gt;&lt;img'</span>)</span><br><span class="line">        amount_figure = amount_figure + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">elseif</span> contains(message(<span class="built_in">i</span>),<span class="string">'&lt;msg&gt;&lt;voice'</span>)</span><br><span class="line">        amount_voice = amount_voice + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">elseif</span> contains(message(<span class="built_in">i</span>),<span class="string">'&lt;msg&gt;&lt;video'</span>)</span><br><span class="line">        amount_video = amount_video + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">elseif</span> contains(message(<span class="built_in">i</span>),<span class="string">'&lt;msg&gt;&lt;appmsg'</span>)</span><br><span class="line">        amount_other = amount_other + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        amount_text = amount_text + <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-
-<p>在做不同类型的分布饼图时，我感觉matlab的饼图函数实在是太丑，于是我回归Excel，制作出来的效果还算不错。</p>
-<p><img src="/images/%E8%81%8A%E5%A4%A9%E5%86%85%E5%AE%B9%E5%88%86%E5%B8%83.png" alt="聊天内容分布"></p>
-<p>另外，我还画了一天内聊天频率的分布直方图，结果不出意外，深夜凌晨聊的最多，呈现出W型的分布。</p>
-<p><img src="/images/image-4-1024x577.png" alt="image-4-1024x577"></p>
-<p>Python有一个wordcloud的包，貌似是专门用来制作微信聊天记录词云的，我也没有经得住诱惑，拿来试了试，效果还不错，就是很土味，哈哈！</p>
-<p><img src="/images/wordcloud.png" alt="wordcloud"></p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>聊天记录</tag>
-        <tag>微信</tag>
       </tags>
   </entry>
   <entry>
