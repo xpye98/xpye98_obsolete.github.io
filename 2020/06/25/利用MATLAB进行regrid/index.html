@@ -27,12 +27,15 @@
 <meta property="og:site_name" content="远东二三叶">
 <meta property="og:description" content="在大气科学模式数据处理中，经常需要进行regrid的操作，例如将025x025的MIX排放清单格点转化成GEOS-Chem的025x03125格点。这里我们使用MATLAB中的griddata函数进行该操作。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://yoursite.com/images/before_grid.png">
+<meta property="og:image" content="http://yoursite.com/images/after_grid_next.png">
 <meta property="article:published_time" content="2020-06-25T06:41:39.431Z">
-<meta property="article:modified_time" content="2020-06-25T08:00:56.857Z">
+<meta property="article:modified_time" content="2020-06-25T08:13:40.044Z">
 <meta property="article:author" content="Xingpei Ye">
 <meta property="article:tag" content="MATLAB">
 <meta property="article:tag" content="regrid">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/before_grid.png">
 
 <link rel="canonical" href="http://yoursite.com/2020/06/25/%E5%88%A9%E7%94%A8MATLAB%E8%BF%9B%E8%A1%8Cregrid/">
 
@@ -191,7 +194,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-06-25 14:41:39 / 修改时间：16:00:56" itemprop="dateCreated datePublished" datetime="2020-06-25T14:41:39+08:00">2020-06-25</time>
+              <time title="创建时间：2020-06-25 14:41:39 / 修改时间：16:13:40" itemprop="dateCreated datePublished" datetime="2020-06-25T14:41:39+08:00">2020-06-25</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -230,9 +233,9 @@
 <p>之后，我们定义想要差值的经纬度范围并进行差值。这里我范围选用的是GEOS-Chem亚洲区域025x03125的格点，差值方法选用的是<code>nearest</code>。</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[lon_q,lat_q] = <span class="built_in">meshgrid</span>(<span class="number">70</span>:<span class="number">0.3125</span>:<span class="number">140</span>, <span class="number">15</span>:<span class="number">0.25</span>:<span class="number">55</span>);</span><br><span class="line">NO_q = griddata(lon_pre,lat_pre,NO,lon_q,lat_q,<span class="string">'nearest'</span>);</span><br><span class="line">NO_q = NO_q';</span><br></pre></td></tr></table></figure>
 
-<h5 id="下载字体，配置终端颜色"><a href="#下载字体，配置终端颜色" class="headerlink" title="下载字体，配置终端颜色"></a>下载字体，配置终端颜色</h5><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># If you come from bash you might have to change your $PATH.</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$HOME</span>/bin:/usr/<span class="built_in">local</span>/bin:<span class="variable">$PATH</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Path to your oh-my-zsh installation.</span></span><br><span class="line"><span class="built_in">export</span> ZSH=<span class="string">"/Users/sebestian/.oh-my-zsh"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Set name of the theme to load --- if set to "random", it will</span></span><br><span class="line"><span class="comment"># load a random theme each time oh-my-zsh is loaded, in which case,</span></span><br><span class="line"><span class="comment"># to know which specific one was loaded, run: echo $RANDOM_THEME</span></span><br><span class="line"><span class="comment"># See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes</span></span><br><span class="line">ZSH_THEME=<span class="string">"powerlevel9k/powerlevel9k"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#### Default Setting  ####</span></span><br><span class="line">POWERLEVEL9K_MODE=<span class="string">'nerdfont-complete'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Which plugins would you like to load?</span></span><br><span class="line"><span class="comment"># Standard plugins can be found in ~/.oh-my-zsh/plugins/*</span></span><br><span class="line"><span class="comment"># Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/</span></span><br><span class="line"><span class="comment"># Example format: plugins=(rails git textmate ruby lighthouse)</span></span><br><span class="line"><span class="comment"># Add wisely, as too many plugins slow down shell startup.</span></span><br><span class="line">plugins=(git)</span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> <span class="variable">$ZSH</span>/oh-my-zsh.sh</span><br><span class="line"></span><br><span class="line"><span class="comment"># source bashrc</span></span><br><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Customize prompt of  powerlevel9k-theme</span></span><br><span class="line">POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon user ssh dir vcs newline status)</span><br><span class="line">POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time)</span><br><span class="line">POWERLEVEL9K_PROMPT_ADD_NEWLINE=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<p>这里我source bash_profile的目的是为了启用conda的环境，这些指令以前存在bash里，如果不这样做的话conda的一些指令会用不了。</p>
+<p>我们画图对比regrid前后的数据，基本一样。</p>
+<p><img src="/images/before_grid.png" alt=""></p>
+<p><img src="/images/after_grid_next.png" alt=""></p>
 
     </div>
 
@@ -314,7 +317,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#griddata函数简介"><span class="nav-number">1.</span> <span class="nav-text">griddata函数简介</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#一个实例"><span class="nav-number">2.</span> <span class="nav-text">一个实例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#下载字体，配置终端颜色"><span class="nav-number">3.</span> <span class="nav-text">下载字体，配置终端颜色</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#griddata函数简介"><span class="nav-number">1.</span> <span class="nav-text">griddata函数简介</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#一个实例"><span class="nav-number">2.</span> <span class="nav-text">一个实例</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
