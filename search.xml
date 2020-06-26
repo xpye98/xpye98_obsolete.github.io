@@ -1,6 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hexo建站笔记</title>
+    <url>/2020/05/05/Hexo%E5%BB%BA%E7%AB%99%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>在利用Hexo建站的过程中，主要参考<a href="https://guanqr.com/tech/website/hexo-theme-next-customization/#%E7%AB%99%E7%82%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6](https://guanqr.com/tech/website/hexo-theme-next-customization/#%E7%AB%99%E7%82%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6)" target="_blank" rel="noopener">guanqr</a>这篇文章，收获良多。这里简单记录一些遇到的问题。</p>
+<a id="more"></a>
+
+<h5 id="字体设置"><a href="#字体设置" class="headerlink" title="字体设置"></a>字体设置</h5><p>Hexo默认的字体为PingFang SC和Microsoft YaHei，这两个字体较为通用，一是苹果系统自带的苹方字体，一是Windows自带的微软雅黑。为了增强阅读体验，这里考虑使用google提供的中文思源字体，英文使用EB Garamond。</p>
+<p>Next主题配置中提供了选择google字体的方式，在~/themes/next/_congfig.yml中，我们做如下修改，将enable置为true，全局global字体family选择为EB Garamond。这是对英文字体做的修改。</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">font:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Uri of fonts host, e.g. https://fonts.googleapis.com (Default).</span></span><br><span class="line">  <span class="attr">host:</span> <span class="string">fonts.googleapis.com</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Font options:</span></span><br><span class="line">  <span class="comment"># `external: true` will load this font family from `host` above.</span></span><br><span class="line">  <span class="comment"># `family: Times New Roman`. Without any quotes.</span></span><br><span class="line">  <span class="comment"># `size: x.x`. Use `em` as unit. Default: 1 (16px)</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Global font settings used for all elements inside &lt;body&gt;.</span></span><br><span class="line">  <span class="attr">global:</span></span><br><span class="line">    <span class="attr">external:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">family:</span> <span class="string">EB</span> <span class="string">Garamond</span></span><br><span class="line">    <span class="attr">size:</span></span><br></pre></td></tr></table></figure>
+
+<p>接着，我们到~/themes/next/source/css/_variables/base.styl文件中做如下修改，即将中文设置为思源字体。</p>
+<figure class="highlight styl"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Font families.</span></span><br><span class="line"><span class="variable">$font</span>-family-chinese      = <span class="string">"Noto Serif SC"</span></span><br></pre></td></tr></table></figure>
+
+<p>之后，我们在~/source中新建_data文件夹，向其中添加两个文件。首先是head.swig，该文件链接了我们从google font找到的字体，文件内容如下。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;link href&#x3D;&quot;https:&#x2F;&#x2F;fonts.googleapis.com&#x2F;css2?family&#x3D;EB+Garamond:wght@400;500;700&amp;family&#x3D;Noto+Serif+SC:wght@400;500;700&amp;display&#x3D;swap&quot; rel&#x3D;&quot;stylesheet&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>第二个文件是styles.styl，目的是为了将字体颜色加深，因为默认的字体较浅。内容如下。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.post-body &#123;</span><br><span class="line">    color: #333;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上述两个文件属于自定义文件，所以在主题_config.yml文件中，我们得将自定义前的注释去掉。</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Define custom file paths.</span></span><br><span class="line"><span class="comment"># Create your custom files in site directory `source/_data` and uncomment needed files below.</span></span><br><span class="line"><span class="attr">custom_file_path:</span></span><br><span class="line">  <span class="attr">head:</span> <span class="string">source/_data/head.swig</span></span><br><span class="line">  <span class="comment">#header: source/_data/header.swig</span></span><br><span class="line">  <span class="comment">#sidebar: source/_data/sidebar.swig</span></span><br><span class="line">  <span class="comment">#postMeta: source/_data/post-meta.swig</span></span><br><span class="line">  <span class="comment">#postBodyEnd: source/_data/post-body-end.swig</span></span><br><span class="line">  <span class="comment">#footer: source/_data/footer.swig</span></span><br><span class="line">  <span class="comment">#bodyEnd: source/_data/body-end.swig</span></span><br><span class="line">  <span class="comment">#variable: source/_data/variables.styl</span></span><br><span class="line">  <span class="comment">#mixin: source/_data/mixins.styl</span></span><br><span class="line">  <span class="attr">style:</span> <span class="string">source/_data/styles.styl</span></span><br></pre></td></tr></table></figure>
+
+<p>之后部署一下便大功告成。如果遇到部署完还没有显示新字体的状况，可以hexo clean清除一下缓存。</p>
+<h5 id=""><a href="#" class="headerlink" title=""></a></h5>]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MATLAB绘图样例</title>
     <url>/2020/04/09/MATLAB%E7%BB%98%E5%9B%BE%E6%A0%B7%E4%BE%8B/</url>
     <content><![CDATA[<p>简单给出MATLAB一些常见图的绘制代码。</p>
@@ -51,37 +82,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Hexo建站笔记</title>
-    <url>/2020/05/05/Hexo%E5%BB%BA%E7%AB%99%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>在利用Hexo建站的过程中，主要参考<a href="https://guanqr.com/tech/website/hexo-theme-next-customization/#%E7%AB%99%E7%82%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6](https://guanqr.com/tech/website/hexo-theme-next-customization/#%E7%AB%99%E7%82%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6)" target="_blank" rel="noopener">guanqr</a>这篇文章，收获良多。这里简单记录一些遇到的问题。</p>
-<a id="more"></a>
-
-<h5 id="字体设置"><a href="#字体设置" class="headerlink" title="字体设置"></a>字体设置</h5><p>Hexo默认的字体为PingFang SC和Microsoft YaHei，这两个字体较为通用，一是苹果系统自带的苹方字体，一是Windows自带的微软雅黑。为了增强阅读体验，这里考虑使用google提供的中文思源字体，英文使用EB Garamond。</p>
-<p>Next主题配置中提供了选择google字体的方式，在~/themes/next/_congfig.yml中，我们做如下修改，将enable置为true，全局global字体family选择为EB Garamond。这是对英文字体做的修改。</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">font:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Uri of fonts host, e.g. https://fonts.googleapis.com (Default).</span></span><br><span class="line">  <span class="attr">host:</span> <span class="string">fonts.googleapis.com</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Font options:</span></span><br><span class="line">  <span class="comment"># `external: true` will load this font family from `host` above.</span></span><br><span class="line">  <span class="comment"># `family: Times New Roman`. Without any quotes.</span></span><br><span class="line">  <span class="comment"># `size: x.x`. Use `em` as unit. Default: 1 (16px)</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Global font settings used for all elements inside &lt;body&gt;.</span></span><br><span class="line">  <span class="attr">global:</span></span><br><span class="line">    <span class="attr">external:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">family:</span> <span class="string">EB</span> <span class="string">Garamond</span></span><br><span class="line">    <span class="attr">size:</span></span><br></pre></td></tr></table></figure>
-
-<p>接着，我们到~/themes/next/source/css/_variables/base.styl文件中做如下修改，即将中文设置为思源字体。</p>
-<figure class="highlight styl"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Font families.</span></span><br><span class="line"><span class="variable">$font</span>-family-chinese      = <span class="string">"Noto Serif SC"</span></span><br></pre></td></tr></table></figure>
-
-<p>之后，我们在~/source中新建_data文件夹，向其中添加两个文件。首先是head.swig，该文件链接了我们从google font找到的字体，文件内容如下。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;link href&#x3D;&quot;https:&#x2F;&#x2F;fonts.googleapis.com&#x2F;css2?family&#x3D;EB+Garamond:wght@400;500;700&amp;family&#x3D;Noto+Serif+SC:wght@400;500;700&amp;display&#x3D;swap&quot; rel&#x3D;&quot;stylesheet&quot;&gt;</span><br></pre></td></tr></table></figure>
-
-<p>第二个文件是styles.styl，目的是为了将字体颜色加深，因为默认的字体较浅。内容如下。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.post-body &#123;</span><br><span class="line">    color: #333;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>上述两个文件属于自定义文件，所以在主题_config.yml文件中，我们得将自定义前的注释去掉。</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Define custom file paths.</span></span><br><span class="line"><span class="comment"># Create your custom files in site directory `source/_data` and uncomment needed files below.</span></span><br><span class="line"><span class="attr">custom_file_path:</span></span><br><span class="line">  <span class="attr">head:</span> <span class="string">source/_data/head.swig</span></span><br><span class="line">  <span class="comment">#header: source/_data/header.swig</span></span><br><span class="line">  <span class="comment">#sidebar: source/_data/sidebar.swig</span></span><br><span class="line">  <span class="comment">#postMeta: source/_data/post-meta.swig</span></span><br><span class="line">  <span class="comment">#postBodyEnd: source/_data/post-body-end.swig</span></span><br><span class="line">  <span class="comment">#footer: source/_data/footer.swig</span></span><br><span class="line">  <span class="comment">#bodyEnd: source/_data/body-end.swig</span></span><br><span class="line">  <span class="comment">#variable: source/_data/variables.styl</span></span><br><span class="line">  <span class="comment">#mixin: source/_data/mixins.styl</span></span><br><span class="line">  <span class="attr">style:</span> <span class="string">source/_data/styles.styl</span></span><br></pre></td></tr></table></figure>
-
-<p>之后部署一下便大功告成。如果遇到部署完还没有显示新字体的状况，可以hexo clean清除一下缓存。</p>
-<h5 id=""><a href="#" class="headerlink" title=""></a></h5>]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>关于南大宣传</title>
     <url>/2019/06/26/%E5%85%B3%E4%BA%8E%E5%8D%97%E5%A4%A7%E5%AE%A3%E4%BC%A0/</url>
     <content><![CDATA[<p>虽然我自己不是高中应届毕业生，不知道真实的宣传效果如何，但从公众号一系列推送中的视频和文案的用心程度，我觉得南大今年在招生方面的工作做得还是很到位的。</p>
@@ -97,6 +97,94 @@
       </categories>
       <tags>
         <tag>南大</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>洗澡</title>
+    <url>/2019/05/20/%E6%B4%97%E6%BE%A1/</url>
+    <content><![CDATA[<blockquote><p>上冲下洗，左揉右搓。人穿上衣服分个三六九等，来了这儿，都一样。房子再贵，真正需要的也不过一张小床，衣服再华丽，进了澡堂大家都一个样，唯有身上的精气神是能够长久留下来的东西。</p>
+</blockquote>
+<a id="more"></a>
+<p>扬泰地区有句话叫：早上皮包水，晚上水包皮。”皮包水”是指汤包，外面是皮，里面是汤汁。”水包皮”则指泡澡，可以说是扬泰人最喜欢的一项活动。</p>
+<p>从小，父亲就带我出入大小澡堂。</p>
+<p>小时候泡澡，一般是在老家泰兴。那时候的澡堂子又破又烂，只要5块钱。不管是老大爷，年轻小伙，还是我这种被家长带来的小孩子，三下五除二脱了衣服就扎进一堆人围着的池子。池子里，有默默坐着闭目养神的，脑袋上冒着安逸的热气；有不停往身上浇水，打肥皂，洗头的——那时候哪里有不准在公池打肥皂的规定；还有在开水池子木板上烫脚，并接连发出舒爽愉悦的享受声的。后来父亲告诉我，那是因为脚上如果有死皮会特别痒，而这样的烂脚碰上烫水的蒸汽，那种痛并快乐感是无以言表的。我听的一愣一愣：总之，每次洗澡的我更像是参加一种大型博览会，形形色色的人赤裸全身围着早已起不到洁净作用的脏水池子，有的只是一条不知道有没有处理干净的白色毛巾。唯一的共同点是，这些人好像都放下了一天下来所有的包袱，解除了所有的伪装，所以我不难理解为什么很多做生意请客吃饭的人总要在一天的最后安排洗澡的活动——这时候的人也许是最原始，最不设防备的吧。</p>
+<p>被等候在出口处的大爷擦干净身体后，洗澡并没有结束，对一些人来说，甚至是刚刚开始。</p>
+<p>我一般是坐在旁边看着父亲刮脚，捏脚。当修脚师傅挥舞着修脚刀在指间出神入化地飞舞不能吸引我时，我就会百无聊赖地看看电视，吃吃水果（当然，现在我会乐此不疲地刷着手机）。不知我到几岁时起，父亲会也给我安排项目——我脚上当然没有死皮，所以我一般是找人按摩。</p>
+<p>于是，我有点上瘾了。</p>
+<p>这之后，洗澡这件事在性质上发生了巨大的变化。不管是从大人口中还是同学那里听来的，总之，澡堂在我眼里变成了色情场所。这样的变化可以说源于我年龄的增长，从毛长不起的屁孩到声音变粗的小大人，也可以理解成泰州地区特殊服务行业的快速发展。不过后来我意识到，色情行业自古以来就从未低潮过，只是以不同的打扮存在于不同的角落，曾经是青楼，现在可能就是澡堂、足疗店。当然，我没有搞什么黄色，但是躺在那里被异性按摩触碰身体本身就是件概念上很暧昧的事情。更何况，澡堂在不知不觉间，将按摩你的技师从原先40岁左右经验丰富、手劲十足的大妈替换成如今花枝招展、却华而不实的年轻小姑娘。</p>
+<p>我后来离开了泰州，到南京求学。因为学业繁忙，加上人生地不熟的，所以也一开始不知道哪里可以体验到像泰州那样的澡堂子。后来才知道，澡堂，或者准确说，洗浴中心，全国上下遍地都是，有的只是我想象不到的排场和铺张。南京印象中的洗浴中心有两家，一家常去，一家只去过一次。只去过一次的那个叫浅深，门票就要100大几，是我洗过最贵的澡堂。进去之后仿佛进了宫殿，雕像、喷泉，比比皆是，但不知怎的，穿行其间只觉得过分夸张和俗气。常去的一家位于宝船厂遗址附近，门票也100多，但提供免费的自助餐，所以性价比还算可以。最重要的是那家环境不错，低调大气有内涵，卫生也上佳，擦备用的澡巾都是一次性的，不像泰州那些不知道擦过多少人多少肮脏部位。上大学后有次和父亲准备故地重游，却发现那里倒闭了，实在可惜。</p>
+<p>寒假时和泰州朋友临时起意去扬州旅游。回到澡堂文化的发源地，我们不免有种”朝圣”的心理，所以打听了一家口碑还不错的洗浴中心，叫易德养生会馆。（按说如果要朝圣，应去最古老的澡堂。扬州也确实保留不少有百年历史的澡堂子，但碍于卫生原因和对度假心情的影响，我们还是去了现代化的洗浴中心。）好歹也是从小到大见识过不少澡堂的人了，但见识到扬州这里的布局和风格时，还是不免内心感叹一声牛逼。整体装修有股日式风味，深黄色为主色调，给人以休憩的舒适感，但不至于昏沉。没有极尽奢华之能事的雕像或喷泉，简简单单的几根立柱之外好像就没有什么多余的不实用的装饰。布局方面，公共池位于正中，周围是淋浴间和桑拿房等一众助浴设施，搓澡房则位于单独挑开的一层半空间。更衣室位于二楼，与楼下的公共池用洁净的落地窗隔开，从上面眺望下去，整个男浴室的布局尽收眼底。服务方面更不用赘述，和泰州那种搓澡仿佛跟流水线上杀猪的操作相比，扬州的擦背可以称得上艺术。</p>
+<p>可惜我不在扬州，如果有车，从学校到那里的距离也不会太远，不过我相信这样的场所不管是在南京还是泰州，应该都会越来越多。毕竟现在对于年轻人来说，体验决定一切，我想这也会倒逼一些洗浴中心完善它们的环境和服务吧。</p>
+<p>那天在群里看到这样一则新闻：上海禁止所有洗浴中心异性按摩的服务。我补充道：听我爸说，泰州似乎在这方面最近也查的挺严的了。后来我还开玩笑的表示，如果真是这样，对泰州经济第三产业将会是一次不小的打击。</p>
+<p>可能打击或多或少有点吧，不过这不影响澡堂在我心中的地位——它曾经是为了单纯的洗污除垢，后来是游走在法律灰色地带的色情场合，现在则是我生活中必不可少的一部分，是回归，是重生，是精神家园。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>洗澡</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>微信聊天记录的分析</title>
+    <url>/2020/03/06/%E5%BE%AE%E4%BF%A1%E8%81%8A%E5%A4%A9%E8%AE%B0%E5%BD%95%E7%9A%84%E5%88%86%E6%9E%90/</url>
+    <content><![CDATA[<p>前一篇文章提到我将微信聊天数据导出到了电脑，这里讲一下我的分析中遇到的一些问题。</p>
+<a id="more"></a>
+
+<p><strong>首先是发送消息的时间确定</strong>。从excel列表中看到的时间位unix时间戳（定义为距离1970年1月1日的时间），因此要将这个格式的时间转化为北京时间。实际上，matlab中有一个datenum的函数，可以计算两者之间的时间差，因此从定义我们可以直接换算成一般格式</p>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">date = datestr(unix_time/<span class="number">86400</span>/<span class="number">1000</span> + datenum(<span class="number">1970</span>,<span class="number">1</span>,<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+
+<p>或者，在新版的matlab中，也可以直接运用</p>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">`dt = datetime( unix_time, <span class="string">'ConvertFrom'</span>, <span class="string">'posixtime'</span> )`</span><br></pre></td></tr></table></figure>
+
+<p>有了时间之后，剩下的事情其实都好做了。我们可以算一下总条数，总字数之类的统计值。还可以画出这些值随时间变化的时序图。不过在确定字数的时候，我们会遇到一个问题，就是<strong>如何判断聊天记录的类型</strong>，因为聊天记录分为纯文字、图片、语音、视频、链接等不同属性的，然而在我们导出的数据里面，这些内容都是以字符串的形式出现的。在跟手机上的消息对比后，我总结出如下：</p>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="comment">% contains函数里msg之类的符号便代表不同的类型</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> contains(message(<span class="built_in">i</span>),<span class="string">'&lt;msg&gt;&lt;emoji'</span>)</span><br><span class="line">        amount_sticker = amount_sticker + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">elseif</span> contains(message(<span class="built_in">i</span>),<span class="string">'&lt;?xml'</span>) || contains(message(<span class="built_in">i</span>),<span class="string">'&lt;msg&gt;&lt;img'</span>)</span><br><span class="line">        amount_figure = amount_figure + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">elseif</span> contains(message(<span class="built_in">i</span>),<span class="string">'&lt;msg&gt;&lt;voice'</span>)</span><br><span class="line">        amount_voice = amount_voice + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">elseif</span> contains(message(<span class="built_in">i</span>),<span class="string">'&lt;msg&gt;&lt;video'</span>)</span><br><span class="line">        amount_video = amount_video + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">elseif</span> contains(message(<span class="built_in">i</span>),<span class="string">'&lt;msg&gt;&lt;appmsg'</span>)</span><br><span class="line">        amount_other = amount_other + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        amount_text = amount_text + <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<p>在做不同类型的分布饼图时，我感觉matlab的饼图函数实在是太丑，于是我回归Excel，制作出来的效果还算不错。</p>
+<p><img src="/images/%E8%81%8A%E5%A4%A9%E5%86%85%E5%AE%B9%E5%88%86%E5%B8%83.png" alt="聊天内容分布"></p>
+<p>另外，我还画了一天内聊天频率的分布直方图，结果不出意外，深夜凌晨聊的最多，呈现出W型的分布。</p>
+<p><img src="/images/image-4-1024x577.png" alt="image-4-1024x577"></p>
+<p>Python有一个wordcloud的包，貌似是专门用来制作微信聊天记录词云的，我也没有经得住诱惑，拿来试了试，效果还不错，就是很土味，哈哈！</p>
+<p><img src="/images/wordcloud.png" alt="wordcloud"></p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>聊天记录</tag>
+        <tag>微信</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>站在巨人的肩膀上</title>
+    <url>/2019/06/10/%E7%AB%99%E5%9C%A8%E5%B7%A8%E4%BA%BA%E7%9A%84%E8%82%A9%E8%86%80%E4%B8%8A/</url>
+    <content><![CDATA[<p><img src="/images/image-E8BB70E168CC-1.jpeg" alt=""></p>
+<p>去北大的夏令营，除了收获一个满意的offer，更让我值得回味的，是一个来自中南大学，学地球物理的哥们。这里称他为C同学。</p>
+<a id="more"></a>
+
+<p>关于他的背景，我跟身边的人已经说太多次了，但还是简要概括一下吧：（目的是让以后的自己看到还能知道些细节）</p>
+<blockquote><p>高考志愿毅然决然选择中南大学地球物理专业，除此之外一个没填，不服从调剂。</p>
+<p>大一下学期开始科研，花大半年时间入门，发表会议期刊。</p>
+<p>大二期间拿着导师的经费参加哈尔滨人工智能暑期课程以及国际会议，但因不好意思，只好跟身边的博士博士后谎称自己是大四。</p>
+<p>截止参加夏令营时，已发表Sci两篇，一篇1区，一篇2区，1区为JGR。</p>
+<p>被MIT伍兹霍尔研究所大牛点名要求跟他读博，婉拒，只因觉得自己英语太菜，过不了MIT的英语基本要求。</p>
+<p>打算跟一个只有全美Top100附近的大学的华人教授读博，因为他觉得这个老师跟他更像哥们关系，并且对方承诺让他4年博士毕业。</p>
+<p>为考中国地大的青藏高原数据，顺路来参加北大大气夏令营，拿到offer后表示只要英语过了关能去美国读博，他会毁约。</p>
+</blockquote>
+
+
+<p>C同学是我接触到同龄人当中最强的，至少科研上如此。他有异于常人的品格，诸如异常决绝并且异常勤奋。然而我还是很好奇，他究竟为什么成功？或者说我很想知道，他是如何在科研的道路上起步的。</p>
+<p>C同学回忆起他的科研经历。在刚开始的那个阶段，导师给了他几篇论文，和论文背后导师自己写好的代码。这之后，C同学表示他用了大半年的时间，一边读论文，一边用设不同的断点跑代码，同时不断结合自己的理解给代码调参。此外，导师为了帮助他的理解，在一开始给他布置了一些非常好实现的简单作业，目的是让他了解新旧方法的区别，亦即现在他所研究的方向到底是什么意义。</p>
+<p>这其实是我最想听到的部分。长久以来，科研于我，是一个很玄学的概念。虽然我一直以读研究生为我本科期间的一个阶段性目标，但事实就是，科研是什么，我其实根本还没摸到门路。本科期间我也有科研经历，然而偏偏不巧的是，我做的这个方向不仅偏工程，而且我的导师也不甚熟悉，无论在大的科学性还是技术细节上都不太能给我很好的指导。（这里没有任何贬低我导师的意思，事实上，我的导师人非常好，在自己专业领域上的科研能力也有目共睹，并且在其他方面都给了我很大帮助，可以说是我的贵人）除此之外，另外一个我觉得会很有意思的气候相关的暑研我也还没开始。所以，科研是什么，到底应该如何做，是我从大二下开始进行所谓的科研训练后一直迷茫和思索的话题。</p>
+<p>C同学的一席话，给了我窥见科研的一个窗口。我记得听完他经历的那个晚上，因为过于震撼，我都没能好好的睡觉。现在在回想起来，其实这就是最寻常不过的科研起步的例子了吧——跟着导师熟悉的方向，接着做下一步的工作，这之后再凭借自己的努力和天赋继续走下去。这与我在知乎，在博客上看到的经历其实没有任何两样。但从一个活生生的例子，也就是C同学的口中说出来时，我才意识到对比自己，我在错误的方向上忙活了两年。</p>
+<p>本科生我的这段科研本身兴许是失败的（其实也未知，还有一年的时间可以好好琢磨），但转念想来，何尝不是一次绝佳的试错机会呢？我在导师不甚熟悉的领域上如无头苍蝇般漫无目的地四处碰壁，但好在这只是本科，我的大部分精力还是放在课程的学习上。科研上的颗粒无收虽影响我的心态，但自己反正不是研究生，也影响不到什么毕业论文。有这样一次过程，我想我在真正的博士工作期间，能更好的进入真正科研的状态吧。</p>
+<p>我把真正进入科研的状态，比做如何站在巨人的肩膀上这样一个过程。站在巨人的肩膀上，这是谷歌学术的一个标语，实际上也确确实实是科研之所以能够从亚里士多德那个时代一直传承到现在，并继续为人类社会做贡献的原因。这次夏令营，我也选到了自己心仪的导师，希望有朝一日我也能站在他的肩膀上，看到更广阔的世界。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>北大</tag>
       </tags>
   </entry>
   <entry>
@@ -150,94 +238,6 @@
       <tags>
         <tag>聊天记录</tag>
         <tag>微信</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>微信聊天记录的分析</title>
-    <url>/2020/03/06/%E5%BE%AE%E4%BF%A1%E8%81%8A%E5%A4%A9%E8%AE%B0%E5%BD%95%E7%9A%84%E5%88%86%E6%9E%90/</url>
-    <content><![CDATA[<p>前一篇文章提到我将微信聊天数据导出到了电脑，这里讲一下我的分析中遇到的一些问题。</p>
-<a id="more"></a>
-
-<p><strong>首先是发送消息的时间确定</strong>。从excel列表中看到的时间位unix时间戳（定义为距离1970年1月1日的时间），因此要将这个格式的时间转化为北京时间。实际上，matlab中有一个datenum的函数，可以计算两者之间的时间差，因此从定义我们可以直接换算成一般格式</p>
-<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">date = datestr(unix_time/<span class="number">86400</span>/<span class="number">1000</span> + datenum(<span class="number">1970</span>,<span class="number">1</span>,<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
-
-<p>或者，在新版的matlab中，也可以直接运用</p>
-<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">`dt = datetime( unix_time, <span class="string">'ConvertFrom'</span>, <span class="string">'posixtime'</span> )`</span><br></pre></td></tr></table></figure>
-
-<p>有了时间之后，剩下的事情其实都好做了。我们可以算一下总条数，总字数之类的统计值。还可以画出这些值随时间变化的时序图。不过在确定字数的时候，我们会遇到一个问题，就是<strong>如何判断聊天记录的类型</strong>，因为聊天记录分为纯文字、图片、语音、视频、链接等不同属性的，然而在我们导出的数据里面，这些内容都是以字符串的形式出现的。在跟手机上的消息对比后，我总结出如下：</p>
-<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="comment">% contains函数里msg之类的符号便代表不同的类型</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> contains(message(<span class="built_in">i</span>),<span class="string">'&lt;msg&gt;&lt;emoji'</span>)</span><br><span class="line">        amount_sticker = amount_sticker + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">elseif</span> contains(message(<span class="built_in">i</span>),<span class="string">'&lt;?xml'</span>) || contains(message(<span class="built_in">i</span>),<span class="string">'&lt;msg&gt;&lt;img'</span>)</span><br><span class="line">        amount_figure = amount_figure + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">elseif</span> contains(message(<span class="built_in">i</span>),<span class="string">'&lt;msg&gt;&lt;voice'</span>)</span><br><span class="line">        amount_voice = amount_voice + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">elseif</span> contains(message(<span class="built_in">i</span>),<span class="string">'&lt;msg&gt;&lt;video'</span>)</span><br><span class="line">        amount_video = amount_video + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">elseif</span> contains(message(<span class="built_in">i</span>),<span class="string">'&lt;msg&gt;&lt;appmsg'</span>)</span><br><span class="line">        amount_other = amount_other + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        amount_text = amount_text + <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-
-<p>在做不同类型的分布饼图时，我感觉matlab的饼图函数实在是太丑，于是我回归Excel，制作出来的效果还算不错。</p>
-<p><img src="/images/%E8%81%8A%E5%A4%A9%E5%86%85%E5%AE%B9%E5%88%86%E5%B8%83.png" alt="聊天内容分布"></p>
-<p>另外，我还画了一天内聊天频率的分布直方图，结果不出意外，深夜凌晨聊的最多，呈现出W型的分布。</p>
-<p><img src="/images/image-4-1024x577.png" alt="image-4-1024x577"></p>
-<p>Python有一个wordcloud的包，貌似是专门用来制作微信聊天记录词云的，我也没有经得住诱惑，拿来试了试，效果还不错，就是很土味，哈哈！</p>
-<p><img src="/images/wordcloud.png" alt="wordcloud"></p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>聊天记录</tag>
-        <tag>微信</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>洗澡</title>
-    <url>/2019/05/20/%E6%B4%97%E6%BE%A1/</url>
-    <content><![CDATA[<blockquote><p>上冲下洗，左揉右搓。人穿上衣服分个三六九等，来了这儿，都一样。房子再贵，真正需要的也不过一张小床，衣服再华丽，进了澡堂大家都一个样，唯有身上的精气神是能够长久留下来的东西。</p>
-</blockquote>
-<a id="more"></a>
-<p>扬泰地区有句话叫：早上皮包水，晚上水包皮。”皮包水”是指汤包，外面是皮，里面是汤汁。”水包皮”则指泡澡，可以说是扬泰人最喜欢的一项活动。</p>
-<p>从小，父亲就带我出入大小澡堂。</p>
-<p>小时候泡澡，一般是在老家泰兴。那时候的澡堂子又破又烂，只要5块钱。不管是老大爷，年轻小伙，还是我这种被家长带来的小孩子，三下五除二脱了衣服就扎进一堆人围着的池子。池子里，有默默坐着闭目养神的，脑袋上冒着安逸的热气；有不停往身上浇水，打肥皂，洗头的——那时候哪里有不准在公池打肥皂的规定；还有在开水池子木板上烫脚，并接连发出舒爽愉悦的享受声的。后来父亲告诉我，那是因为脚上如果有死皮会特别痒，而这样的烂脚碰上烫水的蒸汽，那种痛并快乐感是无以言表的。我听的一愣一愣：总之，每次洗澡的我更像是参加一种大型博览会，形形色色的人赤裸全身围着早已起不到洁净作用的脏水池子，有的只是一条不知道有没有处理干净的白色毛巾。唯一的共同点是，这些人好像都放下了一天下来所有的包袱，解除了所有的伪装，所以我不难理解为什么很多做生意请客吃饭的人总要在一天的最后安排洗澡的活动——这时候的人也许是最原始，最不设防备的吧。</p>
-<p>被等候在出口处的大爷擦干净身体后，洗澡并没有结束，对一些人来说，甚至是刚刚开始。</p>
-<p>我一般是坐在旁边看着父亲刮脚，捏脚。当修脚师傅挥舞着修脚刀在指间出神入化地飞舞不能吸引我时，我就会百无聊赖地看看电视，吃吃水果（当然，现在我会乐此不疲地刷着手机）。不知我到几岁时起，父亲会也给我安排项目——我脚上当然没有死皮，所以我一般是找人按摩。</p>
-<p>于是，我有点上瘾了。</p>
-<p>这之后，洗澡这件事在性质上发生了巨大的变化。不管是从大人口中还是同学那里听来的，总之，澡堂在我眼里变成了色情场所。这样的变化可以说源于我年龄的增长，从毛长不起的屁孩到声音变粗的小大人，也可以理解成泰州地区特殊服务行业的快速发展。不过后来我意识到，色情行业自古以来就从未低潮过，只是以不同的打扮存在于不同的角落，曾经是青楼，现在可能就是澡堂、足疗店。当然，我没有搞什么黄色，但是躺在那里被异性按摩触碰身体本身就是件概念上很暧昧的事情。更何况，澡堂在不知不觉间，将按摩你的技师从原先40岁左右经验丰富、手劲十足的大妈替换成如今花枝招展、却华而不实的年轻小姑娘。</p>
-<p>我后来离开了泰州，到南京求学。因为学业繁忙，加上人生地不熟的，所以也一开始不知道哪里可以体验到像泰州那样的澡堂子。后来才知道，澡堂，或者准确说，洗浴中心，全国上下遍地都是，有的只是我想象不到的排场和铺张。南京印象中的洗浴中心有两家，一家常去，一家只去过一次。只去过一次的那个叫浅深，门票就要100大几，是我洗过最贵的澡堂。进去之后仿佛进了宫殿，雕像、喷泉，比比皆是，但不知怎的，穿行其间只觉得过分夸张和俗气。常去的一家位于宝船厂遗址附近，门票也100多，但提供免费的自助餐，所以性价比还算可以。最重要的是那家环境不错，低调大气有内涵，卫生也上佳，擦备用的澡巾都是一次性的，不像泰州那些不知道擦过多少人多少肮脏部位。上大学后有次和父亲准备故地重游，却发现那里倒闭了，实在可惜。</p>
-<p>寒假时和泰州朋友临时起意去扬州旅游。回到澡堂文化的发源地，我们不免有种”朝圣”的心理，所以打听了一家口碑还不错的洗浴中心，叫易德养生会馆。（按说如果要朝圣，应去最古老的澡堂。扬州也确实保留不少有百年历史的澡堂子，但碍于卫生原因和对度假心情的影响，我们还是去了现代化的洗浴中心。）好歹也是从小到大见识过不少澡堂的人了，但见识到扬州这里的布局和风格时，还是不免内心感叹一声牛逼。整体装修有股日式风味，深黄色为主色调，给人以休憩的舒适感，但不至于昏沉。没有极尽奢华之能事的雕像或喷泉，简简单单的几根立柱之外好像就没有什么多余的不实用的装饰。布局方面，公共池位于正中，周围是淋浴间和桑拿房等一众助浴设施，搓澡房则位于单独挑开的一层半空间。更衣室位于二楼，与楼下的公共池用洁净的落地窗隔开，从上面眺望下去，整个男浴室的布局尽收眼底。服务方面更不用赘述，和泰州那种搓澡仿佛跟流水线上杀猪的操作相比，扬州的擦背可以称得上艺术。</p>
-<p>可惜我不在扬州，如果有车，从学校到那里的距离也不会太远，不过我相信这样的场所不管是在南京还是泰州，应该都会越来越多。毕竟现在对于年轻人来说，体验决定一切，我想这也会倒逼一些洗浴中心完善它们的环境和服务吧。</p>
-<p>那天在群里看到这样一则新闻：上海禁止所有洗浴中心异性按摩的服务。我补充道：听我爸说，泰州似乎在这方面最近也查的挺严的了。后来我还开玩笑的表示，如果真是这样，对泰州经济第三产业将会是一次不小的打击。</p>
-<p>可能打击或多或少有点吧，不过这不影响澡堂在我心中的地位——它曾经是为了单纯的洗污除垢，后来是游走在法律灰色地带的色情场合，现在则是我生活中必不可少的一部分，是回归，是重生，是精神家园。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>洗澡</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>站在巨人的肩膀上</title>
-    <url>/2019/06/10/%E7%AB%99%E5%9C%A8%E5%B7%A8%E4%BA%BA%E7%9A%84%E8%82%A9%E8%86%80%E4%B8%8A/</url>
-    <content><![CDATA[<p><img src="/images/image-E8BB70E168CC-1.jpeg" alt=""></p>
-<p>去北大的夏令营，除了收获一个满意的offer，更让我值得回味的，是一个来自中南大学，学地球物理的哥们。这里称他为C同学。</p>
-<a id="more"></a>
-
-<p>关于他的背景，我跟身边的人已经说太多次了，但还是简要概括一下吧：（目的是让以后的自己看到还能知道些细节）</p>
-<blockquote><p>高考志愿毅然决然选择中南大学地球物理专业，除此之外一个没填，不服从调剂。</p>
-<p>大一下学期开始科研，花大半年时间入门，发表会议期刊。</p>
-<p>大二期间拿着导师的经费参加哈尔滨人工智能暑期课程以及国际会议，但因不好意思，只好跟身边的博士博士后谎称自己是大四。</p>
-<p>截止参加夏令营时，已发表Sci两篇，一篇1区，一篇2区，1区为JGR。</p>
-<p>被MIT伍兹霍尔研究所大牛点名要求跟他读博，婉拒，只因觉得自己英语太菜，过不了MIT的英语基本要求。</p>
-<p>打算跟一个只有全美Top100附近的大学的华人教授读博，因为他觉得这个老师跟他更像哥们关系，并且对方承诺让他4年博士毕业。</p>
-<p>为考中国地大的青藏高原数据，顺路来参加北大大气夏令营，拿到offer后表示只要英语过了关能去美国读博，他会毁约。</p>
-</blockquote>
-
-
-<p>C同学是我接触到同龄人当中最强的，至少科研上如此。他有异于常人的品格，诸如异常决绝并且异常勤奋。然而我还是很好奇，他究竟为什么成功？或者说我很想知道，他是如何在科研的道路上起步的。</p>
-<p>C同学回忆起他的科研经历。在刚开始的那个阶段，导师给了他几篇论文，和论文背后导师自己写好的代码。这之后，C同学表示他用了大半年的时间，一边读论文，一边用设不同的断点跑代码，同时不断结合自己的理解给代码调参。此外，导师为了帮助他的理解，在一开始给他布置了一些非常好实现的简单作业，目的是让他了解新旧方法的区别，亦即现在他所研究的方向到底是什么意义。</p>
-<p>这其实是我最想听到的部分。长久以来，科研于我，是一个很玄学的概念。虽然我一直以读研究生为我本科期间的一个阶段性目标，但事实就是，科研是什么，我其实根本还没摸到门路。本科期间我也有科研经历，然而偏偏不巧的是，我做的这个方向不仅偏工程，而且我的导师也不甚熟悉，无论在大的科学性还是技术细节上都不太能给我很好的指导。（这里没有任何贬低我导师的意思，事实上，我的导师人非常好，在自己专业领域上的科研能力也有目共睹，并且在其他方面都给了我很大帮助，可以说是我的贵人）除此之外，另外一个我觉得会很有意思的气候相关的暑研我也还没开始。所以，科研是什么，到底应该如何做，是我从大二下开始进行所谓的科研训练后一直迷茫和思索的话题。</p>
-<p>C同学的一席话，给了我窥见科研的一个窗口。我记得听完他经历的那个晚上，因为过于震撼，我都没能好好的睡觉。现在在回想起来，其实这就是最寻常不过的科研起步的例子了吧——跟着导师熟悉的方向，接着做下一步的工作，这之后再凭借自己的努力和天赋继续走下去。这与我在知乎，在博客上看到的经历其实没有任何两样。但从一个活生生的例子，也就是C同学的口中说出来时，我才意识到对比自己，我在错误的方向上忙活了两年。</p>
-<p>本科生我的这段科研本身兴许是失败的（其实也未知，还有一年的时间可以好好琢磨），但转念想来，何尝不是一次绝佳的试错机会呢？我在导师不甚熟悉的领域上如无头苍蝇般漫无目的地四处碰壁，但好在这只是本科，我的大部分精力还是放在课程的学习上。科研上的颗粒无收虽影响我的心态，但自己反正不是研究生，也影响不到什么毕业论文。有这样一次过程，我想我在真正的博士工作期间，能更好的进入真正科研的状态吧。</p>
-<p>我把真正进入科研的状态，比做如何站在巨人的肩膀上这样一个过程。站在巨人的肩膀上，这是谷歌学术的一个标语，实际上也确确实实是科研之所以能够从亚里士多德那个时代一直传承到现在，并继续为人类社会做贡献的原因。这次夏令营，我也选到了自己心仪的导师，希望有朝一日我也能站在他的肩膀上，看到更广阔的世界。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>北大</tag>
       </tags>
   </entry>
   <entry>
