@@ -286,14 +286,15 @@
 <ol>
 <li><p>下载XQuartz</p>
 </li>
-<li><p>在终端下编辑/etc/ssh/ssh_config文件，需要sudo vim 打开，将X11Forwarding no 修改为 yes（在新的系统版本中，在ssh_config文件中Host下添加Forward三行，如下图）<br><img src="/images/mac_ssh_1.png" alt=""></p>
+<li><p>在终端下编辑/etc/ssh/ssh_config文件，需要sudo vim 打开，将X11Forwarding no 修改为 yes（在新的系统版本中，在ssh_config文件中Host下添加Forward三行，如下图）</p>
+<p><img src="/images/mac_ssh_1.png" alt=""></p>
 </li>
 <li><p>打开XQuartz情况下，ssh -Y连接ssh服务器即可打开GUI</p>
 </li>
 <li><p>若出现报错No xauth data; using fake authentication data for X11 forwarding.则在ssh_config文件中添加一行XAuthLocation /opt/X11/bin/xauth</p>
 </li>
 </ol>
-<p>ssh_config最终如下<br><img src="/images/mac_ssh_2.png" alt=""></p>
+<p>ssh_config最终如下<br>    <img src="/images/mac_ssh_2.png" alt=""></p>
 ]]></content>
       <categories>
         <category>技术</category>
