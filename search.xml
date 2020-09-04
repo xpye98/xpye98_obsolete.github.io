@@ -201,7 +201,7 @@
   <entry>
     <title>利用MATLAB进行regrid</title>
     <url>/2020/06/25/%E5%88%A9%E7%94%A8MATLAB%E8%BF%9B%E8%A1%8Cregrid/</url>
-    <content><![CDATA[<p>在大气科学模式数据处理中，经常需要进行regrid的操作，例如将025x025的MIX排放清单格点转化成GEOS-Chem的025x03125格点。这里我们使用MATLAB中的griddata函数进行该操作。<span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f604.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png?v8">😄</span></p>
+    <content><![CDATA[<p>在大气科学模式数据处理中，经常需要进行regrid的操作，例如将025x025的MIX排放清单格点转化成GEOS-Chem的025x03125格点。这里我们使用MATLAB中的griddata函数进行该操作。</p>
 <a id="more"></a>
 <h5 id="griddata函数简介"><a href="#griddata函数简介" class="headerlink" title="griddata函数简介"></a>griddata函数简介</h5><p>MATLAB自带的<a href="https://www.mathworks.com/help/matlab/ref/griddata.html" target="_blank" rel="noopener">griddata</a>函数可以对二维以及三维的数据进行差值。</p>
 <p>我们以官网的代码为例</p>
