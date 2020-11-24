@@ -348,7 +348,7 @@
     <title>test_article</title>
     <url>/2020/11/24/test-article/</url>
     <content><![CDATA[<p>test</p>
-<p>![image-20201124225029700](../../../Library/Application Support/typora-user-images/image-20201124225029700.png)</p>
+<p>![image-20201124225029700](截屏2020-11-24 22.54.18)</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
