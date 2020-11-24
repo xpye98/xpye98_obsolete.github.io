@@ -57,7 +57,7 @@
     <url>/2020/11/24/test-article/</url>
     <content><![CDATA[<p>test</p>
 <p><img src="test_figure.png" alt=""></p>
-<p><img src="image-20201124230414080.png" alt="image-20201124230414080"></p>
+<p><img src="image-20201124230414080.png" alt=""></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
