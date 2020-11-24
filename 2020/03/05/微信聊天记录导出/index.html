@@ -227,10 +227,28 @@
 <h5 id="关于如何导出聊天记录到电脑"><a href="#关于如何导出聊天记录到电脑" class="headerlink" title="关于如何导出聊天记录到电脑"></a>关于如何导出聊天记录到电脑</h5><p>首先，我们下载iTunes，将手机连上电脑后，选择备份。如果你手机内容很多的话，这个过程可能要很久……备份成功后，我们在编辑/偏好设置/设备/ 中能够看到已经备份好的手机。</p>
 <p>这之后我们下载“<a href="https://www.louyue.com/itunes.htm" target="_blank" rel="noopener">楼月免费iTunes备份管理器</a>”，在微信聊天记录里面，导出Documents文件夹到我们想要的一个目录。在Documents文件下内，会有一个由数字字母组成的乱码一样的文件夹，那个文件夹便是我们聊天记录所在的位置。（如果有多个微信账号，会有多个乱码文件夹，这时候判断一下文件大小应该可以知道谁是谁）</p>
 <h5 id="找到指定好友"><a href="#找到指定好友" class="headerlink" title="找到指定好友"></a>找到指定好友</h5><p>这一步卡了我最久，后来我的解决方法是，下载“<a href="https://www.softpedia.com/get/Internet/Servers/Database-Utils/SQLiteSpy.shtml" target="_blank" rel="noopener">SQLiteSpy</a>”，用该软件打开刚才的Documents/一度乱码的文件夹/DB/MM.sqlite文件。然后，我们在软件左侧最下面找到一个名为”sqlite_sequence”的表，点击seq进行从大到小的排列，就可以定位出哪个表代表了你想要的那个人。表名形如Chat_xxxxxxxxxx</p>
-<h5 id="利用Python导出至Excel"><a href="#利用Python导出至Excel" class="headerlink" title="利用Python导出至Excel"></a>利用Python导出至Excel</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#该程序可以实现将聊天记录导出为excel</span></span><br><span class="line"><span class="keyword">import</span> sqlite3</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">with</span> sqlite3.connect(<span class="string">r'聊天记录目录/DB/MM.sqlite'</span>) <span class="keyword">as</span> con:</span><br><span class="line">    df1 = pd.read_sql_query(<span class="string">"select * from Chat_xxx"</span>, con) <span class="comment">#xxx即为刚才找到的制定好友代号</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#保存至excel，这里直接用的相对路径</span></span><br><span class="line">writer = pd.ExcelWriter(<span class="string">'wechat.xlsx'</span>)</span><br><span class="line">df1.to_excel(writer, <span class="string">'Sheet1'</span>)</span><br><span class="line">writer.save()</span><br></pre></td></tr></table></figure>
+<h5 id="利用Python导出至Excel"><a href="#利用Python导出至Excel" class="headerlink" title="利用Python导出至Excel"></a>利用Python导出至Excel</h5><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#该程序可以实现将聊天记录导出为excel</span></span><br><span class="line"><span class="keyword">import</span> sqlite3</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">with</span> sqlite3.connect(<span class="string">r'聊天记录目录/DB/MM.sqlite'</span>) <span class="keyword">as</span> con:</span><br><span class="line">    df1 = pd.read_sql_query(<span class="string">"select * from Chat_xxx"</span>, con) <span class="comment">#xxx即为刚才找到的制定好友代号</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#保存至excel，这里直接用的相对路径</span></span><br><span class="line">writer = pd.ExcelWriter(<span class="string">'wechat.xlsx'</span>)</span><br><span class="line">df1.to_excel(writer, <span class="string">'Sheet1'</span>)</span><br><span class="line">writer.save()</span><br></pre></td></tr></tbody></table></figure>
 
 <p>至此，大功告成。之后的分析就各显神通了，我选择的是matlab。当然，直接用excel基本也能实现想要的功能了。数据分析的结果，也许可以新开个笔记介绍。</p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
     </div>
 
     

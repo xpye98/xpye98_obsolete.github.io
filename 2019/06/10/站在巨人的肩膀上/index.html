@@ -242,7 +242,25 @@
 <p>C同学的一席话，给了我窥见科研的一个窗口。我记得听完他经历的那个晚上，因为过于震撼，我都没能好好的睡觉。现在在回想起来，其实这就是最寻常不过的科研起步的例子了吧——跟着导师熟悉的方向，接着做下一步的工作，这之后再凭借自己的努力和天赋继续走下去。这与我在知乎，在博客上看到的经历其实没有任何两样。但从一个活生生的例子，也就是C同学的口中说出来时，我才意识到对比自己，我在错误的方向上忙活了两年。</p>
 <p>本科生我的这段科研本身兴许是失败的（其实也未知，还有一年的时间可以好好琢磨），但转念想来，何尝不是一次绝佳的试错机会呢？我在导师不甚熟悉的领域上如无头苍蝇般漫无目的地四处碰壁，但好在这只是本科，我的大部分精力还是放在课程的学习上。科研上的颗粒无收虽影响我的心态，但自己反正不是研究生，也影响不到什么毕业论文。有这样一次过程，我想我在真正的博士工作期间，能更好的进入真正科研的状态吧。</p>
 <p>我把真正进入科研的状态，比做如何站在巨人的肩膀上这样一个过程。站在巨人的肩膀上，这是谷歌学术的一个标语，实际上也确确实实是科研之所以能够从亚里士多德那个时代一直传承到现在，并继续为人类社会做贡献的原因。这次夏令营，我也选到了自己心仪的导师，希望有朝一日我也能站在他的肩膀上，看到更广阔的世界。</p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
     </div>
 
     

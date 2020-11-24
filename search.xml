@@ -1,81 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>为什么叫远东二三叶</title>
-    <url>/2019/05/15/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AB%E8%BF%9C%E4%B8%9C%E4%BA%8C%E4%B8%89%E5%8F%B6%EF%BC%9F/</url>
-    <content><![CDATA[<p>远东二三叶，其实一开始是源自前女友闺蜜的QQ名：远东二三清。我不知道她取这个昵称是有什么寓意，不过这种风格确实讨我喜，又因为我姓叶，所以我便取了这样一个名。</p>
-<a id="more"></a>
-
-<p><strong>这个名字后来越看越顺眼。</strong></p>
-<p>远东，Far East，是西方国家的用语，用来区别于东欧之类的”近东”，阿拉伯半岛之类的”中东”。中国🇨🇳即为远东地区的一国，所以从地理位置上，这个名字表义正确。更巧的是，本人所在的高校——南京大学里，有一条主干道亦为此名。上课、吃饭、回宿舍，我每天都要在这条远东大道花上不少时间，所以感情也极为深刻。</p>
-<p>此外，南大曾经有个乐队，边界自由，其主打曲就叫《远东大道》，旋律抓人，主题也很青春，我甚至买了他们的专辑。只不过现在放在宿舍书桌的最上一层，落了不少灰。</p>
-<p><img src="https://pic.xiami.net/images/album/img59/1294626159/21027528231495632777.jpeg?x-oss-process=image/quality,q_80/format,jpg" alt="IMG_8266"></p>
-<p><em>收留《远东大道》的专辑《人民英雄》封面</em></p>
-<p><a href="https://music.163.com/#/song?id=482135817&market=baiduqk" target="_blank" rel="noopener">网易云试听链接</a></p>
-<p>二三叶。我一直觉得名字里带些数字，给人的感觉会更舒服，更亲切。但如若强加数字，又显得很做作了。”二三”，学过文言文的大概都能记起这是个约数，表一些，不是很多，但也有那么一点。连起后面的”叶”字，显得颇有意境。所以我时常感叹自己的姓氏不错——笔画少，意向好，最重要的，有一股古代武侠的风骨。</p>
-<p>哦，刚上网查了一下二三，发现还有反复不定的意思。我想这也符合我的性格吧，有点善变。</p>
-<p>（以前我的网名叫<strong>盛满伤心的罐头</strong>，是很小时候取的了。很多人看到这个名字都会来问我，为什么叫这个名字，我一律回复：没有。确实没有，当时取这个名字脑子里真没有太多的想法。如果硬要解释，我觉得也只能说，伤心二字有点年轻时为赋新词强说愁的意味。至于罐头，真是无从说起了。）</p>
-<p>我写过无数个日记本的开头了，这篇是第几个，我已数不清了。在写这个之前，我在知乎，google上查了很多”在哪里写blog比较好”之类的问题，看得我眼花缭乱，甚至头疼。互联网时代新奇东西太多了，我想真正想坚持写的人（我姑且不能算这类人，结合之前经常半途而废的经验）是不会拘泥格式的，如果说最好的，我想肯定是一张纸，一支笔。</p>
-<p>总结这些方法，wordpress，github一类需要自己搭建，准备的太多，我害怕折腾完这些，想写东西的心情早已全无。简书、知乎、tumblr之类，方便是方便，但思来想去，总有一种碎片式的廉价感，以及随时会被和谐的不稳定性。最后我折中出一个方案，那就是以Markdown形式，用现有的，并且习惯了的Typora来写博客。然后同步到Dropbox里，以备丢失。</p>
-<p>Markdown好处在于文字图片链接Latex等等功能一个不少。而Typora的简洁风格又深得我喜好，且在书写时有良好的沉浸式体验。我想，基本能满足我所有的需求了。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>微信聊天记录导出</title>
-    <url>/2020/03/05/%E5%BE%AE%E4%BF%A1%E8%81%8A%E5%A4%A9%E8%AE%B0%E5%BD%95%E5%AF%BC%E5%87%BA/</url>
-    <content><![CDATA[<p>与npy很快就要在一起一周年了，在pyq某同学的提醒下意识到完全可以将微信聊天记录导出并且进行一波数据分析。（p，实际就是看看谁的话多，每天几点话最多，一年以来的时间序列…之类的简单操作）</p>
-<a id="more"></a>
-
-<h5 id="前提工作与说明"><a href="#前提工作与说明" class="headerlink" title="前提工作与说明"></a>前提工作与说明</h5><p>确认一下微信里聊天记录是否健在（bushi），如果方便，可以提前把其他人的聊天记录都删了，这样备份快，并且好找。如果有一些其他人的重要信息不太能删的，emmm，那最好你想要导出的这个人的聊天记录是所有人当中最多的，这样我们之后在导出到电脑后方便选择。（实际上关于如何确定哪个记录属于谁这个问题，可以通过微信ID来定位，然而这个方法貌似只适用于没有修改过微信默认ID的情况，因此这里就先不介绍了）另外， 我这里使用的是windows系统以及苹果手机。（关于安卓手机的方法百度一下貌似更多） </p>
-<h5 id="关于如何导出聊天记录到电脑"><a href="#关于如何导出聊天记录到电脑" class="headerlink" title="关于如何导出聊天记录到电脑"></a>关于如何导出聊天记录到电脑</h5><p>首先，我们下载iTunes，将手机连上电脑后，选择备份。如果你手机内容很多的话，这个过程可能要很久……备份成功后，我们在编辑/偏好设置/设备/ 中能够看到已经备份好的手机。</p>
-<p>这之后我们下载“<a href="https://www.louyue.com/itunes.htm" target="_blank" rel="noopener">楼月免费iTunes备份管理器</a>”，在微信聊天记录里面，导出Documents文件夹到我们想要的一个目录。在Documents文件下内，会有一个由数字字母组成的乱码一样的文件夹，那个文件夹便是我们聊天记录所在的位置。（如果有多个微信账号，会有多个乱码文件夹，这时候判断一下文件大小应该可以知道谁是谁）</p>
-<h5 id="找到指定好友"><a href="#找到指定好友" class="headerlink" title="找到指定好友"></a>找到指定好友</h5><p>这一步卡了我最久，后来我的解决方法是，下载“<a href="https://www.softpedia.com/get/Internet/Servers/Database-Utils/SQLiteSpy.shtml" target="_blank" rel="noopener">SQLiteSpy</a>”，用该软件打开刚才的Documents/一度乱码的文件夹/DB/MM.sqlite文件。然后，我们在软件左侧最下面找到一个名为”sqlite_sequence”的表，点击seq进行从大到小的排列，就可以定位出哪个表代表了你想要的那个人。表名形如Chat_xxxxxxxxxx</p>
-<h5 id="利用Python导出至Excel"><a href="#利用Python导出至Excel" class="headerlink" title="利用Python导出至Excel"></a>利用Python导出至Excel</h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#该程序可以实现将聊天记录导出为excel</span></span><br><span class="line"><span class="keyword">import</span> sqlite3</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">with</span> sqlite3.connect(<span class="string">r'聊天记录目录/DB/MM.sqlite'</span>) <span class="keyword">as</span> con:</span><br><span class="line">    df1 = pd.read_sql_query(<span class="string">"select * from Chat_xxx"</span>, con) <span class="comment">#xxx即为刚才找到的制定好友代号</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#保存至excel，这里直接用的相对路径</span></span><br><span class="line">writer = pd.ExcelWriter(<span class="string">'wechat.xlsx'</span>)</span><br><span class="line">df1.to_excel(writer, <span class="string">'Sheet1'</span>)</span><br><span class="line">writer.save()</span><br></pre></td></tr></table></figure>
-
-<p>至此，大功告成。之后的分析就各显神通了，我选择的是matlab。当然，直接用excel基本也能实现想要的功能了。数据分析的结果，也许可以新开个笔记介绍。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>聊天记录</tag>
-        <tag>微信</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>微信聊天记录的分析</title>
-    <url>/2020/03/06/%E5%BE%AE%E4%BF%A1%E8%81%8A%E5%A4%A9%E8%AE%B0%E5%BD%95%E7%9A%84%E5%88%86%E6%9E%90/</url>
-    <content><![CDATA[<p>前一篇文章提到我将微信聊天数据导出到了电脑，这里讲一下我的分析中遇到的一些问题。</p>
-<a id="more"></a>
-
-<p><strong>首先是发送消息的时间确定</strong>。从excel列表中看到的时间位unix时间戳（定义为距离1970年1月1日的时间），因此要将这个格式的时间转化为北京时间。实际上，matlab中有一个datenum的函数，可以计算两者之间的时间差，因此从定义我们可以直接换算成一般格式</p>
-<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">date = datestr(unix_time/<span class="number">86400</span>/<span class="number">1000</span> + datenum(<span class="number">1970</span>,<span class="number">1</span>,<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
-
-<p>或者，在新版的matlab中，也可以直接运用</p>
-<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">`dt = datetime( unix_time, <span class="string">'ConvertFrom'</span>, <span class="string">'posixtime'</span> )`</span><br></pre></td></tr></table></figure>
-
-<p>有了时间之后，剩下的事情其实都好做了。我们可以算一下总条数，总字数之类的统计值。还可以画出这些值随时间变化的时序图。不过在确定字数的时候，我们会遇到一个问题，就是<strong>如何判断聊天记录的类型</strong>，因为聊天记录分为纯文字、图片、语音、视频、链接等不同属性的，然而在我们导出的数据里面，这些内容都是以字符串的形式出现的。在跟手机上的消息对比后，我总结出如下：</p>
-<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="comment">% contains函数里msg之类的符号便代表不同的类型</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> contains(message(<span class="built_in">i</span>),<span class="string">'&lt;msg&gt;&lt;emoji'</span>)</span><br><span class="line">        amount_sticker = amount_sticker + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">elseif</span> contains(message(<span class="built_in">i</span>),<span class="string">'&lt;?xml'</span>) || contains(message(<span class="built_in">i</span>),<span class="string">'&lt;msg&gt;&lt;img'</span>)</span><br><span class="line">        amount_figure = amount_figure + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">elseif</span> contains(message(<span class="built_in">i</span>),<span class="string">'&lt;msg&gt;&lt;voice'</span>)</span><br><span class="line">        amount_voice = amount_voice + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">elseif</span> contains(message(<span class="built_in">i</span>),<span class="string">'&lt;msg&gt;&lt;video'</span>)</span><br><span class="line">        amount_video = amount_video + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">elseif</span> contains(message(<span class="built_in">i</span>),<span class="string">'&lt;msg&gt;&lt;appmsg'</span>)</span><br><span class="line">        amount_other = amount_other + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        amount_text = amount_text + <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-
-<p>在做不同类型的分布饼图时，我感觉matlab的饼图函数实在是太丑，于是我回归Excel，制作出来的效果还算不错。</p>
-<p><img src="/images/%E8%81%8A%E5%A4%A9%E5%86%85%E5%AE%B9%E5%88%86%E5%B8%83.png" alt="聊天内容分布"></p>
-<p>另外，我还画了一天内聊天频率的分布直方图，结果不出意外，深夜凌晨聊的最多，呈现出W型的分布。</p>
-<p><img src="/images/image-4-1024x577.png" alt="image-4-1024x577"></p>
-<p>Python有一个wordcloud的包，貌似是专门用来制作微信聊天记录词云的，我也没有经得住诱惑，拿来试了试，效果还不错，就是很土味，哈哈！</p>
-<p><img src="/images/wordcloud.png" alt="wordcloud"></p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>聊天记录</tag>
-        <tag>微信</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo建站笔记</title>
     <url>/2020/05/05/Hexo%E5%BB%BA%E7%AB%99%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>在利用Hexo建站的过程中，主要参考<a href="https://guanqr.com/tech/website/hexo-theme-next-customization/#%E7%AB%99%E7%82%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6](https://guanqr.com/tech/website/hexo-theme-next-customization/#%E7%AB%99%E7%82%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6)" target="_blank" rel="noopener">guanqr</a>这篇文章，收获良多。这里简单记录一些遇到的问题。</p>
@@ -128,24 +53,67 @@
       </tags>
   </entry>
   <entry>
+    <title>test_article</title>
+    <url>/2020/11/24/test-article/</url>
+    <content><![CDATA[<p>test</p>
+<p><img src="test-article/test_figure.png" alt=""></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
+  </entry>
+  <entry>
     <title>MATLAB绘图样例</title>
     <url>/2020/04/09/MATLAB%E7%BB%98%E5%9B%BE%E6%A0%B7%E4%BE%8B/</url>
     <content><![CDATA[<p>简单给出MATLAB一些常见图的绘制代码。</p>
 <a id="more"></a>
 
-<h5 id="线图（plot）"><a href="#线图（plot）" class="headerlink" title="线图（plot）"></a>线图（plot）</h5><figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="comment">% 设置图片大小，[距屏幕左边距离，距屏幕下面距离，长，高 ]</span></span><br><span class="line"><span class="built_in">figure</span>(<span class="string">'position'</span>, [<span class="number">300</span>, <span class="number">400</span>, <span class="number">600</span>, <span class="number">350</span>]); </span><br><span class="line"></span><br><span class="line">hData = <span class="built_in">plot</span>(base_NCP_daily,<span class="string">'linewidth'</span>,<span class="number">3.5</span>,...</span><br><span class="line"><span class="string">'color'</span>,[<span class="number">0.8500</span>, <span class="number">0.3250</span>, <span class="number">0.0980</span>]); <span class="comment">% 线图</span></span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line">hE = errorbar(x,obs_NCP_daily, obs_std) <span class="comment">%带errorbar的线图</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% 设置errorbar线图</span></span><br><span class="line">set(hE                            , …</span><br><span class="line"><span class="string">'Marker'</span>          , <span class="string">'.'</span>         , …</span><br><span class="line"><span class="string">'Color'</span>           , [<span class="number">.3</span> <span class="number">.3</span> <span class="number">.3</span>]  ,…</span><br><span class="line"><span class="string">'LineStyle'</span>       ,<span class="string">'none'</span>       ,…</span><br><span class="line"><span class="string">'Marker'</span>          , <span class="string">'o'</span>         , …</span><br><span class="line"><span class="string">'MarkerSize'</span>      , <span class="number">8</span>           , …</span><br><span class="line"><span class="string">'MarkerEdgeColor'</span> , [<span class="number">.2</span> <span class="number">.2</span> <span class="number">.2</span>]  , …</span><br><span class="line"><span class="string">'MarkerFaceColor'</span> , [<span class="number">.7</span> <span class="number">.7</span> <span class="number">.7</span>]  ,…</span><br><span class="line"><span class="string">'linewidth'</span>,<span class="number">1.5</span>);</span><br><span class="line"></span><br><span class="line">set(gca,<span class="string">'XLim'</span>,[<span class="number">0</span> <span class="number">32</span>],<span class="string">'YLim'</span>,[<span class="number">0</span> <span class="number">160</span>]); <span class="comment">% 设置横纵坐标的范围</span></span><br><span class="line">set(gca, <span class="string">'Box'</span>, <span class="string">'on'</span>, <span class="string">'TickDir'</span>, <span class="string">'out'</span>,<span class="string">'LineWidth'</span>, <span class="number">1</span>, …</span><br><span class="line"><span class="string">'XMinorTick'</span>, <span class="string">'on'</span>, <span class="string">'YMinorTick'</span>, <span class="string">'on'</span>, <span class="string">'YGrid'</span>, <span class="string">'on'</span>,...</span><br><span class="line"><span class="string">'FontName'</span>, <span class="string">'Arial'</span>,<span class="string">'fontsize'</span>,<span class="number">12</span>); <span class="comment">% 美化坐标轴</span></span><br><span class="line"></span><br><span class="line">xlabel(<span class="string">'day'</span>); <span class="comment">% 坐标轴名称</span></span><br><span class="line">ylabel(<span class="string">'O3 MDA8 (ppbv)'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">%设置legend标签</span></span><br><span class="line">hLegend = <span class="built_in">legend</span>( …</span><br><span class="line">[hE, hData], …</span><br><span class="line"><span class="string">'Observation (\mu \pm \sigma)'</span> , …</span><br><span class="line"><span class="string">'GEOS-Chem base'</span>                , …</span><br><span class="line"><span class="string">'location'</span>, <span class="string">'NorthEast'</span> );</span><br><span class="line"><span class="comment">% 额外加入一些文字</span></span><br><span class="line">text(<span class="number">2</span>,<span class="number">150</span>,<span class="string">'NCP '</span>,<span class="string">'fontsize'</span>,<span class="number">14</span>,<span class="string">'fontname'</span>,<span class="string">'Arial'</span>)</span><br></pre></td></tr></table></figure>
+<h5 id="线图（plot）"><a href="#线图（plot）" class="headerlink" title="线图（plot）"></a>线图（plot）</h5><figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">% 设置图片大小，[距屏幕左边距离，距屏幕下面距离，长，高 ]</span></span><br><span class="line"><span class="built_in">figure</span>(<span class="string">'position'</span>, [<span class="number">300</span>, <span class="number">400</span>, <span class="number">600</span>, <span class="number">350</span>]); </span><br><span class="line"></span><br><span class="line">hData = <span class="built_in">plot</span>(base_NCP_daily,<span class="string">'linewidth'</span>,<span class="number">3.5</span>,...</span><br><span class="line"><span class="string">'color'</span>,[<span class="number">0.8500</span>, <span class="number">0.3250</span>, <span class="number">0.0980</span>]); <span class="comment">% 线图</span></span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line">hE = errorbar(x,obs_NCP_daily, obs_std) <span class="comment">%带errorbar的线图</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% 设置errorbar线图</span></span><br><span class="line">set(hE                            , …</span><br><span class="line"><span class="string">'Marker'</span>          , <span class="string">'.'</span>         , …</span><br><span class="line"><span class="string">'Color'</span>           , [<span class="number">.3</span> <span class="number">.3</span> <span class="number">.3</span>]  ,…</span><br><span class="line"><span class="string">'LineStyle'</span>       ,<span class="string">'none'</span>       ,…</span><br><span class="line"><span class="string">'Marker'</span>          , <span class="string">'o'</span>         , …</span><br><span class="line"><span class="string">'MarkerSize'</span>      , <span class="number">8</span>           , …</span><br><span class="line"><span class="string">'MarkerEdgeColor'</span> , [<span class="number">.2</span> <span class="number">.2</span> <span class="number">.2</span>]  , …</span><br><span class="line"><span class="string">'MarkerFaceColor'</span> , [<span class="number">.7</span> <span class="number">.7</span> <span class="number">.7</span>]  ,…</span><br><span class="line"><span class="string">'linewidth'</span>,<span class="number">1.5</span>);</span><br><span class="line"></span><br><span class="line">set(gca,<span class="string">'XLim'</span>,[<span class="number">0</span> <span class="number">32</span>],<span class="string">'YLim'</span>,[<span class="number">0</span> <span class="number">160</span>]); <span class="comment">% 设置横纵坐标的范围</span></span><br><span class="line">set(gca, <span class="string">'Box'</span>, <span class="string">'on'</span>, <span class="string">'TickDir'</span>, <span class="string">'out'</span>,<span class="string">'LineWidth'</span>, <span class="number">1</span>, …</span><br><span class="line"><span class="string">'XMinorTick'</span>, <span class="string">'on'</span>, <span class="string">'YMinorTick'</span>, <span class="string">'on'</span>, <span class="string">'YGrid'</span>, <span class="string">'on'</span>,...</span><br><span class="line"><span class="string">'FontName'</span>, <span class="string">'Arial'</span>,<span class="string">'fontsize'</span>,<span class="number">12</span>); <span class="comment">% 美化坐标轴</span></span><br><span class="line"></span><br><span class="line">xlabel(<span class="string">'day'</span>); <span class="comment">% 坐标轴名称</span></span><br><span class="line">ylabel(<span class="string">'O3 MDA8 (ppbv)'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">%设置legend标签</span></span><br><span class="line">hLegend = <span class="built_in">legend</span>( …</span><br><span class="line">[hE, hData], …</span><br><span class="line"><span class="string">'Observation (\mu \pm \sigma)'</span> , …</span><br><span class="line"><span class="string">'GEOS-Chem base'</span>                , …</span><br><span class="line"><span class="string">'location'</span>, <span class="string">'NorthEast'</span> );</span><br><span class="line"><span class="comment">% 额外加入一些文字</span></span><br><span class="line">text(<span class="number">2</span>,<span class="number">150</span>,<span class="string">'NCP '</span>,<span class="string">'fontsize'</span>,<span class="number">14</span>,<span class="string">'fontname'</span>,<span class="string">'Arial'</span>)</span><br></pre></td></tr></tbody></table></figure>
 
 <p>类似效果图</p>
 <p> <img src="/images/image-1.png" alt="image-1"></p>
-<h5 id="地图（contour）"><a href="#地图（contour）" class="headerlink" title="地图（contour）"></a>地图（contour）</h5><figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="comment">% 设置投影格式，经纬度范围</span></span><br><span class="line">m_proj(<span class="string">'miller'</span>,<span class="string">'longitudes'</span>,[<span class="number">71</span> <span class="number">139</span>],<span class="string">'latitudes'</span>,[<span class="number">15</span> <span class="number">55</span>]); </span><br><span class="line">[X, Y] = <span class="built_in">meshgrid</span>(lon,lat); <span class="comment">% 经纬度需从nc文件读取</span></span><br><span class="line">m_contourf(X',Y',NO_anthro,<span class="string">'Linestyle'</span>,<span class="string">'none'</span>); <span class="comment">% 去掉contourf之间的线</span></span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line"></span><br><span class="line">m_plot(bou1_4px,bou1_4py,<span class="string">'k'</span>,<span class="string">'LineWidth'</span>,<span class="number">1</span>); <span class="comment">% 绘制省界，参考之前的笔记</span></span><br><span class="line">m_coast(<span class="string">'line'</span>,<span class="string">'linewidth'</span>,<span class="number">1</span>,<span class="string">'color'</span>,<span class="string">'black'</span>); <span class="comment">% 绘制海岸线</span></span><br><span class="line">m_grid(<span class="string">'fontsize'</span>,<span class="number">5</span>,<span class="string">'linespec'</span>,<span class="string">'none'</span>,<span class="string">'xticklabels'</span>,<span class="string">''</span>,<span class="string">'yticklabels'</span>,<span class="string">''</span>); <span class="comment">% 设置地图边框格式，这里不显示任何信息</span></span><br><span class="line">title(<span class="string">'(a) Anthropogenic NO'</span>,<span class="string">'fontsize'</span>,<span class="number">14</span>,<span class="string">'fontname'</span>,<span class="string">'Arial'</span>); <span class="comment">% 设置标题</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% 自己设置的colorbar RGB颜色</span></span><br><span class="line">colmap = [<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>;<span class="number">230</span>,<span class="number">230</span>,<span class="number">250</span>;<span class="number">135</span>,<span class="number">206</span>,<span class="number">250</span>;...</span><br><span class="line"><span class="number">64</span>,<span class="number">224</span>,<span class="number">208</span>;<span class="number">60</span>,<span class="number">179</span>,<span class="number">113</span>;<span class="number">255</span>,<span class="number">215</span>,<span class="number">0</span>;<span class="number">255</span>,...</span><br><span class="line"><span class="number">140</span>,<span class="number">0</span>;<span class="number">255</span>,<span class="number">69</span>,<span class="number">0</span>;<span class="number">165</span>,<span class="number">42</span>,<span class="number">42</span>;<span class="number">128</span>,<span class="number">0</span>,<span class="number">0</span>]/<span class="number">256</span>;</span><br><span class="line">colormap(colmap); <span class="comment">% 启用colmap</span></span><br><span class="line">caxis([<span class="number">1</span> <span class="number">100</span>]) <span class="comment">% 设置数值范围</span></span><br><span class="line">text(<span class="number">-0.55</span>,<span class="number">1.02</span>,<span class="number">10</span>,[num2str(roundn(total_NO_anthro_NCP,<span class="number">-2</span>)),<span class="string">' Tg N'</span>],<span class="string">'fontsize'</span>,<span class="number">16</span>) <span class="comment">% 额外加文字</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% 显示colorbar并设置其位置等，horiz表示横向，纵向则不用写</span></span><br><span class="line">hcb = colorbar(<span class="string">'horiz'</span>,<span class="string">'position'</span>,[<span class="number">0.3</span>,<span class="number">0.18</span>,<span class="number">0.4</span>,<span class="number">0.04</span>],<span class="string">'FontSize'</span>,<span class="number">14</span>,<span class="string">'FontWeight'</span>,<span class="string">'bold'</span>)</span><br></pre></td></tr></table></figure>
+<h5 id="地图（contour）"><a href="#地图（contour）" class="headerlink" title="地图（contour）"></a>地图（contour）</h5><figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">% 设置投影格式，经纬度范围</span></span><br><span class="line">m_proj(<span class="string">'miller'</span>,<span class="string">'longitudes'</span>,[<span class="number">71</span> <span class="number">139</span>],<span class="string">'latitudes'</span>,[<span class="number">15</span> <span class="number">55</span>]); </span><br><span class="line">[X, Y] = <span class="built_in">meshgrid</span>(lon,lat); <span class="comment">% 经纬度需从nc文件读取</span></span><br><span class="line">m_contourf(X',Y',NO_anthro,<span class="string">'Linestyle'</span>,<span class="string">'none'</span>); <span class="comment">% 去掉contourf之间的线</span></span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line"></span><br><span class="line">m_plot(bou1_4px,bou1_4py,<span class="string">'k'</span>,<span class="string">'LineWidth'</span>,<span class="number">1</span>); <span class="comment">% 绘制省界，参考之前的笔记</span></span><br><span class="line">m_coast(<span class="string">'line'</span>,<span class="string">'linewidth'</span>,<span class="number">1</span>,<span class="string">'color'</span>,<span class="string">'black'</span>); <span class="comment">% 绘制海岸线</span></span><br><span class="line">m_grid(<span class="string">'fontsize'</span>,<span class="number">5</span>,<span class="string">'linespec'</span>,<span class="string">'none'</span>,<span class="string">'xticklabels'</span>,<span class="string">''</span>,<span class="string">'yticklabels'</span>,<span class="string">''</span>); <span class="comment">% 设置地图边框格式，这里不显示任何信息</span></span><br><span class="line">title(<span class="string">'(a) Anthropogenic NO'</span>,<span class="string">'fontsize'</span>,<span class="number">14</span>,<span class="string">'fontname'</span>,<span class="string">'Arial'</span>); <span class="comment">% 设置标题</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% 自己设置的colorbar RGB颜色</span></span><br><span class="line">colmap = [<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>;<span class="number">230</span>,<span class="number">230</span>,<span class="number">250</span>;<span class="number">135</span>,<span class="number">206</span>,<span class="number">250</span>;...</span><br><span class="line"><span class="number">64</span>,<span class="number">224</span>,<span class="number">208</span>;<span class="number">60</span>,<span class="number">179</span>,<span class="number">113</span>;<span class="number">255</span>,<span class="number">215</span>,<span class="number">0</span>;<span class="number">255</span>,...</span><br><span class="line"><span class="number">140</span>,<span class="number">0</span>;<span class="number">255</span>,<span class="number">69</span>,<span class="number">0</span>;<span class="number">165</span>,<span class="number">42</span>,<span class="number">42</span>;<span class="number">128</span>,<span class="number">0</span>,<span class="number">0</span>]/<span class="number">256</span>;</span><br><span class="line">colormap(colmap); <span class="comment">% 启用colmap</span></span><br><span class="line">caxis([<span class="number">1</span> <span class="number">100</span>]) <span class="comment">% 设置数值范围</span></span><br><span class="line">text(<span class="number">-0.55</span>,<span class="number">1.02</span>,<span class="number">10</span>,[num2str(roundn(total_NO_anthro_NCP,<span class="number">-2</span>)),<span class="string">' Tg N'</span>],<span class="string">'fontsize'</span>,<span class="number">16</span>) <span class="comment">% 额外加文字</span></span><br><span class="line"></span><br><span class="line"><span class="comment">% 显示colorbar并设置其位置等，horiz表示横向，纵向则不用写</span></span><br><span class="line">hcb = colorbar(<span class="string">'horiz'</span>,<span class="string">'position'</span>,[<span class="number">0.3</span>,<span class="number">0.18</span>,<span class="number">0.4</span>,<span class="number">0.04</span>],<span class="string">'FontSize'</span>,<span class="number">14</span>,<span class="string">'FontWeight'</span>,<span class="string">'bold'</span>)</span><br></pre></td></tr></tbody></table></figure>
 
 <p>类似效果图</p>
 <p><img src="/images/image-1536x542.png" alt="image-1536x542"></p>
-<h5 id="箱型图（box-plot）"><a href="#箱型图（box-plot）" class="headerlink" title="箱型图（box plot）"></a>箱型图（box plot）</h5><figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line"><span class="comment">% 预处理，这里分两组</span></span><br><span class="line">x1 = [anthro_soil_1,anthro_soil_2,anthro_soil_3];</span><br><span class="line">x2 = [anthro_nosoil_1,anthro_nosoil_2,anthro_nosoil_3];</span><br><span class="line"> </span><br><span class="line"><span class="comment">% 绘制箱型图，position后的[]表示其所在位置</span></span><br><span class="line">h2 = boxplot(x1,<span class="string">'positions'</span>,[<span class="number">1.5</span>,<span class="number">3.5</span>,<span class="number">5.5</span>],<span class="string">'symbol'</span>,<span class="string">''</span>,<span class="string">'width'</span>,<span class="number">0.35</span>,<span class="string">'color'</span>,<span class="string">'r'</span>);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line">h1 = boxplot(x2,<span class="string">'positions'</span>,[<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>],<span class="string">'symbol'</span>,<span class="string">''</span>,<span class="string">'width'</span>,<span class="number">0.35</span>,<span class="string">'color'</span>,[<span class="number">0</span>,<span class="number">0.4470</span>,<span class="number">0.7410</span>]);</span><br><span class="line"> </span><br><span class="line">label = &#123;<span class="string">'&lt;33%'</span>,<span class="string">'33%-67%'</span>,<span class="string">'&gt;67%'</span>&#125;;</span><br><span class="line"> </span><br><span class="line">xlabel(<span class="string">'GC O3 MDA8'</span>)</span><br><span class="line">ylabel(<span class="string">'Anthro Contribution (ppb)'</span>)</span><br><span class="line"> </span><br><span class="line"><span class="comment">% 设置坐标轴</span></span><br><span class="line">set(gca,<span class="string">'XTick'</span>,[<span class="number">1.75</span> <span class="number">3.75</span>, <span class="number">5.75</span>],<span class="string">'XTickLabel'</span>,label,<span class="string">'Xlim'</span>,[<span class="number">1</span> <span class="number">6.5</span>],<span class="string">'Ylim'</span>,[<span class="number">-10</span> <span class="number">60</span>],...</span><br><span class="line">    <span class="string">'Box'</span>, <span class="string">'off'</span>, <span class="string">'TickDir'</span>, <span class="string">'out'</span>,<span class="string">'LineWidth'</span>, <span class="number">1</span>,...</span><br><span class="line">    <span class="string">'FontName'</span>, <span class="string">'Helvetica'</span>,<span class="string">'fontsize'</span>,<span class="number">12</span>)</span><br><span class="line"> </span><br><span class="line"><span class="comment">% 添加一些文字</span></span><br><span class="line">text(<span class="number">1.25</span>,<span class="number">55</span>,<span class="string">'base'</span>,<span class="string">'color'</span>,<span class="string">'r'</span>,<span class="string">'fontsize'</span>,<span class="number">14</span>,<span class="string">'fontweight'</span>,<span class="string">'bold'</span>)</span><br><span class="line">text(<span class="number">2</span>,<span class="number">55</span>,<span class="string">'no soil'</span>,<span class="string">'color'</span>,[<span class="number">0</span>,<span class="number">0.4470</span>,<span class="number">0.7410</span>],<span class="string">'fontsize'</span>,<span class="number">14</span>,<span class="string">'fontweight'</span>,<span class="string">'bold'</span>)</span><br><span class="line">text(<span class="number">4.75</span>,<span class="number">-3</span>,<span class="string">'NCP 55 cities'</span>,<span class="string">'color'</span>,<span class="string">'black'</span>,<span class="string">'fontsize'</span>,<span class="number">12</span>,<span class="string">'fontweight'</span>,<span class="string">'bold'</span>)</span><br><span class="line"> </span><br><span class="line"><span class="comment">% 设置箱型图边框的粗细</span></span><br><span class="line">set(h1,&#123;<span class="string">'linew'</span>&#125;,&#123;<span class="number">1.5</span>&#125;)</span><br><span class="line">set(h2,&#123;<span class="string">'linew'</span>&#125;,&#123;<span class="number">1.5</span>&#125;)</span><br></pre></td></tr></table></figure>
+<h5 id="箱型图（box-plot）"><a href="#箱型图（box-plot）" class="headerlink" title="箱型图（box plot）"></a>箱型图（box plot）</h5><figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">% 预处理，这里分两组</span></span><br><span class="line">x1 = [anthro_soil_1,anthro_soil_2,anthro_soil_3];</span><br><span class="line">x2 = [anthro_nosoil_1,anthro_nosoil_2,anthro_nosoil_3];</span><br><span class="line"> </span><br><span class="line"><span class="comment">% 绘制箱型图，position后的[]表示其所在位置</span></span><br><span class="line">h2 = boxplot(x1,<span class="string">'positions'</span>,[<span class="number">1.5</span>,<span class="number">3.5</span>,<span class="number">5.5</span>],<span class="string">'symbol'</span>,<span class="string">''</span>,<span class="string">'width'</span>,<span class="number">0.35</span>,<span class="string">'color'</span>,<span class="string">'r'</span>);</span><br><span class="line"><span class="built_in">hold</span> on;</span><br><span class="line">h1 = boxplot(x2,<span class="string">'positions'</span>,[<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>],<span class="string">'symbol'</span>,<span class="string">''</span>,<span class="string">'width'</span>,<span class="number">0.35</span>,<span class="string">'color'</span>,[<span class="number">0</span>,<span class="number">0.4470</span>,<span class="number">0.7410</span>]);</span><br><span class="line"> </span><br><span class="line">label = {<span class="string">'&lt;33%'</span>,<span class="string">'33%-67%'</span>,<span class="string">'&gt;67%'</span>};</span><br><span class="line"> </span><br><span class="line">xlabel(<span class="string">'GC O3 MDA8'</span>)</span><br><span class="line">ylabel(<span class="string">'Anthro Contribution (ppb)'</span>)</span><br><span class="line"> </span><br><span class="line"><span class="comment">% 设置坐标轴</span></span><br><span class="line">set(gca,<span class="string">'XTick'</span>,[<span class="number">1.75</span> <span class="number">3.75</span>, <span class="number">5.75</span>],<span class="string">'XTickLabel'</span>,label,<span class="string">'Xlim'</span>,[<span class="number">1</span> <span class="number">6.5</span>],<span class="string">'Ylim'</span>,[<span class="number">-10</span> <span class="number">60</span>],...</span><br><span class="line">    <span class="string">'Box'</span>, <span class="string">'off'</span>, <span class="string">'TickDir'</span>, <span class="string">'out'</span>,<span class="string">'LineWidth'</span>, <span class="number">1</span>,...</span><br><span class="line">    <span class="string">'FontName'</span>, <span class="string">'Helvetica'</span>,<span class="string">'fontsize'</span>,<span class="number">12</span>)</span><br><span class="line"> </span><br><span class="line"><span class="comment">% 添加一些文字</span></span><br><span class="line">text(<span class="number">1.25</span>,<span class="number">55</span>,<span class="string">'base'</span>,<span class="string">'color'</span>,<span class="string">'r'</span>,<span class="string">'fontsize'</span>,<span class="number">14</span>,<span class="string">'fontweight'</span>,<span class="string">'bold'</span>)</span><br><span class="line">text(<span class="number">2</span>,<span class="number">55</span>,<span class="string">'no soil'</span>,<span class="string">'color'</span>,[<span class="number">0</span>,<span class="number">0.4470</span>,<span class="number">0.7410</span>],<span class="string">'fontsize'</span>,<span class="number">14</span>,<span class="string">'fontweight'</span>,<span class="string">'bold'</span>)</span><br><span class="line">text(<span class="number">4.75</span>,<span class="number">-3</span>,<span class="string">'NCP 55 cities'</span>,<span class="string">'color'</span>,<span class="string">'black'</span>,<span class="string">'fontsize'</span>,<span class="number">12</span>,<span class="string">'fontweight'</span>,<span class="string">'bold'</span>)</span><br><span class="line"> </span><br><span class="line"><span class="comment">% 设置箱型图边框的粗细</span></span><br><span class="line">set(h1,{<span class="string">'linew'</span>},{<span class="number">1.5</span>})</span><br><span class="line">set(h2,{<span class="string">'linew'</span>},{<span class="number">1.5</span>})</span><br></pre></td></tr></tbody></table></figure>
 
 <p>类似效果图</p>
 <p><img src="/images/image-2.png" alt="image-2"></p>
-]]></content>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
       <categories>
         <category>技术</category>
       </categories>
@@ -155,29 +123,90 @@
       </tags>
   </entry>
   <entry>
-    <title>洗澡</title>
-    <url>/2019/05/20/%E6%B4%97%E6%BE%A1/</url>
-    <content><![CDATA[<blockquote><p>上冲下洗，左揉右搓。人穿上衣服分个三六九等，来了这儿，都一样。房子再贵，真正需要的也不过一张小床，衣服再华丽，进了澡堂大家都一个样，唯有身上的精气神是能够长久留下来的东西。</p>
-</blockquote>
+    <title>为什么叫远东二三叶</title>
+    <url>/2019/05/15/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AB%E8%BF%9C%E4%B8%9C%E4%BA%8C%E4%B8%89%E5%8F%B6%EF%BC%9F/</url>
+    <content><![CDATA[<p>远东二三叶，其实一开始是源自前女友闺蜜的QQ名：远东二三清。我不知道她取这个昵称是有什么寓意，不过这种风格确实讨我喜，又因为我姓叶，所以我便取了这样一个名。</p>
 <a id="more"></a>
-<p>扬泰地区有句话叫：早上皮包水，晚上水包皮。”皮包水”是指汤包，外面是皮，里面是汤汁。”水包皮”则指泡澡，可以说是扬泰人最喜欢的一项活动。</p>
-<p>从小，父亲就带我出入大小澡堂。</p>
-<p>小时候泡澡，一般是在老家泰兴。那时候的澡堂子又破又烂，只要5块钱。不管是老大爷，年轻小伙，还是我这种被家长带来的小孩子，三下五除二脱了衣服就扎进一堆人围着的池子。池子里，有默默坐着闭目养神的，脑袋上冒着安逸的热气；有不停往身上浇水，打肥皂，洗头的——那时候哪里有不准在公池打肥皂的规定；还有在开水池子木板上烫脚，并接连发出舒爽愉悦的享受声的。后来父亲告诉我，那是因为脚上如果有死皮会特别痒，而这样的烂脚碰上烫水的蒸汽，那种痛并快乐感是无以言表的。我听的一愣一愣：总之，每次洗澡的我更像是参加一种大型博览会，形形色色的人赤裸全身围着早已起不到洁净作用的脏水池子，有的只是一条不知道有没有处理干净的白色毛巾。唯一的共同点是，这些人好像都放下了一天下来所有的包袱，解除了所有的伪装，所以我不难理解为什么很多做生意请客吃饭的人总要在一天的最后安排洗澡的活动——这时候的人也许是最原始，最不设防备的吧。</p>
-<p>被等候在出口处的大爷擦干净身体后，洗澡并没有结束，对一些人来说，甚至是刚刚开始。</p>
-<p>我一般是坐在旁边看着父亲刮脚，捏脚。当修脚师傅挥舞着修脚刀在指间出神入化地飞舞不能吸引我时，我就会百无聊赖地看看电视，吃吃水果（当然，现在我会乐此不疲地刷着手机）。不知我到几岁时起，父亲会也给我安排项目——我脚上当然没有死皮，所以我一般是找人按摩。</p>
-<p>于是，我有点上瘾了。</p>
-<p>这之后，洗澡这件事在性质上发生了巨大的变化。不管是从大人口中还是同学那里听来的，总之，澡堂在我眼里变成了色情场所。这样的变化可以说源于我年龄的增长，从毛长不起的屁孩到声音变粗的小大人，也可以理解成泰州地区特殊服务行业的快速发展。不过后来我意识到，色情行业自古以来就从未低潮过，只是以不同的打扮存在于不同的角落，曾经是青楼，现在可能就是澡堂、足疗店。当然，我没有搞什么黄色，但是躺在那里被异性按摩触碰身体本身就是件概念上很暧昧的事情。更何况，澡堂在不知不觉间，将按摩你的技师从原先40岁左右经验丰富、手劲十足的大妈替换成如今花枝招展、却华而不实的年轻小姑娘。</p>
-<p>我后来离开了泰州，到南京求学。因为学业繁忙，加上人生地不熟的，所以也一开始不知道哪里可以体验到像泰州那样的澡堂子。后来才知道，澡堂，或者准确说，洗浴中心，全国上下遍地都是，有的只是我想象不到的排场和铺张。南京印象中的洗浴中心有两家，一家常去，一家只去过一次。只去过一次的那个叫浅深，门票就要100大几，是我洗过最贵的澡堂。进去之后仿佛进了宫殿，雕像、喷泉，比比皆是，但不知怎的，穿行其间只觉得过分夸张和俗气。常去的一家位于宝船厂遗址附近，门票也100多，但提供免费的自助餐，所以性价比还算可以。最重要的是那家环境不错，低调大气有内涵，卫生也上佳，擦备用的澡巾都是一次性的，不像泰州那些不知道擦过多少人多少肮脏部位。上大学后有次和父亲准备故地重游，却发现那里倒闭了，实在可惜。</p>
-<p>寒假时和泰州朋友临时起意去扬州旅游。回到澡堂文化的发源地，我们不免有种”朝圣”的心理，所以打听了一家口碑还不错的洗浴中心，叫易德养生会馆。（按说如果要朝圣，应去最古老的澡堂。扬州也确实保留不少有百年历史的澡堂子，但碍于卫生原因和对度假心情的影响，我们还是去了现代化的洗浴中心。）好歹也是从小到大见识过不少澡堂的人了，但见识到扬州这里的布局和风格时，还是不免内心感叹一声牛逼。整体装修有股日式风味，深黄色为主色调，给人以休憩的舒适感，但不至于昏沉。没有极尽奢华之能事的雕像或喷泉，简简单单的几根立柱之外好像就没有什么多余的不实用的装饰。布局方面，公共池位于正中，周围是淋浴间和桑拿房等一众助浴设施，搓澡房则位于单独挑开的一层半空间。更衣室位于二楼，与楼下的公共池用洁净的落地窗隔开，从上面眺望下去，整个男浴室的布局尽收眼底。服务方面更不用赘述，和泰州那种搓澡仿佛跟流水线上杀猪的操作相比，扬州的擦背可以称得上艺术。</p>
-<p>可惜我不在扬州，如果有车，从学校到那里的距离也不会太远，不过我相信这样的场所不管是在南京还是泰州，应该都会越来越多。毕竟现在对于年轻人来说，体验决定一切，我想这也会倒逼一些洗浴中心完善它们的环境和服务吧。</p>
-<p>那天在群里看到这样一则新闻：上海禁止所有洗浴中心异性按摩的服务。我补充道：听我爸说，泰州似乎在这方面最近也查的挺严的了。后来我还开玩笑的表示，如果真是这样，对泰州经济第三产业将会是一次不小的打击。</p>
-<p>可能打击或多或少有点吧，不过这不影响澡堂在我心中的地位——它曾经是为了单纯的洗污除垢，后来是游走在法律灰色地带的色情场合，现在则是我生活中必不可少的一部分，是回归，是重生，是精神家园。</p>
-]]></content>
+
+<p><strong>这个名字后来越看越顺眼。</strong></p>
+<p>远东，Far East，是西方国家的用语，用来区别于东欧之类的”近东”，阿拉伯半岛之类的”中东”。中国🇨🇳即为远东地区的一国，所以从地理位置上，这个名字表义正确。更巧的是，本人所在的高校——南京大学里，有一条主干道亦为此名。上课、吃饭、回宿舍，我每天都要在这条远东大道花上不少时间，所以感情也极为深刻。</p>
+<p>此外，南大曾经有个乐队，边界自由，其主打曲就叫《远东大道》，旋律抓人，主题也很青春，我甚至买了他们的专辑。只不过现在放在宿舍书桌的最上一层，落了不少灰。</p>
+<p><img src="https://pic.xiami.net/images/album/img59/1294626159/21027528231495632777.jpeg?x-oss-process=image/quality,q_80/format,jpg" alt="IMG_8266"></p>
+<p><em>收留《远东大道》的专辑《人民英雄》封面</em></p>
+<p><a href="https://music.163.com/#/song?id=482135817&amp;market=baiduqk" target="_blank" rel="noopener">网易云试听链接</a></p>
+<p>二三叶。我一直觉得名字里带些数字，给人的感觉会更舒服，更亲切。但如若强加数字，又显得很做作了。”二三”，学过文言文的大概都能记起这是个约数，表一些，不是很多，但也有那么一点。连起后面的”叶”字，显得颇有意境。所以我时常感叹自己的姓氏不错——笔画少，意向好，最重要的，有一股古代武侠的风骨。</p>
+<p>哦，刚上网查了一下二三，发现还有反复不定的意思。我想这也符合我的性格吧，有点善变。</p>
+<p>（以前我的网名叫<strong>盛满伤心的罐头</strong>，是很小时候取的了。很多人看到这个名字都会来问我，为什么叫这个名字，我一律回复：没有。确实没有，当时取这个名字脑子里真没有太多的想法。如果硬要解释，我觉得也只能说，伤心二字有点年轻时为赋新词强说愁的意味。至于罐头，真是无从说起了。）</p>
+<p>我写过无数个日记本的开头了，这篇是第几个，我已数不清了。在写这个之前，我在知乎，google上查了很多”在哪里写blog比较好”之类的问题，看得我眼花缭乱，甚至头疼。互联网时代新奇东西太多了，我想真正想坚持写的人（我姑且不能算这类人，结合之前经常半途而废的经验）是不会拘泥格式的，如果说最好的，我想肯定是一张纸，一支笔。</p>
+<p>总结这些方法，wordpress，github一类需要自己搭建，准备的太多，我害怕折腾完这些，想写东西的心情早已全无。简书、知乎、tumblr之类，方便是方便，但思来想去，总有一种碎片式的廉价感，以及随时会被和谐的不稳定性。最后我折中出一个方案，那就是以Markdown形式，用现有的，并且习惯了的Typora来写博客。然后同步到Dropbox里，以备丢失。</p>
+<p>Markdown好处在于文字图片链接Latex等等功能一个不少。而Typora的简洁风格又深得我喜好，且在书写时有良好的沉浸式体验。我想，基本能满足我所有的需求了。</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
       <categories>
         <category>随笔</category>
       </categories>
+  </entry>
+  <entry>
+    <title>Mac ssh X11配置</title>
+    <url>/2019/03/26/Mac%20ssh%20X11%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>本文介绍Mac端ssh远程服务器时，X11图形界面相关的配置操作。</p>
+<a id="more"></a>
+
+<ol>
+<li><p>下载XQuartz</p>
+</li>
+<li><p>在终端下编辑/etc/ssh/ssh_config文件，需要sudo vim 打开，将X11Forwarding no 修改为 yes（在新的系统版本中，在ssh_config文件中Host下添加Forward三行，如下图）</p>
+<p><img src="/images/mac_ssh_1.png" alt=""></p>
+</li>
+<li><p>打开XQuartz情况下，ssh -Y连接ssh服务器即可打开GUI</p>
+</li>
+<li><p>若出现报错No xauth data; using fake authentication data for X11 forwarding.则在ssh_config文件中添加一行XAuthLocation /opt/X11/bin/xauth</p>
+</li>
+</ol>
+<p>ssh_config最终如下<br>    <img src="/images/mac_ssh_2.png" alt=""></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
       <tags>
-        <tag>洗澡</tag>
+        <tag>Mac</tag>
+        <tag>ssh</tag>
+        <tag>X11</tag>
       </tags>
   </entry>
   <entry>
@@ -190,12 +219,118 @@
 <p>除此之外，南大比较会的一个地方在于，在一些比较成熟的科考项目中（比如贝加尔湖和阿尔卑斯山科考），加入对高中生的选拔。这些高中生往往就来自于上述提到的西部地区。他们可能之前不知道南大或了解甚少，但经历过科考，他们对南大的印象肯定加深。口口相传之下，他们身边的同学、家长也就有了更多的了解。加上一些他们所在高中甚至地区的公众号宣传，南哪儿大学的梗，我想说不定在以后也不会再有。</p>
 <p>这次去别的学校夏令营，在谈及本科生活经历时，一位上交老哥突然对我竖起大拇指：不愧是做最好的本科教育。我瞬间有点苦笑不得，但也鼻子有点酸酸：这个口号我在刚入校时觉得是空话、大话、甚至是谎话。但三年下来再看这句话，我觉得南大确实也有这样的底气和信心。有个天天diss南大哪里哪里不好的大四学姐，在即将毕业时，发了一条pyq谈到这个口号，她说：最好不一定，但是前三应该没问题。</p>
 <p>我想，嗯，应该没问题，如果宿舍来个热水就更好了。</p>
-]]></content>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
       <categories>
         <category>随笔</category>
       </categories>
       <tags>
         <tag>南大</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>微信聊天记录导出</title>
+    <url>/2020/03/05/%E5%BE%AE%E4%BF%A1%E8%81%8A%E5%A4%A9%E8%AE%B0%E5%BD%95%E5%AF%BC%E5%87%BA/</url>
+    <content><![CDATA[<p>与npy很快就要在一起一周年了，在pyq某同学的提醒下意识到完全可以将微信聊天记录导出并且进行一波数据分析。（p，实际就是看看谁的话多，每天几点话最多，一年以来的时间序列…之类的简单操作）</p>
+<a id="more"></a>
+
+<h5 id="前提工作与说明"><a href="#前提工作与说明" class="headerlink" title="前提工作与说明"></a>前提工作与说明</h5><p>确认一下微信里聊天记录是否健在（bushi），如果方便，可以提前把其他人的聊天记录都删了，这样备份快，并且好找。如果有一些其他人的重要信息不太能删的，emmm，那最好你想要导出的这个人的聊天记录是所有人当中最多的，这样我们之后在导出到电脑后方便选择。（实际上关于如何确定哪个记录属于谁这个问题，可以通过微信ID来定位，然而这个方法貌似只适用于没有修改过微信默认ID的情况，因此这里就先不介绍了）另外， 我这里使用的是windows系统以及苹果手机。（关于安卓手机的方法百度一下貌似更多） </p>
+<h5 id="关于如何导出聊天记录到电脑"><a href="#关于如何导出聊天记录到电脑" class="headerlink" title="关于如何导出聊天记录到电脑"></a>关于如何导出聊天记录到电脑</h5><p>首先，我们下载iTunes，将手机连上电脑后，选择备份。如果你手机内容很多的话，这个过程可能要很久……备份成功后，我们在编辑/偏好设置/设备/ 中能够看到已经备份好的手机。</p>
+<p>这之后我们下载“<a href="https://www.louyue.com/itunes.htm" target="_blank" rel="noopener">楼月免费iTunes备份管理器</a>”，在微信聊天记录里面，导出Documents文件夹到我们想要的一个目录。在Documents文件下内，会有一个由数字字母组成的乱码一样的文件夹，那个文件夹便是我们聊天记录所在的位置。（如果有多个微信账号，会有多个乱码文件夹，这时候判断一下文件大小应该可以知道谁是谁）</p>
+<h5 id="找到指定好友"><a href="#找到指定好友" class="headerlink" title="找到指定好友"></a>找到指定好友</h5><p>这一步卡了我最久，后来我的解决方法是，下载“<a href="https://www.softpedia.com/get/Internet/Servers/Database-Utils/SQLiteSpy.shtml" target="_blank" rel="noopener">SQLiteSpy</a>”，用该软件打开刚才的Documents/一度乱码的文件夹/DB/MM.sqlite文件。然后，我们在软件左侧最下面找到一个名为”sqlite_sequence”的表，点击seq进行从大到小的排列，就可以定位出哪个表代表了你想要的那个人。表名形如Chat_xxxxxxxxxx</p>
+<h5 id="利用Python导出至Excel"><a href="#利用Python导出至Excel" class="headerlink" title="利用Python导出至Excel"></a>利用Python导出至Excel</h5><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">#该程序可以实现将聊天记录导出为excel</span></span><br><span class="line"><span class="keyword">import</span> sqlite3</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">with</span> sqlite3.connect(<span class="string">r'聊天记录目录/DB/MM.sqlite'</span>) <span class="keyword">as</span> con:</span><br><span class="line">    df1 = pd.read_sql_query(<span class="string">"select * from Chat_xxx"</span>, con) <span class="comment">#xxx即为刚才找到的制定好友代号</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#保存至excel，这里直接用的相对路径</span></span><br><span class="line">writer = pd.ExcelWriter(<span class="string">'wechat.xlsx'</span>)</span><br><span class="line">df1.to_excel(writer, <span class="string">'Sheet1'</span>)</span><br><span class="line">writer.save()</span><br></pre></td></tr></tbody></table></figure>
+
+<p>至此，大功告成。之后的分析就各显神通了，我选择的是matlab。当然，直接用excel基本也能实现想要的功能了。数据分析的结果，也许可以新开个笔记介绍。</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>聊天记录</tag>
+        <tag>微信</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>微信聊天记录的分析</title>
+    <url>/2020/03/06/%E5%BE%AE%E4%BF%A1%E8%81%8A%E5%A4%A9%E8%AE%B0%E5%BD%95%E7%9A%84%E5%88%86%E6%9E%90/</url>
+    <content><![CDATA[<p>前一篇文章提到我将微信聊天数据导出到了电脑，这里讲一下我的分析中遇到的一些问题。</p>
+<a id="more"></a>
+
+<p><strong>首先是发送消息的时间确定</strong>。从excel列表中看到的时间位unix时间戳（定义为距离1970年1月1日的时间），因此要将这个格式的时间转化为北京时间。实际上，matlab中有一个datenum的函数，可以计算两者之间的时间差，因此从定义我们可以直接换算成一般格式</p>
+<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line">date = datestr(unix_time/<span class="number">86400</span>/<span class="number">1000</span> + datenum(<span class="number">1970</span>,<span class="number">1</span>,<span class="number">1</span>))</span><br></pre></td></tr></tbody></table></figure>
+
+<p>或者，在新版的matlab中，也可以直接运用</p>
+<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line">`dt = datetime( unix_time, <span class="string">'ConvertFrom'</span>, <span class="string">'posixtime'</span> )`</span><br></pre></td></tr></tbody></table></figure>
+
+<p>有了时间之后，剩下的事情其实都好做了。我们可以算一下总条数，总字数之类的统计值。还可以画出这些值随时间变化的时序图。不过在确定字数的时候，我们会遇到一个问题，就是<strong>如何判断聊天记录的类型</strong>，因为聊天记录分为纯文字、图片、语音、视频、链接等不同属性的，然而在我们导出的数据里面，这些内容都是以字符串的形式出现的。在跟手机上的消息对比后，我总结出如下：</p>
+<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">% contains函数里msg之类的符号便代表不同的类型</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> contains(message(<span class="built_in">i</span>),<span class="string">'&lt;msg&gt;&lt;emoji'</span>)</span><br><span class="line">        amount_sticker = amount_sticker + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">elseif</span> contains(message(<span class="built_in">i</span>),<span class="string">'&lt;?xml'</span>) || contains(message(<span class="built_in">i</span>),<span class="string">'&lt;msg&gt;&lt;img'</span>)</span><br><span class="line">        amount_figure = amount_figure + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">elseif</span> contains(message(<span class="built_in">i</span>),<span class="string">'&lt;msg&gt;&lt;voice'</span>)</span><br><span class="line">        amount_voice = amount_voice + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">elseif</span> contains(message(<span class="built_in">i</span>),<span class="string">'&lt;msg&gt;&lt;video'</span>)</span><br><span class="line">        amount_video = amount_video + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">elseif</span> contains(message(<span class="built_in">i</span>),<span class="string">'&lt;msg&gt;&lt;appmsg'</span>)</span><br><span class="line">        amount_other = amount_other + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        amount_text = amount_text + <span class="number">1</span>;</span><br></pre></td></tr></tbody></table></figure>
+
+<p>在做不同类型的分布饼图时，我感觉matlab的饼图函数实在是太丑，于是我回归Excel，制作出来的效果还算不错。</p>
+<p><img src="/images/%E8%81%8A%E5%A4%A9%E5%86%85%E5%AE%B9%E5%88%86%E5%B8%83.png" alt="聊天内容分布"></p>
+<p>另外，我还画了一天内聊天频率的分布直方图，结果不出意外，深夜凌晨聊的最多，呈现出W型的分布。</p>
+<p><img src="/images/image-4-1024x577.png" alt="image-4-1024x577"></p>
+<p>Python有一个wordcloud的包，貌似是专门用来制作微信聊天记录词云的，我也没有经得住诱惑，拿来试了试，效果还不错，就是很土味，哈哈！</p>
+<p><img src="/images/wordcloud.png" alt="wordcloud"></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>聊天记录</tag>
+        <tag>微信</tag>
       </tags>
   </entry>
   <entry>
@@ -248,6 +383,105 @@
       </tags>
   </entry>
   <entry>
+    <title>洗澡</title>
+    <url>/2019/05/20/%E6%B4%97%E6%BE%A1/</url>
+    <content><![CDATA[<blockquote><p>上冲下洗，左揉右搓。人穿上衣服分个三六九等，来了这儿，都一样。房子再贵，真正需要的也不过一张小床，衣服再华丽，进了澡堂大家都一个样，唯有身上的精气神是能够长久留下来的东西。</p>
+</blockquote>
+<a id="more"></a>
+<p>扬泰地区有句话叫：早上皮包水，晚上水包皮。”皮包水”是指汤包，外面是皮，里面是汤汁。”水包皮”则指泡澡，可以说是扬泰人最喜欢的一项活动。</p>
+<p>从小，父亲就带我出入大小澡堂。</p>
+<p>小时候泡澡，一般是在老家泰兴。那时候的澡堂子又破又烂，只要5块钱。不管是老大爷，年轻小伙，还是我这种被家长带来的小孩子，三下五除二脱了衣服就扎进一堆人围着的池子。池子里，有默默坐着闭目养神的，脑袋上冒着安逸的热气；有不停往身上浇水，打肥皂，洗头的——那时候哪里有不准在公池打肥皂的规定；还有在开水池子木板上烫脚，并接连发出舒爽愉悦的享受声的。后来父亲告诉我，那是因为脚上如果有死皮会特别痒，而这样的烂脚碰上烫水的蒸汽，那种痛并快乐感是无以言表的。我听的一愣一愣：总之，每次洗澡的我更像是参加一种大型博览会，形形色色的人赤裸全身围着早已起不到洁净作用的脏水池子，有的只是一条不知道有没有处理干净的白色毛巾。唯一的共同点是，这些人好像都放下了一天下来所有的包袱，解除了所有的伪装，所以我不难理解为什么很多做生意请客吃饭的人总要在一天的最后安排洗澡的活动——这时候的人也许是最原始，最不设防备的吧。</p>
+<p>被等候在出口处的大爷擦干净身体后，洗澡并没有结束，对一些人来说，甚至是刚刚开始。</p>
+<p>我一般是坐在旁边看着父亲刮脚，捏脚。当修脚师傅挥舞着修脚刀在指间出神入化地飞舞不能吸引我时，我就会百无聊赖地看看电视，吃吃水果（当然，现在我会乐此不疲地刷着手机）。不知我到几岁时起，父亲会也给我安排项目——我脚上当然没有死皮，所以我一般是找人按摩。</p>
+<p>于是，我有点上瘾了。</p>
+<p>这之后，洗澡这件事在性质上发生了巨大的变化。不管是从大人口中还是同学那里听来的，总之，澡堂在我眼里变成了色情场所。这样的变化可以说源于我年龄的增长，从毛长不起的屁孩到声音变粗的小大人，也可以理解成泰州地区特殊服务行业的快速发展。不过后来我意识到，色情行业自古以来就从未低潮过，只是以不同的打扮存在于不同的角落，曾经是青楼，现在可能就是澡堂、足疗店。当然，我没有搞什么黄色，但是躺在那里被异性按摩触碰身体本身就是件概念上很暧昧的事情。更何况，澡堂在不知不觉间，将按摩你的技师从原先40岁左右经验丰富、手劲十足的大妈替换成如今花枝招展、却华而不实的年轻小姑娘。</p>
+<p>我后来离开了泰州，到南京求学。因为学业繁忙，加上人生地不熟的，所以也一开始不知道哪里可以体验到像泰州那样的澡堂子。后来才知道，澡堂，或者准确说，洗浴中心，全国上下遍地都是，有的只是我想象不到的排场和铺张。南京印象中的洗浴中心有两家，一家常去，一家只去过一次。只去过一次的那个叫浅深，门票就要100大几，是我洗过最贵的澡堂。进去之后仿佛进了宫殿，雕像、喷泉，比比皆是，但不知怎的，穿行其间只觉得过分夸张和俗气。常去的一家位于宝船厂遗址附近，门票也100多，但提供免费的自助餐，所以性价比还算可以。最重要的是那家环境不错，低调大气有内涵，卫生也上佳，擦备用的澡巾都是一次性的，不像泰州那些不知道擦过多少人多少肮脏部位。上大学后有次和父亲准备故地重游，却发现那里倒闭了，实在可惜。</p>
+<p>寒假时和泰州朋友临时起意去扬州旅游。回到澡堂文化的发源地，我们不免有种”朝圣”的心理，所以打听了一家口碑还不错的洗浴中心，叫易德养生会馆。（按说如果要朝圣，应去最古老的澡堂。扬州也确实保留不少有百年历史的澡堂子，但碍于卫生原因和对度假心情的影响，我们还是去了现代化的洗浴中心。）好歹也是从小到大见识过不少澡堂的人了，但见识到扬州这里的布局和风格时，还是不免内心感叹一声牛逼。整体装修有股日式风味，深黄色为主色调，给人以休憩的舒适感，但不至于昏沉。没有极尽奢华之能事的雕像或喷泉，简简单单的几根立柱之外好像就没有什么多余的不实用的装饰。布局方面，公共池位于正中，周围是淋浴间和桑拿房等一众助浴设施，搓澡房则位于单独挑开的一层半空间。更衣室位于二楼，与楼下的公共池用洁净的落地窗隔开，从上面眺望下去，整个男浴室的布局尽收眼底。服务方面更不用赘述，和泰州那种搓澡仿佛跟流水线上杀猪的操作相比，扬州的擦背可以称得上艺术。</p>
+<p>可惜我不在扬州，如果有车，从学校到那里的距离也不会太远，不过我相信这样的场所不管是在南京还是泰州，应该都会越来越多。毕竟现在对于年轻人来说，体验决定一切，我想这也会倒逼一些洗浴中心完善它们的环境和服务吧。</p>
+<p>那天在群里看到这样一则新闻：上海禁止所有洗浴中心异性按摩的服务。我补充道：听我爸说，泰州似乎在这方面最近也查的挺严的了。后来我还开玩笑的表示，如果真是这样，对泰州经济第三产业将会是一次不小的打击。</p>
+<p>可能打击或多或少有点吧，不过这不影响澡堂在我心中的地位——它曾经是为了单纯的洗污除垢，后来是游走在法律灰色地带的色情场合，现在则是我生活中必不可少的一部分，是回归，是重生，是精神家园。</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>洗澡</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>美化Mac终端</title>
+    <url>/2020/04/27/%E7%BE%8E%E5%8C%96Mac%E7%BB%88%E7%AB%AF/</url>
+    <content><![CDATA[<p>本文严重抄袭自：</p>
+<p><a href="https://blog.biezhi.me/2018/11/build-a-beautiful-mac-terminal-environment.html" target="_blank" rel="noopener">https://blog.biezhi.me/2018/11/build-a-beautiful-mac-terminal-environment.html</a></p>
+<h5 id="切换默认shell为zsh"><a href="#切换默认shell为zsh" class="headerlink" title="切换默认shell为zsh"></a>切换默认shell为zsh</h5><p>mac自带了多种shell，但默认的shell为bash。我们可以通过如下命令查看已有的shell</p>
+<figure class="highlight zsh"><table><tbody><tr><td class="code"><pre><span class="line">cat /etc/shells</span><br></pre></td></tr></tbody></table></figure>
+
+<p>此后我们更改默认shell为zsh</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">chsh -s /usr/local/bin/zsh</span><br></pre></td></tr></tbody></table></figure>
+<a id="more"></a>
+<h5 id="下载oh-my-zsh以及powerlevel9k主题"><a href="#下载oh-my-zsh以及powerlevel9k主题" class="headerlink" title="下载oh-my-zsh以及powerlevel9k主题"></a>下载oh-my-zsh以及powerlevel9k主题</h5><p>zsh是一个较难配置的shell，因此之前用的人不多，不过好在oh-my-zsh的出现使得这一切变得方便起来，我们通过官网的下载步骤安装</p>
+<figure class="highlight zsh"><table><tbody><tr><td class="code"><pre><span class="line">sh -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)</span>"</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>安装完oh-my-zsh后会出现成功的字样，重启终端后应该能发现主题已经更换得稍微美观了一点，这是因为oh-my-zsh默认的主题为robbyrussell，我们可以打开~/.zshrc看到其中ZSH_THEME=”robbyrussell”的字样。oh-my-zsh自带了很多主题，可以在<a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Themes" target="_blank" rel="noopener">官网上查看。</a></p>
+<p>不过这里我们使用一个自由化程度更高也更炫酷的主题：powerlevel9k。下载很方便，直接从git上下载就行，之后我们更改主题ZSH_THEME=”powerlevel9k/powerlevel9k”，并source生效</p>
+<figure class="highlight zsh"><table><tbody><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k</span><br></pre></td></tr></tbody></table></figure>
+
+<h5 id="下载字体，配置终端颜色"><a href="#下载字体，配置终端颜色" class="headerlink" title="下载字体，配置终端颜色"></a>下载字体，配置终端颜色</h5><p>更换到最新的主题后，我们发现有些地方是乱码的，这是因为默认terminal的字体是不支持一些花里胡哨的图标的，因此我们要下载更丰富的字体：nerd-fonts。安装方法是利用Homebrew（不知道这个的强烈推荐安装，管理mac包神器）</p>
+<figure class="highlight zsh"><table><tbody><tr><td class="code"><pre><span class="line">brew tap homebrew/cask-fonts</span><br><span class="line">brew cask install font-hack-nerd-font</span><br></pre></td></tr></tbody></table></figure>
+
+<p>成功后，我们在terminal的偏好设置中更改字体即可。</p>
+<p><img src="/images/image-20200427170143962.png" alt="image-20200427170143962"></p>
+<p>另外，终端的各种颜色（包括背景，高亮）也是很有讲究。大家可以自选ANSI喜欢的颜色。如果想要达到开头我那样的效果，也可以在更改颜色时，利用mac自带的取色器直接对着我的图里的ANSI取色。</p>
+<h5 id="自定义主题样式"><a href="#自定义主题样式" class="headerlink" title="自定义主题样式"></a>自定义主题样式</h5><p>最后，我们就可以根据自己的喜好，自定义出现在终端里的元素（prompt），同样是在.zshrc中更改，这里给出完整的.zshrc文件，也就是我开头效果的设置。设置完后记得source一下。</p>
+<figure class="highlight zsh"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># If you come from bash you might have to change your $PATH.</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$HOME</span>/bin:/usr/<span class="built_in">local</span>/bin:<span class="variable">$PATH</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Path to your oh-my-zsh installation.</span></span><br><span class="line"><span class="built_in">export</span> ZSH=<span class="string">"/Users/sebestian/.oh-my-zsh"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Set name of the theme to load --- if set to "random", it will</span></span><br><span class="line"><span class="comment"># load a random theme each time oh-my-zsh is loaded, in which case,</span></span><br><span class="line"><span class="comment"># to know which specific one was loaded, run: echo $RANDOM_THEME</span></span><br><span class="line"><span class="comment"># See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes</span></span><br><span class="line">ZSH_THEME=<span class="string">"powerlevel9k/powerlevel9k"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#### Default Setting  ####</span></span><br><span class="line">POWERLEVEL9K_MODE=<span class="string">'nerdfont-complete'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Which plugins would you like to load?</span></span><br><span class="line"><span class="comment"># Standard plugins can be found in ~/.oh-my-zsh/plugins/*</span></span><br><span class="line"><span class="comment"># Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/</span></span><br><span class="line"><span class="comment"># Example format: plugins=(rails git textmate ruby lighthouse)</span></span><br><span class="line"><span class="comment"># Add wisely, as too many plugins slow down shell startup.</span></span><br><span class="line">plugins=(git)</span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> <span class="variable">$ZSH</span>/oh-my-zsh.sh</span><br><span class="line"></span><br><span class="line"><span class="comment"># source bashrc</span></span><br><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Customize prompt of  powerlevel9k-theme</span></span><br><span class="line">POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon user ssh dir vcs newline status)</span><br><span class="line">POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time)</span><br><span class="line">POWERLEVEL9K_PROMPT_ADD_NEWLINE=<span class="literal">true</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>这里我source bash_profile的目的是为了启用conda的环境，这些指令以前存在bash里，如果不这样做的话conda的一些指令会用不了。</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>Mac</tag>
+        <tag>终端</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>站在巨人的肩膀上</title>
     <url>/2019/06/10/%E7%AB%99%E5%9C%A8%E5%B7%A8%E4%BA%BA%E7%9A%84%E8%82%A9%E8%86%80%E4%B8%8A/</url>
     <content><![CDATA[<p><img src="/images/image-E8BB70E168CC-1.jpeg" alt=""></p>
@@ -271,84 +505,6 @@
 <p>C同学的一席话，给了我窥见科研的一个窗口。我记得听完他经历的那个晚上，因为过于震撼，我都没能好好的睡觉。现在在回想起来，其实这就是最寻常不过的科研起步的例子了吧——跟着导师熟悉的方向，接着做下一步的工作，这之后再凭借自己的努力和天赋继续走下去。这与我在知乎，在博客上看到的经历其实没有任何两样。但从一个活生生的例子，也就是C同学的口中说出来时，我才意识到对比自己，我在错误的方向上忙活了两年。</p>
 <p>本科生我的这段科研本身兴许是失败的（其实也未知，还有一年的时间可以好好琢磨），但转念想来，何尝不是一次绝佳的试错机会呢？我在导师不甚熟悉的领域上如无头苍蝇般漫无目的地四处碰壁，但好在这只是本科，我的大部分精力还是放在课程的学习上。科研上的颗粒无收虽影响我的心态，但自己反正不是研究生，也影响不到什么毕业论文。有这样一次过程，我想我在真正的博士工作期间，能更好的进入真正科研的状态吧。</p>
 <p>我把真正进入科研的状态，比做如何站在巨人的肩膀上这样一个过程。站在巨人的肩膀上，这是谷歌学术的一个标语，实际上也确确实实是科研之所以能够从亚里士多德那个时代一直传承到现在，并继续为人类社会做贡献的原因。这次夏令营，我也选到了自己心仪的导师，希望有朝一日我也能站在他的肩膀上，看到更广阔的世界。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>北大</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>美化Mac终端</title>
-    <url>/2020/04/27/%E7%BE%8E%E5%8C%96Mac%E7%BB%88%E7%AB%AF/</url>
-    <content><![CDATA[<p>本文严重抄袭自：</p>
-<p><a href="https://blog.biezhi.me/2018/11/build-a-beautiful-mac-terminal-environment.html" target="_blank" rel="noopener">https://blog.biezhi.me/2018/11/build-a-beautiful-mac-terminal-environment.html</a></p>
-<h5 id="切换默认shell为zsh"><a href="#切换默认shell为zsh" class="headerlink" title="切换默认shell为zsh"></a>切换默认shell为zsh</h5><p>mac自带了多种shell，但默认的shell为bash。我们可以通过如下命令查看已有的shell</p>
-<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">cat /etc/shells</span><br></pre></td></tr></table></figure>
-
-<p>此后我们更改默认shell为zsh</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">chsh -s &#x2F;usr&#x2F;local&#x2F;bin&#x2F;zsh</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h5 id="下载oh-my-zsh以及powerlevel9k主题"><a href="#下载oh-my-zsh以及powerlevel9k主题" class="headerlink" title="下载oh-my-zsh以及powerlevel9k主题"></a>下载oh-my-zsh以及powerlevel9k主题</h5><p>zsh是一个较难配置的shell，因此之前用的人不多，不过好在oh-my-zsh的出现使得这一切变得方便起来，我们通过官网的下载步骤安装</p>
-<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">sh -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)</span>"</span></span><br></pre></td></tr></table></figure>
-
-<p>安装完oh-my-zsh后会出现成功的字样，重启终端后应该能发现主题已经更换得稍微美观了一点，这是因为oh-my-zsh默认的主题为robbyrussell，我们可以打开~/.zshrc看到其中ZSH_THEME=”robbyrussell”的字样。oh-my-zsh自带了很多主题，可以在<a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Themes" target="_blank" rel="noopener">官网上查看。</a></p>
-<p>不过这里我们使用一个自由化程度更高也更炫酷的主题：powerlevel9k。下载很方便，直接从git上下载就行，之后我们更改主题ZSH_THEME=”powerlevel9k/powerlevel9k”，并source生效</p>
-<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k</span><br></pre></td></tr></table></figure>
-
-<h5 id="下载字体，配置终端颜色"><a href="#下载字体，配置终端颜色" class="headerlink" title="下载字体，配置终端颜色"></a>下载字体，配置终端颜色</h5><p>更换到最新的主题后，我们发现有些地方是乱码的，这是因为默认terminal的字体是不支持一些花里胡哨的图标的，因此我们要下载更丰富的字体：nerd-fonts。安装方法是利用Homebrew（不知道这个的强烈推荐安装，管理mac包神器）</p>
-<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">brew tap homebrew/cask-fonts</span><br><span class="line">brew cask install font-hack-nerd-font</span><br></pre></td></tr></table></figure>
-
-<p>成功后，我们在terminal的偏好设置中更改字体即可。</p>
-<p><img src="/images/image-20200427170143962.png" alt="image-20200427170143962"></p>
-<p>另外，终端的各种颜色（包括背景，高亮）也是很有讲究。大家可以自选ANSI喜欢的颜色。如果想要达到开头我那样的效果，也可以在更改颜色时，利用mac自带的取色器直接对着我的图里的ANSI取色。</p>
-<h5 id="自定义主题样式"><a href="#自定义主题样式" class="headerlink" title="自定义主题样式"></a>自定义主题样式</h5><p>最后，我们就可以根据自己的喜好，自定义出现在终端里的元素（prompt），同样是在.zshrc中更改，这里给出完整的.zshrc文件，也就是我开头效果的设置。设置完后记得source一下。</p>
-<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># If you come from bash you might have to change your $PATH.</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$HOME</span>/bin:/usr/<span class="built_in">local</span>/bin:<span class="variable">$PATH</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Path to your oh-my-zsh installation.</span></span><br><span class="line"><span class="built_in">export</span> ZSH=<span class="string">"/Users/sebestian/.oh-my-zsh"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Set name of the theme to load --- if set to "random", it will</span></span><br><span class="line"><span class="comment"># load a random theme each time oh-my-zsh is loaded, in which case,</span></span><br><span class="line"><span class="comment"># to know which specific one was loaded, run: echo $RANDOM_THEME</span></span><br><span class="line"><span class="comment"># See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes</span></span><br><span class="line">ZSH_THEME=<span class="string">"powerlevel9k/powerlevel9k"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#### Default Setting  ####</span></span><br><span class="line">POWERLEVEL9K_MODE=<span class="string">'nerdfont-complete'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Which plugins would you like to load?</span></span><br><span class="line"><span class="comment"># Standard plugins can be found in ~/.oh-my-zsh/plugins/*</span></span><br><span class="line"><span class="comment"># Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/</span></span><br><span class="line"><span class="comment"># Example format: plugins=(rails git textmate ruby lighthouse)</span></span><br><span class="line"><span class="comment"># Add wisely, as too many plugins slow down shell startup.</span></span><br><span class="line">plugins=(git)</span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> <span class="variable">$ZSH</span>/oh-my-zsh.sh</span><br><span class="line"></span><br><span class="line"><span class="comment"># source bashrc</span></span><br><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Customize prompt of  powerlevel9k-theme</span></span><br><span class="line">POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon user ssh dir vcs newline status)</span><br><span class="line">POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time)</span><br><span class="line">POWERLEVEL9K_PROMPT_ADD_NEWLINE=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<p>这里我source bash_profile的目的是为了启用conda的环境，这些指令以前存在bash里，如果不这样做的话conda的一些指令会用不了。</p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>终端</tag>
-        <tag>Mac</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Mac ssh X11配置</title>
-    <url>/2019/03/26/Mac%20ssh%20X11%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<p>本文介绍Mac端ssh远程服务器时，X11图形界面相关的配置操作。</p>
-<a id="more"></a>
-
-<ol>
-<li><p>下载XQuartz</p>
-</li>
-<li><p>在终端下编辑/etc/ssh/ssh_config文件，需要sudo vim 打开，将X11Forwarding no 修改为 yes（在新的系统版本中，在ssh_config文件中Host下添加Forward三行，如下图）</p>
-<p><img src="/images/mac_ssh_1.png" alt=""></p>
-</li>
-<li><p>打开XQuartz情况下，ssh -Y连接ssh服务器即可打开GUI</p>
-</li>
-<li><p>若出现报错No xauth data; using fake authentication data for X11 forwarding.则在ssh_config文件中添加一行XAuthLocation /opt/X11/bin/xauth</p>
-</li>
-</ol>
-<p>ssh_config最终如下<br>    <img src="/images/mac_ssh_2.png" alt=""></p>
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>Mac</tag>
-        <tag>ssh</tag>
-        <tag>X11</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>test_article</title>
-    <url>/2020/11/24/test-article/</url>
-    <content><![CDATA[<p>test</p>
-<p><img src="test_figure.png" alt=""></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -368,5 +524,11 @@
             document.body.appendChild(img);
           });
       </script>]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>北大</tag>
+      </tags>
   </entry>
 </search>

@@ -234,7 +234,25 @@
 <p>可惜我不在扬州，如果有车，从学校到那里的距离也不会太远，不过我相信这样的场所不管是在南京还是泰州，应该都会越来越多。毕竟现在对于年轻人来说，体验决定一切，我想这也会倒逼一些洗浴中心完善它们的环境和服务吧。</p>
 <p>那天在群里看到这样一则新闻：上海禁止所有洗浴中心异性按摩的服务。我补充道：听我爸说，泰州似乎在这方面最近也查的挺严的了。后来我还开玩笑的表示，如果真是这样，对泰州经济第三产业将会是一次不小的打击。</p>
 <p>可能打击或多或少有点吧，不过这不影响澡堂在我心中的地位——它曾经是为了单纯的洗污除垢，后来是游走在法律灰色地带的色情场合，现在则是我生活中必不可少的一部分，是回归，是重生，是精神家园。</p>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
     </div>
 
     
