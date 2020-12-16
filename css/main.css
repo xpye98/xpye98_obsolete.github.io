@@ -1242,7 +1242,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #7d79fb;
+  background: #32612d;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2232,7 +2232,7 @@ hr {
   }
 }
 .content {
-  padding-top: 80px;
+  padding-top: 20px;
 }
 @media (max-width: 767px) {
   .content {
@@ -2376,7 +2376,7 @@ hr {
   display: none;
 }
 .posts-expand .post-block:not(:first-child) {
-  margin-top: 120px;
+  margin-top: 60px;
 }
 .posts-expand .post-title,
 .posts-expand .post-meta {
@@ -2456,4 +2456,17 @@ hr {
 }
 .post-body {
   color: #333;
+}
+---Custom Begins here,
+.posts-expand .post-title-link::before {
+  background-image: linear-gradient(90deg, #a166ab 0, #ef4e7b 25%, #f37055 50%, #ef4e7b 75%, #a166ab 100%);
+}
+.post-button .btn:hover {
+  border-color: #6f42c1;
+  color: #fff;
+  background: #e431d3;
+  background-image: linear-gradient(90deg, #a166ab 0, #ef4e7b 25%, #f37055 50%, #ef4e7b 75%, #a166ab 100%);
+}
+.highlight-container {
+  background: #7fb8ee;
 }
