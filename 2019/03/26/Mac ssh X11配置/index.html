@@ -20,23 +20,23 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="本文介绍Mac端ssh远程服务器时，X11图形界面相关的配置操作。">
+  <meta name="description" content="本文介绍 Mac 端 ssh 远程服务器时，X11 图形界面相关的配置操作。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mac ssh X11配置">
 <meta property="og:url" content="http://yoursite.com/2019/03/26/Mac%20ssh%20X11%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="远东二三叶">
-<meta property="og:description" content="本文介绍Mac端ssh远程服务器时，X11图形界面相关的配置操作。">
+<meta property="og:description" content="本文介绍 Mac 端 ssh 远程服务器时，X11 图形界面相关的配置操作。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yoursite.com/images/mac_ssh_1.png">
-<meta property="og:image" content="http://yoursite.com/images/mac_ssh_2.png">
+<meta property="og:image" content="http://yoursite.com/images/loading.jpeg">
+<meta property="og:image" content="http://yoursite.com/images/loading.jpeg">
 <meta property="article:published_time" content="2019-03-26T00:48:10.000Z">
-<meta property="article:modified_time" content="2020-08-31T11:53:36.269Z">
+<meta property="article:modified_time" content="2020-12-18T00:23:57.539Z">
 <meta property="article:author" content="Xingpei Ye">
 <meta property="article:tag" content="Mac">
 <meta property="article:tag" content="ssh">
 <meta property="article:tag" content="X11">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/images/mac_ssh_1.png">
+<meta name="twitter:image" content="http://yoursite.com/images/loading.jpeg">
 
 <link rel="canonical" href="http://yoursite.com/2019/03/26/Mac%20ssh%20X11%E9%85%8D%E7%BD%AE/">
 
@@ -196,7 +196,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-31 19:53:36" itemprop="dateModified" datetime="2020-08-31T19:53:36+08:00">2020-08-31</time>
+                <time title="修改时间：2020-12-18 08:23:57" itemprop="dateModified" datetime="2020-12-18T08:23:57+08:00">2020-12-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -219,21 +219,21 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>本文介绍Mac端ssh远程服务器时，X11图形界面相关的配置操作。</p>
+        <p>本文介绍 Mac 端 ssh 远程服务器时，X11 图形界面相关的配置操作。</p>
 <a id="more"></a>
 
 <ol>
-<li><p>下载XQuartz</p>
+<li><p>下载 XQuartz</p>
 </li>
-<li><p>在终端下编辑/etc/ssh/ssh_config文件，需要sudo vim 打开，将X11Forwarding no 修改为 yes（在新的系统版本中，在ssh_config文件中Host下添加Forward三行，如下图）</p>
+<li><p>在终端下编辑 <code>/etc/ssh/ssh_config</code> 文件，需要 <code>sudo vim</code> 打开，将 X11Forwarding no 修改为 yes（在新的系统版本中，在 <code>ssh_config</code> 文件中 Host 下添加 Forward 三行，如下图）</p>
 <p><img src="/images/loading.jpeg" data-original="/images/mac_ssh_1.png" alt=""></p>
 </li>
-<li><p>打开XQuartz情况下，ssh -Y连接ssh服务器即可打开GUI</p>
+<li><p>打开 XQuartz 情况下，<code>ssh -Y</code> 连接 ssh 服务器即可打开 GUI</p>
 </li>
-<li><p>若出现报错No xauth data; using fake authentication data for X11 forwarding.则在ssh_config文件中添加一行XAuthLocation /opt/X11/bin/xauth</p>
+<li><p>若出现报错 <code>No xauth data; using fake authentication data for X11 forwarding.</code> 则在 <code>ssh_config</code> 文件中添加一行 <code>XAuthLocation /opt/X11/bin/xauth</code></p>
 </li>
 </ol>
-<p>ssh_config最终如下<br>    <img src="/images/loading.jpeg" data-original="/images/mac_ssh_2.png" alt=""></p>
+<p><code>ssh_config</code> 最终如下<br>    <img src="/images/loading.jpeg" data-original="/images/mac_ssh_2.png" alt=""></p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {

@@ -20,22 +20,22 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="在大气科学模式数据处理中，经常需要进行regrid的操作，例如将025x025的MIX排放清单格点转化成GEOS-Chem的025x03125格点。这里我们使用MATLAB中的griddata函数进行该操作。">
+  <meta name="description" content="在大气科学模式数据处理中，经常需要进行 regrid 的操作，例如将 025x025 的 MIX 排放清单格点转化成 GEOS-Chem 的 025x03125 格点。这里我们使用 MATLAB 中的 griddata 函数进行该操作。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="利用MATLAB进行regrid">
 <meta property="og:url" content="http://yoursite.com/2020/06/25/%E5%88%A9%E7%94%A8MATLAB%E8%BF%9B%E8%A1%8Cregrid/index.html">
 <meta property="og:site_name" content="远东二三叶">
-<meta property="og:description" content="在大气科学模式数据处理中，经常需要进行regrid的操作，例如将025x025的MIX排放清单格点转化成GEOS-Chem的025x03125格点。这里我们使用MATLAB中的griddata函数进行该操作。">
+<meta property="og:description" content="在大气科学模式数据处理中，经常需要进行 regrid 的操作，例如将 025x025 的 MIX 排放清单格点转化成 GEOS-Chem 的 025x03125 格点。这里我们使用 MATLAB 中的 griddata 函数进行该操作。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yoursite.com/images/before_grid.png">
-<meta property="og:image" content="http://yoursite.com/images/after_grid_nearest.png">
+<meta property="og:image" content="http://yoursite.com/images/loading.jpeg">
+<meta property="og:image" content="http://yoursite.com/images/loading.jpeg">
 <meta property="article:published_time" content="2020-06-25T06:41:39.431Z">
-<meta property="article:modified_time" content="2020-09-04T03:21:54.452Z">
+<meta property="article:modified_time" content="2020-12-18T00:26:33.888Z">
 <meta property="article:author" content="Xingpei Ye">
 <meta property="article:tag" content="MATLAB">
 <meta property="article:tag" content="regrid">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/images/before_grid.png">
+<meta name="twitter:image" content="http://yoursite.com/images/loading.jpeg">
 
 <link rel="canonical" href="http://yoursite.com/2020/06/25/%E5%88%A9%E7%94%A8MATLAB%E8%BF%9B%E8%A1%8Cregrid/">
 
@@ -195,7 +195,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-09-04 11:21:54" itemprop="dateModified" datetime="2020-09-04T11:21:54+08:00">2020-09-04</time>
+                <time title="修改时间：2020-12-18 08:26:33" itemprop="dateModified" datetime="2020-12-18T08:26:33+08:00">2020-12-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -218,23 +218,23 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>在大气科学模式数据处理中，经常需要进行regrid的操作，例如将025x025的MIX排放清单格点转化成GEOS-Chem的025x03125格点。这里我们使用MATLAB中的griddata函数进行该操作。</p>
+        <p>在大气科学模式数据处理中，经常需要进行 regrid 的操作，例如将 025x025 的 MIX 排放清单格点转化成 GEOS-Chem 的 025x03125 格点。这里我们使用 MATLAB 中的 <code>griddata</code> 函数进行该操作。</p>
 <a id="more"></a>
-<h5 id="griddata函数简介"><a href="#griddata函数简介" class="headerlink" title="griddata函数简介"></a>griddata函数简介</h5><p>MATLAB自带的<a href="https://www.mathworks.com/help/matlab/ref/griddata.html" target="_blank" rel="noopener">griddata</a>函数可以对二维以及三维的数据进行差值。</p>
+<h5 id="griddata函数简介"><a href="#griddata函数简介" class="headerlink" title="griddata函数简介"></a>griddata函数简介</h5><p>MATLAB 自带的 <a href="https://www.mathworks.com/help/matlab/ref/griddata.html" target="_blank" rel="noopener">griddata</a> 函数可以对二维以及三维的数据进行差值。</p>
 <p>我们以官网的代码为例</p>
 <figure class="highlight matlab"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">xy = <span class="number">-2.5</span> + <span class="number">5</span>*<span class="built_in">gallery</span>(<span class="string">'uniformdata'</span>,[<span class="number">200</span> <span class="number">2</span>],<span class="number">0</span>);</span><br><span class="line">x = xy(:,<span class="number">1</span>);</span><br><span class="line">y = xy(:,<span class="number">2</span>);</span><br><span class="line">v = x.*<span class="built_in">exp</span>(-x.^<span class="number">2</span>-y.^<span class="number">2</span>);</span><br><span class="line">[xq,yq] = <span class="built_in">meshgrid</span>(<span class="number">-2</span>:<span class="number">.2</span>:<span class="number">2</span>, <span class="number">-2</span>:<span class="number">.2</span>:<span class="number">2</span>);</span><br><span class="line">vq = griddata(x,y,v,xq,yq,<span class="string">'linear'</span>);</span><br></pre></td></tr></tbody></table></figure>
-<p>可以看到，我们首先需要准备好未经差值的原始数据（代码1-4行），也就是x，y，z。其中x，y为坐标信息，z为对应的值。与传统大气科学中 a(lon x lat)这样经纬度形成的矩阵数据不同，这里的x，y，z都是一维的列向量，即一个经度对应一个纬度对应一个值。因此实际操作时我们需要进行相应的转换。</p>
-<p>这之后，我们通过meshgrid函数定义差值后的数据范围xq和yq，这时的位置信息又变成为我们熟悉的矩阵形式。</p>
-<p>最后，通过griddata进行差值。差值共有linear/nearest/natural/cubic/v4等5种方法，默认使用linear方法。通常，我不会选择linear，而是使用nearest这种选取临近点值的非连续方法，这点在后面实例中有所展开。</p>
-<h5 id="一个实例"><a href="#一个实例" class="headerlink" title="一个实例"></a>一个实例</h5><p>这里我们以025x025格点转化成025x03125格点为例，使用griddata函数进行regrid操作。</p>
-<p>首先，我的原始数据 <code>NO_origional</code>为560 x 441（lon x lat）的矩阵数据，<code>lon</code>为40.1250至179.8750的一维数组（间隔0.25），<code>lat</code>为-20.1250至89.8750的一维数组（间隔0.25）。</p>
-<p>上面提到，要进行差值，我们需要将<code>NO_origional</code>这样二维矩阵形式的数据转化成一维数组。这个操作还是很常见的，使用<code>NO = NO_origional(:)</code>即可完成。这个操作中，我们把一个矩阵中第二列所有值摆在了第一列下，接着在下面接第三列、第四列……，因此，下一步我们需要制作与之对应的经纬度一维数组<code>lon_pre</code>和<code>lat_pre</code>。</p>
+<p>可以看到，我们首先需要准备好未经差值的原始数据（代码1-4行），也就是 x，y，z。其中x，y 为坐标信息，z 为对应的值。与传统大气科学中 a(lon x lat)这样经纬度形成的矩阵数据不同，这里的 x，y，z 都是一维的列向量，即一个经度对应一个纬度对应一个值。因此实际操作时我们需要进行相应的转换。</p>
+<p>这之后，我们通过 <code>meshgrid</code> 函数定义差值后的数据范围 xq 和 yq，这时的位置信息又变成为我们熟悉的矩阵形式。</p>
+<p>最后，通过 <code>griddata</code> 进行差值。差值共有 linear/nearest/natural/cubic/v4 等5种方法，默认使用 linear 方法。通常，我不会选择 linear，而是使用 nearest 这种选取临近点值的非连续方法，这点在后面实例中有所展开。</p>
+<h5 id="一个实例"><a href="#一个实例" class="headerlink" title="一个实例"></a>一个实例</h5><p>这里我们以 025x025 格点转化成 025x03125 格点为例，使用 <code>griddata</code> 函数进行 regrid 操作。</p>
+<p>首先，我的原始数据 <code>NO_origional</code>为 560 x 441（lon x lat）的矩阵数据，<code>lon</code> 为 40.1250 至 179.8750 的一维数组（间隔 0.25），<code>lat</code> 为 -20.1250 至 89.8750 的一维数组（间隔 0.25）。</p>
+<p>上面提到，要进行差值，我们需要将 <code>NO_origional</code> 这样二维矩阵形式的数据转化成一维数组。这个操作还是很常见的，使用 <code>NO = NO_origional(:)</code> 即可完成。这个操作中，我们把一个矩阵中第二列所有值摆在了第一列下，接着在下面接第三列、第四列……，因此，下一步我们需要制作与之对应的经纬度一维数组 <code>lon_pre</code> 和 <code>lat_pre</code>。</p>
 <figure class="highlight matlab"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:lat_size</span><br><span class="line">    lat_pre( (<span class="built_in">i</span><span class="number">-1</span>)*lon_size+<span class="number">1</span> : <span class="built_in">i</span>*lon_size ) = lat(<span class="built_in">i</span>);</span><br><span class="line">    lon_pre( (<span class="built_in">i</span><span class="number">-1</span>)*lon_size+<span class="number">1</span> : <span class="built_in">i</span>*lon_size ) = lon;</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></tbody></table></figure>
 
-<p>之后，我们定义想要差值的经纬度范围并进行差值。这里我范围选用的是GEOS-Chem亚洲区域025x03125的格点，差值方法选用的是<code>nearest</code>。</p>
+<p>之后，我们定义想要差值的经纬度范围并进行差值。这里我范围选用的是 GEOS-Chem 亚洲区域 025x03125 的格点，差值方法选用的是 <code>nearest</code>。</p>
 <figure class="highlight matlab"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[lon_q,lat_q] = <span class="built_in">meshgrid</span>(<span class="number">70</span>:<span class="number">0.3125</span>:<span class="number">140</span>, <span class="number">15</span>:<span class="number">0.25</span>:<span class="number">55</span>);</span><br><span class="line">NO_q = griddata(lon_pre,lat_pre,NO,lon_q,lat_q,<span class="string">'nearest'</span>);</span><br><span class="line">NO_q = NO_q';</span><br></pre></td></tr></tbody></table></figure>
 
-<p>我们画图对比regrid前后的数据，基本一样。</p>
+<p>我们画图对比 regrid 前后的数据，基本一样。</p>
 <p><img src="/images/loading.jpeg" data-original="/images/before_grid.png" alt=""></p>
 <p><img src="/images/loading.jpeg" data-original="/images/after_grid_nearest.png" alt=""></p>
 <script>
